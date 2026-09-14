@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Assemble mwacoustic.com from Diane Meier's 'MW Acoustics Website' doc (Sep 10 2026) + Brand Guide WE02. No new copy — see COPY-SOURCES.md."""
-import html, pathlib, re
+import html, pathlib, re, hashlib
 ROOT=pathlib.Path(__file__).parent; SITE=ROOT/"site"; E=html.escape
 NAV=[("Home","index.html"),("About","about.html"),("Products","products.html"),("Software","software.html"),("Press","press.html"),("Contact","contact.html")]
 LINES=[  # Bennett, "Speaker Hardware products" email 2026-09-10; only Neodymium is live
@@ -21,13 +21,14 @@ def nav_html(current):
         else: items.append(f'<li><a href="{h}"{cur}>{E(l)}</a></li>')
     return "".join(items)
 
+CSS_VER=hashlib.md5((SITE/"assets/styles.css").read_bytes()).hexdigest()[:8]
 def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and Blended Take on Audio."):
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}"><meta name="theme-color" content="#121211">
 <link rel="icon" href="assets/logos/mw-circle-black.svg" type="image/svg+xml"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Jost:ital,wght@0,500;1,500&display=swap">
-<link rel="stylesheet" href="assets/styles.css"></head>
+<link rel="stylesheet" href="assets/styles.css?v={CSS_VER}"></head>
 <body>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="index.html" aria-label="MW Acoustics home"><img class="tile" src="assets/logos/tile-acoustics-green.svg" alt=""><img class="divname" src="assets/logos/division-acoustics-white.svg" alt="MW Acoustics"></a>
