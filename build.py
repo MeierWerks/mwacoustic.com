@@ -96,6 +96,52 @@ products=f'''
 <p class="fine" style="margin-top:14px;color:var(--muted)">Photography: ferrite magnets — Omegatron, Wikimedia Commons, CC BY-SA 3.0 (cropped) · alnico magnet — Chetvorno, Wikimedia Commons, CC0 · copper coil — Vadim Timayev, Pexels.</p></div></section>
 '''
 
+
+# ---------- Software page: Process / Specs / Compatibility (Bennett, chat, 2026-09-14; facts from the SDS repo docs/81, docs/44, docs/47, project.yml, MW-iOS-App-Scope) ----------
+PROCESS=[("Drivers","Pick a driver from the catalog, type in your own Thiele-Small set, trace a manufacturer datasheet PDF, or load FRD and ZMA measurements."),
+ ("Crossover","Schematic, live response and dispersion in one document. Choose a filter family from the encyclopedia, tune components, auto-fit ideal to real parts, and read summed SPL, phase, group delay, impedance and the CTA-2034 spinorama as you work."),
+ ("Enclosure","Sealed, vented, passive radiator, bandpass, isobaric, transmission line, horn or open baffle. Dial volume and tuning while loading, excursion and port velocity update live."),
+ ("Workshop","The 3-D cabinet and fabrication space: materials, finishes, bracing, imported CAD, bill of materials, cut files and a price for the build."),
+ ("Simulate","The FEM / BEM cockpit, in six steps: cancellation, diffraction, internal resonance, panel resonance, system radiation and distortion."),
+ ("Measure","Close the loop. Capture or import a measurement, gate it, compare measured against predicted, and refine the design.")]
+SPECS=[("Crossover and network","Exact nodal (MNA) circuit solver · Butterworth, Linkwitz-Riley and Bessel targets · ladder synthesis to real component values · Zobel and L-pad networks fitted to the measured impedance · filter-topology optimizer · Nelder-Mead auto-fit · CMA-ES, coordinate-descent and NSGA-II multi-objective search with a Pareto trade-off front · active / DSP crossovers with biquad export"),
+ ("Enclosures","Sealed, bass reflex, bandpass, passive radiator, isobaric, transmission line, horn and open baffle · Helmholtz port tuning and auto-sizing · ABCD two-port composition for lines and horns · radiation impedance · port flow-noise (chuffing) estimate"),
+ ("Horns","Compression-driver horn engine · Western Electric / Altec-style multicell horns · constant-directivity and sculpted-horn solvers · front-loaded horn family · BEM-derived mouth loading · flat-pattern development for fabrication"),
+ ("Directivity and diffraction","Analytic baffle diffraction and baffle step · BEM-solved diffraction fed back into the design chart · polar engine with the full CTA-2034 spinorama · directivity balloons · source-cancellation field across every radiating aperture"),
+ ("FEM / BEM","2-D exterior BEM validated to under 1 % against analytic solutions · 3-D Helmholtz BEM · interior standing-wave modes · solid-elasticity modal analysis of the assembled cabinet · panel modal solvers · GMRES iterative solver for large meshes"),
+ ("Cabinet, materials and structure","In-cabinet coloration transfer per driver · two-way fluid-structure coupling between air and panels · panel radiation · modal decay (ringing) in the time domain · viscous and thermal boundary-layer loss in ports and slots · Johnson-Champoux-Allard model for stuffing · material library with finite wall impedance · structural attachment of hardware and horns · physics-placed bracing, FEM-revalidated"),
+ ("Room","Image-source room prediction at the listening position · geometric ray acoustics to any reflection order · placement guidance"),
+ ("Large signal","Nonlinear motor: Bl(x), Cms(x), Le(x,i) · suspension nonlinearity · voice-coil thermal model and power compression · magnetostatic solve of the real magnetic circuit · time-domain coupled solver · excursion, port-velocity and power safety gates"),
+ ("Time alignment and phase","Frequency-dependent acoustic centre · minimum-phase derivation (Hilbert) · complex acoustic summation with offsets and polarity"),
+ ("Measurement","Sweep, RTA, cumulative spectral decay and impedance capture · calibrated microphone profiles · FRD / ZMA import · measured-versus-predicted reconciliation"),
+ ("Datasheets and catalog","Datasheet PDF reading: text extraction plus curve tracing with axis calibration and confidence scoring · 340-plus Parts Express / Dayton driver records · live bill of materials with indicative pricing"),
+ ("Rendering and fabrication","Metal path-traced photoreal rendering · DXF, STL and STEP cut files from one part list with joinery, pockets and bevels · every exported part checked closed, orientable and positive-volume before it leaves the app"),
+ ("MW-Assist","An assistant that observes the design, proposes fixes and applies them through the same actions the interface uses. AI orchestrates; it never simulates.")]
+COMPETITORS=["SDS","VituixCAD","Hornresp","REW","COMSOL"]
+COMPARE=[("Crossover design from measured FRD / ZMA",[1,1,0,0,0]),
+ ("Sealed, vented, PR, bandpass, isobaric, TL, horn, open baffle",[1,2,1,0,2]),
+ ("Horn design: compression, multicell, constant-directivity",[1,0,2,0,2]),
+ ("Baffle diffraction and CTA-2034 spinorama",[1,1,0,0,2]),
+ ("BEM / FEM on the real cabinet",[1,0,0,0,1]),
+ ("Panel resonance, fluid-structure coupling, materials, stuffing",[1,0,0,0,1]),
+ ("Large-signal motor, suspension and thermal behaviour",[1,0,0,0,2]),
+ ("Measurement capture: sweep, RTA, CSD, impedance",[1,0,0,1,0]),
+ ("Measured-versus-predicted reconciliation loop",[1,0,0,0,0]),
+ ("3-D cabinet builder to DXF / STL / STEP cut files",[1,0,0,0,0]),
+ ("Photoreal rendering",[1,0,0,0,0]),
+ ("Parts catalog with live pricing and a one-click cart",[1,0,0,0,0]),
+ ("Datasheet PDF reading and curve tracing",[1,0,0,0,0]),
+ ("Built-in design assistant (MW-Assist)",[1,0,0,0,0]),
+ ("One live document from driver to cut file",[1,0,0,0,0])]
+CMP_LEGEND="● included · ◐ partial or build-it-yourself · – not offered"
+COMPAT=[("Mac","Apple silicon Mac (M1 or later) running macOS 14 Sonoma or later. SDS is a desktop application; the physics, optimizers, Workshop and rendering live here."),
+ ("iPhone and iPad","A companion app for iOS 17 or later: measurement capture with microphone calibration, AirPlay output routing, Resources, Add-ons, orders and cart. Limited capability by design; for full functionality use the desktop version."),
+ ("Microphones","Any calibrated USB measurement microphone; UMIK, ECM8000 and EMM-6 are recognised automatically. Phone-mic calibration profiles are supported."),
+ ("Input","3Dconnexion SpaceMouse for six-axis viewport navigation, alongside the mouse and trackpad."),
+ ("Imports","FRD and ZMA measurements, manufacturer datasheet PDFs, glTF / GLB models from Fusion 360 and other CAD, SDS project and driver files."),
+ ("Exports","DXF, STL and STEP cut files, DSP biquad coefficients, measurement files and simulation reports."),
+ ("Parts","Parts Express is the fulfilment partner: the bill of materials hands off to a live cart with current price and stock.")]
+
 software=f'''
 <section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render.jpg" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><h2 style="margin-top:26px">{E(SDS_H2)}</h2>
@@ -105,6 +151,17 @@ software=f'''
 <img src="assets/img/sds/sds-crossover-design.jpg" alt="SDS crossover design workspace" loading="lazy"></div></section>
 <section class="tight" style="padding-top:0"><div class="wrap"><div class="gallery"><img class="wide" src="assets/img/sds/sds-design-gates.jpg" alt="SDS design workspace with validation gates" loading="lazy" style="aspect-ratio:2000/1584;object-fit:contain;background:#0B0C0E"><img src="assets/img/sds/sds-render-views.jpg" alt="SDS render views" loading="lazy" style="aspect-ratio:1430/1080;object-fit:cover"><img src="assets/img/sds/sds-filter-encyclopedia.jpg" alt="SDS filter encyclopedia" loading="lazy" style="aspect-ratio:2000/1606;object-fit:cover"><img src="assets/img/sds/sds-render-speaker.jpg" alt="Speaker rendered in SDS" loading="lazy" style="aspect-ratio:4/3;object-fit:cover"><img src="assets/img/sds-lockup.png" alt="SDS Speaker Design Suite" loading="lazy" style="object-fit:contain;background:#fff"></div>
 <div class="components">{"".join(f'<img src="assets/img/sds/components/{f}" alt="" loading="lazy">' for f in COMPONENTS)}</div></div></section>
+<section id="process"><div class="wrap"><p class="eyebrow">Process</p><h2>Six workspaces. One document.</h2><hr class="rule" style="margin-bottom:26px">
+<ol class="steps">{"".join(f'<li><span class="n">{i:02d}</span><div><h3>{E(n)}</h3><p>{E(t)}</p></div></li>' for i,(n,t) in enumerate(PROCESS,1))}</ol></div></section>
+<section id="specs" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Specs</p><h2 style="color:var(--warm-white)">Powered by WRKS</h2>
+<p class="lead" style="margin-top:14px;color:var(--warm-white);max-width:60ch">WRKS is the MeierWerks physics engine underneath SDS: a kernel of deterministic solvers that every workspace, optimizer and assistant calls. Nothing on the chart is drawn by an AI.</p>
+<div class="specs">{"".join(f'<div class="spec"><h3>{E(n)}</h3><p>{E(t)}</p></div>' for n,t in SPECS)}</div>
+<h3 style="color:var(--warm-white);margin-top:48px">How SDS compares</h3>
+<div class="tablewrap"><table class="cmp"><thead><tr><th></th>{"".join(f'<th>{E(c)}</th>' for c in COMPETITORS)}</tr></thead><tbody>{"".join('<tr><td>'+E(r)+'</td>'+"".join('<td class="v">'+('●' if v==1 else '◐' if v==2 else '–')+'</td>' for v in vs)+'</tr>' for r,vs in COMPARE)}</tbody></table></div>
+<p class="fine" style="color:var(--silver);margin-top:10px">{E(CMP_LEGEND)}</p></div></section>
+<section id="compatibility"><div class="wrap"><p class="eyebrow">Compatibility</p><h2>Built for the Mac</h2><hr class="rule" style="margin-bottom:26px">
+<dl class="compat">{"".join(f'<div><dt>{E(n)}</dt><dd>{E(t)}</dd></div>' for n,t in COMPAT)}</dl>
+<div class="buttons" style="margin-top:28px"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
 <section class="band-black tight" id="inquire"><div class="wrap split"><div><p class="eyebrow" style="color:var(--gold)">Learn more</p><h2 style="color:var(--warm-white)">Inquire</h2></div>
 <form action="mailto:info@meierwerks.com?subject=SDS%20inquiry" method="post" enctype="text/plain">
 <label style="color:var(--silver)">Name<input id="sds-name" name="name" type="text" autocomplete="name" required></label>
@@ -136,6 +193,7 @@ for _i,_l in enumerate(_plines):
     elif _l.startswith(("Effective:","Last updated:")): _pout.append(f'<p class="meta">{E(_l)}</p>')
     else: _pout.append(f'<p>{E(_l)}</p>')
 privacy=f'<section><div class="wrap legal">{"".join(_pout)}</div></section>'
+
 
 pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — MW Acoustics",about,"about.html"),"products.html":("Products — MW Acoustics",products,"products.html"),
  "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"videos.html":("Videos — MW Acoustics",videos,"videos.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None)}

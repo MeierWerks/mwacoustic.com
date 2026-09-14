@@ -29,8 +29,13 @@
 - [x] Republish artifact for review
 - [x] Software: "Download on the App Store" button (hero, split CTA, home SDS hero) → apps.apple.com id6788087317; note that SDS is a desktop app, iOS companion has limited capability, full functionality needs desktop
 - [x] Neo-Three description: drop "floor model"; now "the flagship of the Neo line, offering uncompromised build quality and fidelity for the most discerning listener"
+- [x] Neo trio v2 (Bennett: drapes read as 2D blobs): Neo One = standalone three-quarter (iso) view; Neo Two ≈ half the previous size; covered shapes rebuilt from the same camera with real 3D shading
+- [x] Software page: flesh out Process (the SDS workflow), Specs (WRKS physics engines, what each does and why), Compatibility (Apple-silicon Macs from M1, iOS companion), plus a differentiation checklist vs the competition (REW, VituixCAD, Hornresp, …) — Bennett, 2026-09-14
+- [x] Parent site: division tile/name click through to the division's site when one exists (MW Acoustics → mwacoustic.com); built + committed, goes live when mwacoustic.com is deployed
 
 ## Flags for Bennett
+- "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
+- Parent-site division links point at https://mwacoustic.com; do not push the parent live until MW Acoustics is deployed there.
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
 - Ferrite photo is CC BY-SA 3.0 (Omegatron); the credit line under the material cards is legally required unless the photo is replaced. Alnico (CC0) and the copper coil (Pexels) need no credit.
 - MW Acoustics logo version: still awaiting Bennett's confirming screenshot.
