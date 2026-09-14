@@ -1,0 +1,93 @@
+SDS Privacy Policy
+Effective: July 14, 2026
+Last updated: July 14, 2026
+This Privacy Policy explains how MeierWerks Inc. ("MeierWerks," "we," "us," or "our") collects, uses, discloses, retains, and protects personal information when you use SDS for macOS or iOS, its account and sync services, MW-Assist, and physical-hardware checkout (collectively, the "Service").
+1. WHO WE ARE
+SDS is provided by MeierWerks Inc., Kent, Connecticut 06757, United States.
+Privacy questions or requests: privacy@meierwerks.com
+Customer support: support@meierwerks.com
+Website: https://meierwerks.com
+For EEA, UK, and Swiss data-protection purposes, MeierWerks Inc. is the controller of personal information described in this Policy unless stated otherwise.
+2. INFORMATION WE COLLECT
+Account and profile information. We collect your email address, account identifier, display name, optional avatar, sign-in provider identifiers, account status, accepted policy versions, consent choices, and subscription or entitlement status. Authentication credentials are handled by our authentication provider. We do not receive your plaintext password.
+Project and design information. Full project files remain on your device unless you choose a feature that transmits specified material. If you save or sync a project, use MW-Assist or another disclosed AI-assisted feature, or send project material to support, we process the loudspeaker, driver, crossover, enclosure, schematic, simulation, cabinet, and related project data and files needed for that feature. The Terms describe the different license rules for Non-Commercial Plan and Commercial License projects.
+Measurement information. We process acoustic measurements, frequency-response data, impulse responses, calibration files and status, microphone and device-model metadata, and related files that you create, import, save, or sync.
+MW-Assist and AI-assisted feature information. When you choose to use MW-Assist or another disclosed AI-assisted feature, the Service sends the text you enter and relevant conversation, project, workspace, datasheet, or image context through our authenticated server to our AI service provider, currently Anthropic, so the requested response or analysis can be generated. The app discloses this transfer and asks for your permission before an AI-assisted feature sends anything for the first time, and you can turn MW-Assist off at any time from the assistant's options menu. Do not submit information that you are not authorized to share.
+Digital-purchase information. Apple processes payment for subscriptions and digital add-ons purchased through the App Store. We receive transaction identifiers, product identifiers, subscription status, expiration or revocation status, and related receipt or entitlement information needed to unlock and reconcile digital access. We do not receive your full payment-card details from Apple.
+Physical-order information. Stripe processes payment for shipped physical hardware. We receive order items, amounts, currency, payment and fulfillment status, contact details, shipping address, taxes, shipping method, tracking information, refunds, disputes, and supplier references needed to fulfill and support the order. Stripe, not MeierWerks, receives and processes your full card number and security code.
+Support and communications. We collect information you send when you contact us, submit a privacy request, or report a problem. Support diagnostics may include app and operating-system versions, device type, selected workspace, sync state, and redacted error information. The support flow is designed to exclude credentials, API keys, authentication tokens, full project contents, and account identifiers from diagnostics.
+Security and service information. Our providers and systems may process IP address, device and operating-system information, app version, sign-in and session events, request timestamps, service logs, crash or error information, fraud signals, and security events needed to operate and protect the Service.
+Preference and policy records. We retain your marketing preference and records of policy disclosures and acceptance, together with the applicable policy version and timestamp.
+Local engineering samples. On eligible Non-Commercial Plans, the current app may create an install-scoped local queue of numeric, de-identified engineering samples such as enclosure count, driver-way count, and alignment category. The current release does not upload that queue. It excludes user ID, project name, file path, free text, and full project contents. Engineering-data collection is off for the Commercial tier's offline/no-cloud mode. We will update this Policy and the app disclosure and obtain any permission required by law or Apple's rules before enabling remote collection.
+3. HOW WE USE INFORMATION
+We use personal information to:
+- create, authenticate, secure, and support your account;
+- provide project storage and cross-device sync;
+- provide measurements, simulations, MW-Assist, and other requested features;
+- verify StoreKit purchases and maintain digital entitlements;
+- price, process, fulfill, support, refund, and account for physical orders;
+- communicate service, security, purchase, support, and policy notices;
+- detect errors, fraud, abuse, and security incidents;
+- comply with tax, accounting, legal, and regulatory obligations;
+- improve reliability, accessibility, safety, and product quality; and
+- send marketing only as permitted by your marketing preference and applicable law, and process service, product, analytics, and product-improvement data as described in this Policy and the Terms.
+If we lawfully receive Project Materials covered by the Non-Commercial Plan license in the Terms, that license permits us to analyze and use them to research, develop, test, train or evaluate systems, manufacture, market, license, and monetize current or future products and services. Our contractual right to use material is separate from whether the current app technically transmits it. Identifiable personal information is used only as disclosed here, as permitted by your settings and applicable law. Commercial License Project Materials are excluded unless you separately and affirmatively authorize their use.
+We may create, retain, use, disclose, license, and monetize aggregated or de-identified engineering datasets, models, benchmarks, patterns, and product improvements that are not reasonably linkable to you. We maintain safeguards designed to prevent reidentification and do not attempt to reidentify that data except to test and maintain those safeguards or as otherwise permitted by law.
+For EEA and UK users, our legal bases are performance of a contract, compliance with legal obligations, our legitimate interests in operating and securing the Service, and consent where consent is required. You may withdraw consent at any time without affecting earlier lawful processing.
+4. HOW WE DISCLOSE INFORMATION
+We do not sell personal information. We do not share personal information for cross-context behavioral advertising, and the app does not use third-party advertising trackers.
+We may sell or license products, services, designs, models, benchmarks, or datasets developed from Project Materials as permitted by the Terms, or from aggregated or de-identified information. We do not treat the sale or license of genuinely de-identified material as a sale of personal information, and we do not sell an identifiable user's raw project file or personal information.
+We disclose information only as reasonably necessary to:
+- Supabase, for authentication, database, storage, Edge Functions, and account sync;
+- Apple, for App Store distribution, Sign in with Apple, StoreKit billing, and transaction verification;
+- Google, if you choose Google sign-in;
+- Anthropic, when you choose MW-Assist or an AI-assisted feature;
+- Stripe, for physical-goods payment processing, tax, fraud controls, and receipts;
+- component suppliers, carriers, and fulfillment providers, including Parts Express where applicable, for availability, purchasing, shipment, returns, and order support;
+- support, security, diagnostics, hosting, email, and professional advisers acting for us; and
+- courts, regulators, law enforcement, or other parties when required by law or reasonably necessary to protect rights, safety, security, or the integrity of the Service.
+If MeierWerks is involved in a merger, financing, acquisition, reorganization, bankruptcy, or sale of assets, information may be transferred as part of that transaction subject to applicable law.
+5. RETENTION
+We retain information only for as long as reasonably necessary for the purposes described above:
+- account, synced project, and measurement data: while your account is active, then deleted or de-identified within 30 days after we verify and begin an account-deletion request, except as described below;
+- service backups: removed through the normal backup cycle, ordinarily within 90 days after deletion from active systems;
+- physical-order, payment, tax, and accounting records: generally seven years after the transaction, or longer if law requires;
+- support and security records: generally up to 24 months, unless a longer period is needed for an active dispute, fraud investigation, security incident, or legal hold;
+- consent and policy-acceptance records: while the account is active and as needed to demonstrate compliance; and
+- AI usage and entitlement records: as needed to provide, meter, secure, and audit the feature. AI inputs may also be processed or retained by the AI provider under the applicable service configuration and legal requirements.
+Aggregated or de-identified datasets, models, benchmarks, know-how, product improvements, and other results that are not reasonably linkable to you may be retained indefinitely. Deleting an account does not require MeierWerks to withdraw a product, model, dataset, analysis, or other non-identifying result already created in accordance with the Terms and this Policy.
+Deleting the app does not delete cloud data. Use Settings > Account > Delete account to initiate deletion. We may retain limited information when required for taxes, payment disputes, fraud prevention, security, legal claims, or another legal obligation. Where feasible, retained information is isolated from ordinary product use.
+6. YOUR CHOICES AND RIGHTS
+In Settings, you can review or change your marketing preference, review required data-use disclosures, export an account snapshot, and initiate access, correction, deletion, objection, restriction, or other privacy requests.
+The project license in the Terms does not waive a privacy right or turn personal information into MeierWerks property. Changing or withdrawing an optional marketing preference does not revoke the separate Non-Commercial Plan intellectual-property license or require removal of aggregated or de-identified products and improvements already lawfully created.
+Depending on where you live, you may have rights to:
+- know or access the personal information we process;
+- correct inaccurate information;
+- receive a portable copy of information you provided;
+- delete personal information;
+- object to or restrict certain processing;
+- withdraw consent;
+- appeal a denied request where local law provides that right; and
+- complain to your local privacy or data-protection authority.
+California and other U.S. state residents may also have rights to know, correct, delete, and obtain a copy of personal information and to opt out of sale, sharing, targeted advertising, or qualifying profiling. We do not sell personal information or share it for cross-context behavioral advertising. We will not discriminate against you for exercising a privacy right.
+Submit a request in the app or email privacy@meierwerks.com. We may verify your identity and authority before completing a request. Authorized agents may submit requests where local law permits. We respond within the period required by applicable law.
+7. ACCOUNT DELETION AND SUBSCRIPTIONS
+You may initiate deletion from Settings on macOS or iOS. Deletion covers the account and associated personal information that we are not legally required to retain. If manual review is required, we will keep you informed and aim to complete verified requests within 30 days.
+Deleting your SDS account does not automatically cancel an Apple subscription. Manage or cancel Apple billing at https://apps.apple.com/account/subscriptions. Where Sign in with Apple was used, we will revoke the associated Apple authorization as part of the completed deletion process where required.
+8. CHILDREN
+SDS is intended for users age 13 and older and is not directed to children under 13. We do not knowingly collect personal information from a child under 13. If you believe a child under 13 has provided personal information, contact privacy@meierwerks.com so we can investigate and delete it as required. A user under the age of legal majority must have a parent or legal guardian's permission and supervision. Purchases must be made by an adult or by a parent or guardian on the user's behalf.
+9. INTERNATIONAL DATA TRANSFERS
+MeierWerks is based in the United States, and our providers may process information in the United States and other countries. Those countries may have different data-protection laws. Where applicable law requires it, we rely on recognized safeguards such as adequacy decisions, contractual protections, or other lawful transfer mechanisms.
+10. SECURITY
+We use administrative, technical, and organizational safeguards designed to protect information, including encrypted transport, authenticated access, row-level database policies, restricted storage, server-held provider credentials, and least-privilege controls. No service can guarantee absolute security. Protect your device and account credentials and contact support@meierwerks.com if you suspect unauthorized access.
+11. THIRD-PARTY SERVICES AND LINKS
+Third-party services process information under their own terms and privacy notices. The Service may also link to external component manufacturers, distributors, documentation, or websites. We are not responsible for the privacy practices of an external site you choose to visit.
+12. CHANGES TO THIS POLICY
+We may update this Policy as the Service or law changes. We will post the new version with its effective date. Material changes will be surfaced in the app or by another appropriate notice and may require renewed consent or acceptance where required.
+13. CONTACT
+MeierWerks Inc.
+Kent, Connecticut 06757
+United States
+Privacy: privacy@meierwerks.com
+Support: support@meierwerks.com
+Website: https://meierwerks.com

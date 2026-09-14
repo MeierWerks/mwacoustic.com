@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Assemble mwacoustic.com from Diane Meier's 'MW Acoustics Website' doc (Sep 10 2026) + Brand Guide WE02. No new copy — see COPY-SOURCES.md."""
-import html, pathlib
+import html, pathlib, re
 ROOT=pathlib.Path(__file__).parent; SITE=ROOT/"site"; E=html.escape
 NAV=[("Home","index.html"),("About","about.html"),("Products","products.html"),("Software","software.html"),("Videos","videos.html"),("Contact","contact.html")]
 LINES=[  # Bennett, "Speaker Hardware products" email 2026-09-10; only Neodymium is live
@@ -36,7 +36,7 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
 <main>{body}</main>
 <footer class="site-footer"><div class="wrap">
 <img src="assets/logos/mw-stamp+wordmark-white.svg" alt="MeierWerks">
-<div><ul>{"".join(f'<li><a href="{h}">{E(l)}</a></li>' for l,h in NAV)}<li><a href="https://meierwerks.com/privacy.html">Privacy</a></li><li><a href="https://meierwerks.com/">MeierWerks</a></li></ul>
+<div><ul>{"".join(f'<li><a href="{h}">{E(l)}</a></li>' for l,h in NAV)}<li><a href="privacy.html">Privacy</a></li><li><a href="https://meierwerks.com/">MeierWerks</a></li></ul>
 <p class="fine">MW Acoustics is a division of MeierWerks Inc. &nbsp;·&nbsp; Kent, CT USA &nbsp;·&nbsp; <a href="mailto:info@meierwerks.com">info@meierwerks.com</a></p></div>
 <div class="right">© MeierWerks Inc. All rights reserved.</div>
 </div></footer>
@@ -59,14 +59,14 @@ def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-
 
 home=f'''
 <section class="hero-photo"><img src="assets/img/hero-full.png" alt="Neo One" style="object-position:center 22%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
-<section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-with-horn.png" alt="Neo One" loading="lazy"></div></section>
+<section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-light-quarter.jpg" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
-<figure><img src="assets/img/hero-full.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/neo-two-covered.jpg" alt="Neo Two, covered"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/neo-three-covered.jpg" alt="Neo Three, covered"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
+<figure><img src="assets/img/neo1-studio-side.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-design.jpg" alt="SDS design workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.jpg" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a></div></div></section>
 '''
 about=f'''
 <section class="hero-photo"><img src="assets/img/cab-front.png" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
@@ -76,25 +76,26 @@ lines_html="".join(
   f'<a class="line-card{" live" if live else ""}" href="#{s}"><img src="assets/img/range/{s}-floorstander.png" alt=""><div class="cap"><div class="nm">{E(n)}</div>' + ('<div class="sub">The Neo Line</div>' if live else '<span class="soon-pill">Coming soon</span>') + '</div></a>'
   for n,s,live in LINES)
 products=f'''
-<section class="tight"><div class="wrap"><p class="eyebrow">Products</p><h1 style="font-size:clamp(40px,5.5vw,76px)">Four lines. One launching now.</h1><hr class="rule">
-<div class="lines">{lines_html}</div></div></section>
-<section id="neodymium" class="band-black"><div class="wrap"><img src="assets/logos/neo-one-mark.svg" alt="NEO • ONE" style="width:120px;height:auto;margin-bottom:18px"><h2 style="color:var(--warm-white)">The Neo Line</h2>
+<section id="neodymium" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h1 style="color:var(--warm-white);font-size:clamp(40px,5.5vw,76px)">The Neo Line</h1>
 <p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p><p style="color:var(--warm-white)">{E(NEO_P[1])}</p>
 <ul class="attrs" style="--c:var(--warm-white)">{"".join(f'<li style="border-color:var(--silver);color:var(--warm-white)"><span class="n">{i:02d}</span>{E(a)}</li>' for i,a in enumerate(ATTRS,1))}</ul>
 <div class="neo-trio">
-<figure><img src="assets/img/hero-full.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/neo-two-covered.jpg" alt="Neo Two, covered"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/neo-three-covered.jpg" alt="Neo Three, covered"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
+<figure><img src="assets/img/neo1-studio-side.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div></div></section>
-<section id="neo-one"><div class="wrap"><p class="eyebrow">Neo One</p><h2>Neo-One</h2><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(NEO1_P)}</p>
-<div class="gallery"><img class="wide" src="assets/img/hero-full.png" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-with-horn.png" alt="" loading="lazy"><img src="assets/img/hero-neo1.png" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
+<section id="neo-one"><div class="wrap"><div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap"><img src="assets/logos/neo-one-mark.svg" alt="NEO • ONE" style="width:120px;height:auto"><div><p class="eyebrow">Neo One</p><h2>Neo-One</h2></div></div><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(NEO1_P)}</p>
+<div class="gallery"><img class="wide" src="assets/img/neo1-studio-above.jpg" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-dark-quarter.jpg" alt="" loading="lazy"><img src="assets/img/neo1-light-rear.jpg" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
 <p class="label" style="margin-top:36px">Coming soon</p>
 <div class="coming"><div class="item"><div class="nm">Neo-Two</div><p>{E(NEO2)}</p></div><div class="item"><div class="nm">Neo-Three</div><p>{E(NEO3)}</p></div></div>
 <div class="buttons"><a href="contact.html">Inquire</a></div></div></section>
-{"".join(f'<section id="{s}" class="tight" style="border-top:1px solid var(--rule)"><div class="wrap split"><div><p class="eyebrow">{E(n)}</p><h2>{E(n)} <span class="soon-pill" style="vertical-align:middle;font-size:13px">Coming soon</span></h2></div><img src="assets/img/range/{s}-floorstander.png" alt="" style="max-width:360px;justify-self:end;filter:brightness(.6)" loading="lazy"></div></section>' for n,s,live in LINES if not live)}
+<section class="tight" style="border-top:1px solid var(--rule)"><div class="wrap"><p class="eyebrow">Products</p><h2>Coming soon</h2><hr class="rule">
+<div class="lines lines-3">{"".join(f'<a class="line-card" id="{s}" href="#{s}"><img src="assets/img/materials/{s}.jpg" alt="{E(n)} magnet material"><div class="cap"><div class="nm">{E(n)}</div><span class="soon-pill">Coming soon</span></div></a>' for n,s,live in LINES if not live)}</div>
+<p class="fine" style="margin-top:14px;color:var(--muted)">Photography: ferrite magnets — Omegatron, Wikimedia Commons, CC BY-SA 3.0 (cropped) · alnico magnet — Chetvorno, Wikimedia Commons, CC0 · copper coil — Vadim Timayev, Pexels.</p></div></section>
 '''
+
 software=f'''
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-render-turntable.jpg" alt="Speakers built in SDS"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render.jpg" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1></div></section>
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><h2 style="margin-top:26px">{E(SDS_H2)}</h2>
 <div class="buttons"><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
 <div style="margin-top:26px"><img src="assets/logos/powered-by-wrks-black.svg" alt="Powered by WRKS" style="height:22px;width:auto"></div></div>
@@ -122,6 +123,17 @@ contact='''
 <label>Message<textarea id="message" name="message" rows="6" required></textarea></label>
 <button type="submit" style="background:var(--cinnabar)">Send</button></form></div></div></section>
 '''
+
+# ---------- Privacy (verbatim; moved from meierwerks.com — MW Acoustics owns SDS) ----------
+_plines=[l.strip() for l in (ROOT/"docs/copy/privacy.txt").read_text().splitlines() if l.strip()]
+_pout=[]
+for _i,_l in enumerate(_plines):
+    if _i==0: _pout.append(f'<h1 style="font-size:clamp(40px,5.5vw,76px)">{E(_l)}</h1>')
+    elif re.match(r'^\d+\. [A-Z]', _l): _pout.append(f'<h2>{E(_l)}</h2>')
+    elif _l.startswith(("Effective:","Last updated:")): _pout.append(f'<p class="meta">{E(_l)}</p>')
+    else: _pout.append(f'<p>{E(_l)}</p>')
+privacy=f'<section><div class="wrap legal">{"".join(_pout)}</div></section>'
+
 pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — MW Acoustics",about,"about.html"),"products.html":("Products — MW Acoustics",products,"products.html"),
- "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"videos.html":("Videos — MW Acoustics",videos,"videos.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html")}
+ "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"videos.html":("Videos — MW Acoustics",videos,"videos.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None)}
 for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(shell(t,b,cur)); print("built",fn)

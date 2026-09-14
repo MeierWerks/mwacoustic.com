@@ -17,3 +17,11 @@ Rule: no new copy. Layout and text follow Diane Meier's Google Doc "MW Acoustics
 | Division mark | Dark green diagonal tile — Bennett 2026-09-14; artwork = Louise's `meierwerks-logo-divisions-color-options.pdf` (center version, British Racing Green), in the kit. The final KatArt delivery of division logos is still not on this Mac. |
 | SDS imagery | Real SDS captures from the CDS repo `.artifacts/` (July 2026 builds) + Dayton Audio component photos from the app's own supplier catalog (`Assets/Catalog/dayton-audio`) |
 | Photography | None exists. Hero/gallery use CAD renders from `MeierWerks/mw-acoustics/designs/renders`; Diane's Set List shots (lifestyle, person at monitor, speakers under cloth) are still to be photographed |
+
+## 2026-09-14 additions
+- Privacy Policy page: verbatim text moved from meierwerks.com (`docs/copy/privacy.txt`, originally the live meierwerks.com/privacy). Bennett, chat, 2026-09-14: MW Acoustics owns SDS, so the policy lives here.
+- Products page material photography (Bennett, chat, 2026-09-14: "tight, almost abstract representations of those materials"):
+  - `assets/img/materials/ferrite.jpg` — "Ceramic magnets.jpg", Omegatron, Wikimedia Commons, CC BY-SA 3.0, cropped/toned. ATTRIBUTION REQUIRED (credit line on products page).
+  - `assets/img/materials/alnico.jpg` — "Magnetron magnet.JPG" (cast alnico magnetron magnet), Chetvorno, Wikimedia Commons, CC0 1.0, cropped/toned.
+  - `assets/img/materials/fieldcoil.jpg` — "Concentric copper spirals on a dark background", Vadim Timayev, Pexels (Pexels licence, free for commercial use), cropped. https://www.pexels.com/photo/12515072/
+- Neo Two / Neo Three images: generated black-satin drapes over the Neo One silhouette (from render MW_Cab_Assembly_Old_2025-Oct-23_04-39-51AM) composited on the dark studio plate of render MW_Cab_Assembly_Old_2026-Jan-31_05-26-53PM.
