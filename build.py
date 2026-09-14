@@ -54,6 +54,8 @@ NEO3="Neo-Three is a larger floor model with even more powerful (if that can be 
 SDS_H1="All the Tools, Products, Tests, and Visualized Process to Build Your Own Speaker"
 SDS_P="Our Speaker Design Suite, powered by our own WRKS engine, allows anyone – from layman to expert – to build their own speaker. SDS is a highly intuitive program combining real-time data (from costs, to size, to materials) with onscreen visualization and sound testing. Quite frankly, it’s like nothing you’ve ever seen before."
 SDS_H2="The world of DIY sound just took a major leap forward"
+APPSTORE="https://apps.apple.com/us/app/sds-speaker-design-suite/id6788087317"   # Bennett, chat, 2026-09-14
+SDS_PLATFORM="SDS is a desktop application. A companion iOS app is available with limited capability; for full functionality, use the desktop version."  # wording per Bennett, chat, 2026-09-14
 
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
 
@@ -66,7 +68,7 @@ home=f'''
 <figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.jpg" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.jpg" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
 '''
 about=f'''
 <section class="hero-photo"><img src="assets/img/cab-front.png" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
@@ -95,9 +97,10 @@ products=f'''
 '''
 
 software=f'''
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render.jpg" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render.jpg" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><h2 style="margin-top:26px">{E(SDS_H2)}</h2>
-<div class="buttons"><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
+<div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
+<p class="platform-note">{E(SDS_PLATFORM)}</p>
 <div style="margin-top:26px"><img src="assets/logos/powered-by-wrks-black.svg" alt="Powered by WRKS" style="height:22px;width:auto"></div></div>
 <img src="assets/img/sds/sds-crossover-design.jpg" alt="SDS crossover design workspace" loading="lazy"></div></section>
 <section class="tight" style="padding-top:0"><div class="wrap"><div class="gallery"><img class="wide" src="assets/img/sds/sds-design-gates.jpg" alt="SDS design workspace with validation gates" loading="lazy" style="aspect-ratio:2000/1584;object-fit:contain;background:#0B0C0E"><img src="assets/img/sds/sds-render-views.jpg" alt="SDS render views" loading="lazy" style="aspect-ratio:1430/1080;object-fit:cover"><img src="assets/img/sds/sds-filter-encyclopedia.jpg" alt="SDS filter encyclopedia" loading="lazy" style="aspect-ratio:2000/1606;object-fit:cover"><img src="assets/img/sds/sds-render-speaker.jpg" alt="Speaker rendered in SDS" loading="lazy" style="aspect-ratio:4/3;object-fit:cover"><img src="assets/img/sds-lockup.png" alt="SDS Speaker Design Suite" loading="lazy" style="object-fit:contain;background:#fff"></div>
