@@ -2,7 +2,7 @@
 """Assemble mwacoustic.com from Diane Meier's 'MW Acoustics Website' doc (Sep 10 2026) + Brand Guide WE02. No new copy — see COPY-SOURCES.md."""
 import html, pathlib, re
 ROOT=pathlib.Path(__file__).parent; SITE=ROOT/"site"; E=html.escape
-NAV=[("Home","index.html"),("About","about.html"),("Products","products.html"),("Software","software.html"),("Videos","videos.html"),("Contact","contact.html")]
+NAV=[("Home","index.html"),("About","about.html"),("Products","products.html"),("Software","software.html"),("Press","press.html"),("Contact","contact.html")]
 LINES=[  # Bennett, "Speaker Hardware products" email 2026-09-10; only Neodymium is live
  ("Ferrite","ferrite",False),("Alnico","alnico",False),("Neodymium","neodymium",True),("Field Coil","fieldcoil",False)]
 COMPONENTS=["dayton-rs180-8.jpg","dayton-rs225-8.jpg","dayton-nd25fa-4.jpg","dayton-ps95-8.jpg","dayton-rs100-4.jpg","dayton-dc28f-8.jpg"]
@@ -170,8 +170,8 @@ software=f'''
 <button type="submit" style="background:var(--cinnabar)">Send</button></form></div></section>
 '''
 videos='''
-<section><div class="wrap"><p class="eyebrow">Videos</p><h1 style="font-size:clamp(40px,5.5vw,76px)">Videos</h1><hr class="rule">
-<div class="videos"><div><video controls playsinline preload="metadata" poster="assets/img/hero-neo1.png"><source src="assets/video/Neo1_final.mp4" type="video/mp4"></video><p class="label label">Neo One</p></div></div></div></section>
+<section><div class="wrap"><p class="eyebrow">Press</p><h1 style="font-size:clamp(40px,5.5vw,76px)">Press</h1><hr class="rule">
+<div class="videos"><div><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/txUsUbOb2yQ" title="Neo One" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="label label">Neo One</p></div></div></div></section>
 '''
 contact='''
 <section><div class="wrap"><p class="eyebrow">MW Acoustics</p><h1 style="font-size:clamp(40px,5.5vw,76px)">Contact</h1><hr class="rule" style="margin-bottom:40px">
@@ -196,5 +196,5 @@ privacy=f'<section><div class="wrap legal">{"".join(_pout)}</div></section>'
 
 
 pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — MW Acoustics",about,"about.html"),"products.html":("Products — MW Acoustics",products,"products.html"),
- "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"videos.html":("Videos — MW Acoustics",videos,"videos.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None)}
+ "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"press.html":("Press — MW Acoustics",videos,"press.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None)}
 for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(shell(t,b,cur)); print("built",fn)
