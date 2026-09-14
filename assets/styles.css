@@ -160,7 +160,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .attrs li{border:2px solid var(--black);border-radius:10px;padding:14px 16px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:19px;line-height:1.05}
 .attrs li .n{display:block;color:var(--cinnabar);font-size:13px;letter-spacing:.1em;margin-bottom:4px}
 .neo-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:28px}
-.neo-trio figure{margin:0;background:#B4B4B4;border-radius:14px;overflow:hidden;color:var(--warm-white)}
+.neo-trio figure{margin:0;background:#0B0C0E;border-radius:14px;overflow:hidden;color:var(--warm-white)}
 .neo-trio img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 .neo-trio figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:22px;line-height:1;background:#0B0C0E}
 .neo-trio figcaption small{font-family:var(--body);font-weight:500;text-transform:none;font-size:15px;color:var(--silver)}
@@ -172,8 +172,10 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .coming .item{border-left:4px solid var(--cinnabar);padding-left:18px}
 .coming .item .nm{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:28px;line-height:1;margin-bottom:6px}
 .lines{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,24px);margin-top:26px}
+.lines-3{grid-template-columns:repeat(3,1fr)}
 .line-card{background:#0B0C0E;color:var(--warm-white);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.line-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(.6)}
+.line-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(.85)}
+.line-card:hover img{filter:brightness(1)}
 .line-card.live img{filter:none}
 .line-card .cap{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px}
 .line-card .nm{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1}
