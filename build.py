@@ -57,8 +57,8 @@ SDS_H2="The world of DIY sound just took a major leap forward"
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
 
 home=f'''
-<section class="hero-photo"><img src="assets/img/hero-neo1.png" alt="Neo One"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
-<section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-render.png" alt="Neo One" loading="lazy"></div></section>
+<section class="hero-photo"><img src="assets/img/hero-full.png" alt="Neo One" style="object-position:center 35%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
+<section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-with-horn.png" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
 <figure><img src="assets/img/range/neodymium-floorstander.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
@@ -86,7 +86,7 @@ products=f'''
 <figure class="hidden"><img src="assets/img/range/neodymium-large-floorstander.png" alt=""><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div></div></section>
 <section id="neo-one"><div class="wrap"><p class="eyebrow">Neo One</p><h2>Neo-One</h2><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(NEO1_P)}</p>
-<div class="gallery"><img class="wide" src="assets/img/hero-neo1.png" alt="Neo One" loading="lazy"><img src="assets/img/neo1-render.png" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
+<div class="gallery"><img class="wide" src="assets/img/hero-full.png" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-with-horn.png" alt="" loading="lazy"><img src="assets/img/hero-neo1.png" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
 <p class="label" style="margin-top:36px">Coming soon</p>
 <div class="coming"><div class="item"><div class="nm">Neo-Two</div><p>{E(NEO2)}</p></div><div class="item"><div class="nm">Neo-Three</div><p>{E(NEO3)}</p></div></div>
 <div class="buttons"><a href="contact.html">Inquire</a></div></div></section>
