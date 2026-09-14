@@ -34,7 +34,7 @@
 - [x] Parent site: division tile/name click through to the division's site when one exists (MW Acoustics → mwacoustic.com); built + committed, goes live when mwacoustic.com is deployed
 - [x] Parent site: division colours reassigned (Acoustics green · Heavy yellow · Deep Learning light green · Magnetics red · Composites tan · Additive blue) — live
 - [x] Parent + MWA footer: transparent KO stamp+wordmark (black plate removed) — live on meierwerks.com
-- [x] MW Acoustics LIVE on mwacoustic.com (2026-09-14 evening): Squarespace defaults deleted, 4 GitHub A records + www CNAME added, public resolvers answer GitHub IPs, site serves over HTTP from GitHub; HTTPS certificate provisioning started (enforce once issued).
+- [x] MW Acoustics LIVE on mwacoustic.com (2026-09-14 evening): Squarespace defaults deleted, 4 GitHub A records + www CNAME added, public resolvers answer GitHub IPs, site serves over HTTP from GitHub; HTTPS certificate approved for apex + www, https_enforced=true. Canonical host = mwacoustic.com (www redirects). Note: stale 4-hour DNS caches on Bennett's Mac caused an apex↔www redirect loop for ~1h after the switch.
 - [x] Favicon: circle mark cropped edge-to-edge + 32/192/Apple-touch PNGs, both sites (Safari still paints its own light tile behind any transparent icon)
 - [x] Neo Two/Three: cloth made opaque — no product detail visible through it
 - [x] Parent WRKS strip: delivered WRKS colour logo + delivered "POWERED BY WRKS" lockup artwork (no typed heading) — live
