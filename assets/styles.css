@@ -184,6 +184,10 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
 .buttons a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:19px;background:var(--black);color:var(--warm-white);padding:14px 26px;border-radius:8px;text-decoration:none}
 .buttons a:hover{background:var(--cinnabar)}
+.buttons a.appstore{background:var(--cinnabar);display:inline-flex;align-items:center;gap:10px}
+.buttons a.appstore::before{content:"";width:16px;height:19px;background:currentColor;-webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 200"><path d="M139 106c0-27 22-40 23-41-13-19-32-21-39-21-17-2-32 10-40 10-9 0-21-10-35-9-18 0-34 10-43 26-19 32-5 80 13 106 9 13 19 27 33 26 13 0 18-8 34-8s20 8 34 8c14 0 23-13 32-26 10-15 14-29 14-30 0 0-27-10-27-41zM113 26c7-9 12-21 11-33-11 0-24 7-31 16-7 8-13 20-11 32 12 1 24-6 31-15z"/></svg>') center/contain no-repeat;mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 200"><path d="M139 106c0-27 22-40 23-41-13-19-32-21-39-21-17-2-32 10-40 10-9 0-21-10-35-9-18 0-34 10-43 26-19 32-5 80 13 106 9 13 19 27 33 26 13 0 18-8 34-8s20 8 34 8c14 0 23-13 32-26 10-15 14-29 14-30 0 0-27-10-27-41zM113 26c7-9 12-21 11-33-11 0-24 7-31 16-7 8-13 20-11 32 12 1 24-6 31-15z"/></svg>') center/contain no-repeat}
+.buttons a.appstore:hover{background:var(--black)}
+.platform-note{margin-top:16px;font-size:15px;color:var(--muted);max-width:52ch}
 .sds-hero{position:relative;background:var(--black);color:var(--warm-white);overflow:hidden}
 .sds-hero img.bg{width:100%;height:min(70vh,640px);object-fit:cover;opacity:.7;display:block}
 .sds-hero .over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:var(--gutter);gap:18px;background:linear-gradient(90deg,rgba(18,18,17,.94) 0%,rgba(18,18,17,.84) 36%,rgba(18,18,17,.42) 68%,rgba(18,18,17,.08) 100%)}
