@@ -35,6 +35,8 @@
 - [x] Parent site: division colours reassigned (Acoustics green · Heavy yellow · Deep Learning light green · Magnetics red · Composites tan · Additive blue) — live
 - [x] Parent + MWA footer: transparent KO stamp+wordmark (black plate removed) — live on meierwerks.com
 - [ ] MW Acoustics LIVE on mwacoustic.com: GitHub repo MeierWerks/mwacoustic.com, Pages on gh-pages, CNAME set, build green. DNS at Squarespace still on Squarespace defaults — blocked on Bennett's Google re-verification in the Browser pane; then delete the default preset, add 4 GitHub A records + www CNAME, request HTTPS.
+- [x] Favicon: circle mark cropped edge-to-edge + 32/192/Apple-touch PNGs, both sites (Safari still paints its own light tile behind any transparent icon)
+- [x] Neo Two/Three: cloth made opaque — no product detail visible through it
 
 ## Flags for Bennett
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
