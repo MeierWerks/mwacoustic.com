@@ -42,7 +42,7 @@
 - [x] Press page (was Videos): embeds Bennett's YouTube feature txUsUbOb2yQ; local Neo1_final.mp4 no longer referenced
 
 ## Flags for Bennett
-- YouTube oEmbed reports the embedded video as "Revolutionizing Audio: The Rise of AI Speakers!" by channel "Jay's iyagi" — confirm that is the intended feature.
+- Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
 - Parent-site division links to https://mwacoustic.com are live; they resolve once the DNS switch completes.
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
