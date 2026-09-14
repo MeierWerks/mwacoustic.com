@@ -57,7 +57,7 @@ SDS_H2="The world of DIY sound just took a major leap forward"
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
 
 home=f'''
-<section class="hero-photo"><img src="assets/img/hero-full.png" alt="Neo One" style="object-position:center 35%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
+<section class="hero-photo"><img src="assets/img/hero-full.png" alt="Neo One" style="object-position:center 22%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
 <section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-with-horn.png" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
