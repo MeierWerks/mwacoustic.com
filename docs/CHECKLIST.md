@@ -40,11 +40,13 @@
 - [x] Parent WRKS strip: delivered WRKS colour logo + delivered "POWERED BY WRKS" lockup artwork (no typed heading) — live
 - [x] MWA Software › Specs: delivered WRKS colour logo above "Powered by WRKS" — live on Pages, in artifact
 - [x] Press page (was Videos): embeds Bennett's YouTube feature txUsUbOb2yQ; local Neo1_final.mp4 no longer referenced
+- [x] Products: photo credit line removed; ferrite photo replaced with a no-attribution Pexels image (dark iron-oxide mineral close-up)
+- [x] Parent Divisions page: ident reel integrated as a scroll-scrubbed band (advances on scroll down, rewinds on scroll up) — live
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
 - Parent-site division links to https://mwacoustic.com are live and now resolve.
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
-- Ferrite photo is CC BY-SA 3.0 (Omegatron); the credit line under the material cards is legally required unless the photo is replaced. Alnico (CC0) and the copper coil (Pexels) need no credit.
+- Photo credits: none required any more (all three material photos are CC0 / Pexels).
 - MW Acoustics logo version: still awaiting Bennett's confirming screenshot.
