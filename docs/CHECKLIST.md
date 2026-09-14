@@ -41,7 +41,7 @@
 - [x] MWA Software › Specs: delivered WRKS colour logo above "Powered by WRKS" — live on Pages, in artifact
 - [x] Press page (was Videos): embeds Bennett's YouTube feature txUsUbOb2yQ; local Neo1_final.mp4 no longer referenced
 - [x] Products: photo credit line removed; ferrite photo replaced with a no-attribution Pexels image (dark iron-oxide mineral close-up)
-- [x] Parent Divisions page (v5): each division's mark colours itself in with a smooth vector wipe (built from the delivered tile SVG, feathered edge) as soon as the mark is fully on screen; reverses on scroll-up; forced complete at page bottom; no video on the site any more — live
+- [x] Parent Divisions page (v5): each division's mark colours itself in with a smooth vector wipe (built from the delivered tile SVG, feathered edge) as soon as the mark is fully on screen; reverses on scroll-up; forced complete at page bottom; no video on the site any more; wipe eases per animation frame so stepped scroll input still animates smoothly (v6) — live
 - [x] Both sites: stylesheet URL cache-busted (fixes stale layouts in Safari)
 
 ## Flags for Bennett
