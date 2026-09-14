@@ -32,10 +32,13 @@
 - [x] Neo trio v2 (Bennett: drapes read as 2D blobs): Neo One = standalone three-quarter (iso) view; Neo Two ≈ half the previous size; covered shapes rebuilt from the same camera with real 3D shading
 - [x] Software page: flesh out Process (the SDS workflow), Specs (WRKS physics engines, what each does and why), Compatibility (Apple-silicon Macs from M1, iOS companion), plus a differentiation checklist vs the competition (REW, VituixCAD, Hornresp, …) — Bennett, 2026-09-14
 - [x] Parent site: division tile/name click through to the division's site when one exists (MW Acoustics → mwacoustic.com); built + committed, goes live when mwacoustic.com is deployed
+- [x] Parent site: division colours reassigned (Acoustics green · Heavy yellow · Deep Learning light green · Magnetics red · Composites tan · Additive blue) — live
+- [x] Parent + MWA footer: transparent KO stamp+wordmark (black plate removed) — live on meierwerks.com
+- [ ] MW Acoustics LIVE on mwacoustic.com: GitHub repo MeierWerks/mwacoustic.com, Pages on gh-pages, CNAME set, build green. DNS at Squarespace still on Squarespace defaults — blocked on Bennett's Google re-verification in the Browser pane; then delete the default preset, add 4 GitHub A records + www CNAME, request HTTPS.
 
 ## Flags for Bennett
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
-- Parent-site division links point at https://mwacoustic.com; do not push the parent live until MW Acoustics is deployed there.
+- Parent-site division links to https://mwacoustic.com are live; they resolve once the DNS switch completes.
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
 - Ferrite photo is CC BY-SA 3.0 (Omegatron); the credit line under the material cards is legally required unless the photo is replaced. Alnico (CC0) and the copper coil (Pexels) need no credit.
 - MW Acoustics logo version: still awaiting Bennett's confirming screenshot.
