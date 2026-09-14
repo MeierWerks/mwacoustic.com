@@ -5,6 +5,7 @@ ROOT=pathlib.Path(__file__).parent; SITE=ROOT/"site"; E=html.escape
 NAV=[("Home","index.html"),("About","about.html"),("Products","products.html"),("Software","software.html"),("Videos","videos.html"),("Contact","contact.html")]
 LINES=[  # Bennett, "Speaker Hardware products" email 2026-09-10; only Neodymium is live
  ("Ferrite","ferrite",False),("Alnico","alnico",False),("Neodymium","neodymium",True),("Field Coil","fieldcoil",False)]
+COMPONENTS=["dayton-rs180-8.jpg","dayton-rs225-8.jpg","dayton-nd25fa-4.jpg","dayton-ps95-8.jpg","dayton-rs100-4.jpg","dayton-dc28f-8.jpg"]
 ATTRS=["Neodymium Magnet topology","Carbon Fiber diaphragms on all drivers","Transmission line nested cabinet","Advanced 3D Printing","CNC Machined Aluminum","Constrained layer damping","Acoustic Lens and Horn"]
 
 def nav_html(current):
@@ -24,12 +25,12 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}"><meta name="theme-color" content="#121211">
-<link rel="icon" href="assets/logos/tile-acoustics.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logos/mw-circle-black.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Jost:ital,wght@0,500;1,500&display=swap">
 <link rel="stylesheet" href="assets/styles.css"></head>
 <body>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="index.html" aria-label="MW Acoustics home"><img class="tile" src="assets/logos/tile-acoustics.svg" alt=""><img class="divname" src="assets/logos/division-acoustics-white.svg" alt="MW Acoustics"></a>
+<a class="brand" href="index.html" aria-label="MW Acoustics home"><img class="tile" src="assets/logos/tile-acoustics-green.svg" alt=""><img class="divname" src="assets/logos/division-acoustics-white.svg" alt="MW Acoustics"></a>
 <nav aria-label="Primary"><ul class="nav">{nav_html(current)}</ul></nav>
 </div></header>
 <main>{body}</main>
@@ -65,7 +66,7 @@ home=f'''
 <figure class="hidden"><img src="assets/img/range/neodymium-bookshelf.png" alt=""><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/range/neodymium-large-floorstander.png" alt=""><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
-<section class="sds-hero"><img class="bg" src="assets/img/group-shot.png" alt=""><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-design.jpg" alt="SDS design workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a></div></div></section>
 '''
 about=f'''
 <section class="hero-photo"><img src="assets/img/cab-front.png" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
@@ -93,11 +94,13 @@ products=f'''
 {"".join(f'<section id="{s}" class="tight" style="border-top:1px solid var(--rule)"><div class="wrap split"><div><p class="eyebrow">{E(n)}</p><h2>{E(n)} <span class="soon-pill" style="vertical-align:middle;font-size:13px">Coming soon</span></h2></div><img src="assets/img/range/{s}-floorstander.png" alt="" style="max-width:360px;justify-self:end;filter:brightness(.6)" loading="lazy"></div></section>' for n,s,live in LINES if not live)}
 '''
 software=f'''
-<section class="sds-hero"><img class="bg" src="assets/img/group-shot.png" alt=""><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-render-turntable.jpg" alt="Speakers built in SDS"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1></div></section>
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><h2 style="margin-top:26px">{E(SDS_H2)}</h2>
 <div class="buttons"><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
 <div style="margin-top:26px"><img src="assets/logos/powered-by-wrks-black.svg" alt="Powered by WRKS" style="height:22px;width:auto"></div></div>
-<img src="assets/img/sds-lockup.png" alt="SDS Speaker Design Suite" loading="lazy" style="max-width:420px;justify-self:center"></div></section>
+<img src="assets/img/sds/sds-crossover-design.jpg" alt="SDS crossover design workspace" loading="lazy"></div></section>
+<section class="tight" style="padding-top:0"><div class="wrap"><div class="gallery"><img class="wide" src="assets/img/sds/sds-design-gates.jpg" alt="SDS design workspace with validation gates" loading="lazy" style="aspect-ratio:2000/1584;object-fit:contain;background:#0B0C0E"><img src="assets/img/sds/sds-render-views.jpg" alt="SDS render views" loading="lazy" style="aspect-ratio:1430/1080;object-fit:cover"><img src="assets/img/sds/sds-filter-encyclopedia.jpg" alt="SDS filter encyclopedia" loading="lazy" style="aspect-ratio:2000/1606;object-fit:cover"><img src="assets/img/sds/sds-render-speaker.jpg" alt="Speaker rendered in SDS" loading="lazy" style="aspect-ratio:4/3;object-fit:cover"><img src="assets/img/sds-lockup.png" alt="SDS Speaker Design Suite" loading="lazy" style="object-fit:contain;background:#fff"></div>
+<div class="components">{"".join(f'<img src="assets/img/sds/components/{f}" alt="" loading="lazy">' for f in COMPONENTS)}</div></div></section>
 <section class="band-black tight" id="inquire"><div class="wrap split"><div><p class="eyebrow" style="color:var(--gold)">Learn more</p><h2 style="color:var(--warm-white)">Inquire</h2></div>
 <form action="mailto:info@meierwerks.com?subject=SDS%20inquiry" method="post" enctype="text/plain">
 <label style="color:var(--silver)">Name<input id="sds-name" name="name" type="text" autocomplete="name" required></label>
