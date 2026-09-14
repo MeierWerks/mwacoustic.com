@@ -153,7 +153,7 @@ software=f'''
 <div class="components">{"".join(f'<img src="assets/img/sds/components/{f}" alt="" loading="lazy">' for f in COMPONENTS)}</div></div></section>
 <section id="process"><div class="wrap"><p class="eyebrow">Process</p><h2>Six workspaces. One document.</h2><hr class="rule" style="margin-bottom:26px">
 <ol class="steps">{"".join(f'<li><span class="n">{i:02d}</span><div><h3>{E(n)}</h3><p>{E(t)}</p></div></li>' for i,(n,t) in enumerate(PROCESS,1))}</ol></div></section>
-<section id="specs" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Specs</p><h2 style="color:var(--warm-white)">Powered by WRKS</h2>
+<section id="specs" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Specs</p><img src="assets/logos/wrks-color.svg" alt="WRKS" style="height:72px;width:auto;display:block;margin:6px 0 18px"><h2 style="color:var(--warm-white)">Powered by WRKS</h2>
 <p class="lead" style="margin-top:14px;color:var(--warm-white);max-width:60ch">WRKS is the MeierWerks physics engine underneath SDS: a kernel of deterministic solvers that every workspace, optimizer and assistant calls. Nothing on the chart is drawn by an AI.</p>
 <div class="specs">{"".join(f'<div class="spec"><h3>{E(n)}</h3><p>{E(t)}</p></div>' for n,t in SPECS)}</div>
 <h3 style="color:var(--warm-white);margin-top:48px">How SDS compares</h3>
