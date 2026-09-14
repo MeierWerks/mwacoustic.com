@@ -41,7 +41,7 @@
 - [x] MWA Software › Specs: delivered WRKS colour logo above "Powered by WRKS" — live on Pages, in artifact
 - [x] Press page (was Videos): embeds Bennett's YouTube feature txUsUbOb2yQ; local Neo1_final.mp4 no longer referenced
 - [x] Products: photo credit line removed; ferrite photo replaced with a no-attribution Pexels image (dark iron-oxide mineral close-up)
-- [x] Parent Divisions page: ident reel integrated as a scroll-scrubbed band (advances on scroll down, rewinds on scroll up) — live
+- [x] Parent Divisions page: ident reel rides beside the sections; each division plays its tile colour as its section passes; logo transformation plays at the bottom (Bennett rejected the pinned scroll-scrub band) — live
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
