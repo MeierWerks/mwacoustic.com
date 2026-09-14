@@ -171,7 +171,7 @@ software=f'''
 '''
 videos='''
 <section><div class="wrap"><p class="eyebrow">Press</p><h1 style="font-size:clamp(40px,5.5vw,76px)">Press</h1><hr class="rule">
-<div class="videos"><div><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/txUsUbOb2yQ" title="Neo One" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="label label">Neo One</p></div></div></div></section>
+<div class="videos"><div><div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/txUsUbOb2yQ" title="Revolutionizing Audio: The Rise of AI Speakers" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="label label">Revolutionizing Audio: The Rise of AI Speakers · 1BIT Podcast</p></div></div></div></section>
 '''
 contact='''
 <section><div class="wrap"><p class="eyebrow">MW Acoustics</p><h1 style="font-size:clamp(40px,5.5vw,76px)">Contact</h1><hr class="rule" style="margin-bottom:40px">
