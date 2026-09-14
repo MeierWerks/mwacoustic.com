@@ -93,7 +93,7 @@ products=f'''
 <div class="buttons"><a href="contact.html">Inquire</a></div></div></section>
 <section class="tight" style="border-top:1px solid var(--rule)"><div class="wrap"><p class="eyebrow">Products</p><h2>Coming soon</h2><hr class="rule">
 <div class="lines lines-3">{"".join(f'<a class="line-card" id="{s}" href="#{s}"><img src="assets/img/materials/{s}.jpg" alt="{E(n)} magnet material"><div class="cap"><div class="nm">{E(n)}</div><span class="soon-pill">Coming soon</span></div></a>' for n,s,live in LINES if not live)}</div>
-<p class="fine" style="margin-top:14px;color:var(--muted)">Photography: ferrite magnets — Omegatron, Wikimedia Commons, CC BY-SA 3.0 (cropped) · alnico magnet — Chetvorno, Wikimedia Commons, CC0 · copper coil — Vadim Timayev, Pexels.</p></div></section>
+</div></section>
 '''
 
 
