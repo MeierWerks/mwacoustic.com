@@ -64,7 +64,7 @@ home=f'''
 <section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-light-quarter.jpg" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
-<figure><img src="assets/img/neo1-studio-side.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
+<figure><img src="assets/img/neo1-studio-quarter.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
@@ -82,12 +82,12 @@ products=f'''
 <p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p><p style="color:var(--warm-white)">{E(NEO_P[1])}</p>
 <ul class="attrs" style="--c:var(--warm-white)">{"".join(f'<li style="border-color:var(--silver);color:var(--warm-white)"><span class="n">{i:02d}</span>{E(a)}</li>' for i,a in enumerate(ATTRS,1))}</ul>
 <div class="neo-trio">
-<figure><img src="assets/img/neo1-studio-side.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
+<figure><img src="assets/img/neo1-studio-quarter.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div></div></section>
 <section id="neo-one"><div class="wrap"><div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap"><img src="assets/logos/neo-one-mark.svg" alt="NEO • ONE" style="width:120px;height:auto"><div><p class="eyebrow">Neo One</p><h2>Neo-One</h2></div></div><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(NEO1_P)}</p>
-<div class="gallery"><img class="wide" src="assets/img/neo1-studio-above.jpg" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-dark-quarter.jpg" alt="" loading="lazy"><img src="assets/img/neo1-light-rear.jpg" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
+<div class="gallery"><img class="wide" src="assets/img/neo1-studio-above.jpg" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-studio-side.jpg" alt="" loading="lazy"><img src="assets/img/neo1-light-rear.jpg" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
 <p class="label" style="margin-top:36px">Coming soon</p>
 <div class="coming"><div class="item"><div class="nm">Neo-Two</div><p>{E(NEO2)}</p></div><div class="item"><div class="nm">Neo-Three</div><p>{E(NEO3)}</p></div></div>
 <div class="buttons"><a href="contact.html">Inquire</a></div></div></section>
