@@ -14,4 +14,6 @@ Rule: no new copy. Layout and text follow Diane Meier's Google Doc "MW Acoustics
 | Software: SDS mark, lineup hero, headline 1, paragraph, headline 2, three buttons (Process / Specs / Compatibility), inquire form | Diane's doc; product name uses the Brand Guide form "SDS : Speaker Design Suite" (Diane's doc says "Software Design Suite" — **decide**); "WRKS driver?" → "WRKS engine". The three buttons have no destination content yet. |
 | Videos page | Neo1_final.mp4 (existing product animation). Diane's doc names the page but supplies no content. |
 | Contact | Diane's doc: "Give me contact info MG (Name)" — unresolved; page uses MeierWerks' Kent CT + info@meierwerks.com until an MW Acoustics contact is supplied |
+| Division mark | Dark green diagonal tile — Bennett 2026-09-14; artwork = Louise's `meierwerks-logo-divisions-color-options.pdf` (center version, British Racing Green), in the kit. The final KatArt delivery of division logos is still not on this Mac. |
+| SDS imagery | Real SDS captures from the CDS repo `.artifacts/` (July 2026 builds) + Dayton Audio component photos from the app's own supplier catalog (`Assets/Catalog/dayton-audio`) |
 | Photography | None exists. Hero/gallery use CAD renders from `MeierWerks/mw-acoustics/designs/renders`; Diane's Set List shots (lifestyle, person at monitor, speakers under cloth) are still to be photographed |
