@@ -62,9 +62,9 @@ home=f'''
 <section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-with-horn.png" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
-<figure><img src="assets/img/range/neodymium-floorstander.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/range/neodymium-bookshelf.png" alt=""><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/range/neodymium-large-floorstander.png" alt=""><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
+<figure><img src="assets/img/hero-full.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-two-covered.jpg" alt="Neo Two, covered"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-three-covered.jpg" alt="Neo Three, covered"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
 <section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-design.jpg" alt="SDS design workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a></div></div></section>
 '''
@@ -82,9 +82,9 @@ products=f'''
 <p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p><p style="color:var(--warm-white)">{E(NEO_P[1])}</p>
 <ul class="attrs" style="--c:var(--warm-white)">{"".join(f'<li style="border-color:var(--silver);color:var(--warm-white)"><span class="n">{i:02d}</span>{E(a)}</li>' for i,a in enumerate(ATTRS,1))}</ul>
 <div class="neo-trio">
-<figure><img src="assets/img/range/neodymium-floorstander.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/range/neodymium-bookshelf.png" alt=""><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
-<figure class="hidden"><img src="assets/img/range/neodymium-large-floorstander.png" alt=""><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
+<figure><img src="assets/img/hero-full.png" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-two-covered.jpg" alt="Neo Two, covered"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
+<figure class="hidden"><img src="assets/img/neo-three-covered.jpg" alt="Neo Three, covered"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div></div></section>
 <section id="neo-one"><div class="wrap"><p class="eyebrow">Neo One</p><h2>Neo-One</h2><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(NEO1_P)}</p>
 <div class="gallery"><img class="wide" src="assets/img/hero-full.png" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-with-horn.png" alt="" loading="lazy"><img src="assets/img/hero-neo1.png" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
