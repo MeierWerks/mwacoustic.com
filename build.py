@@ -50,7 +50,7 @@ NEO_P=["MW’s Neo line incorporates new and patented materials from horn design
  "Our Neo line incorporates: Neodymium Magnet Technology. Carbon Fiber diaphragms on all drivers. Transmission line nested cabinet. Advanced 3D Printing. CNC Machined Jewel-Quality Aluminum. Constrained layer damping. Acoustic Lens and Horn."]
 NEO1_P="Neo-One, the first of the speakers to be released is a mid-sized floor standing speaker with jewel-like detailing, an elegant shape suggesting both retro and future, jewel-like aluminum feet and details, and a spectacular hand-polished finish. All designed in the service of an unparalleled “in-the-air” sound quality that’s second to none."
 NEO2="A brilliant bookshelf model"
-NEO3="Neo-Three is a larger floor model with even more powerful (if that can be believed) sound, and all the brilliant attributes of our Neo-One model."
+NEO3="Neo-Three is the flagship of the Neo line, offering uncompromised build quality and fidelity for the most discerning listener."  # Bennett, chat, 2026-09-14 (replaces Diane's "larger floor model" line)
 SDS_H1="All the Tools, Products, Tests, and Visualized Process to Build Your Own Speaker"
 SDS_P="Our Speaker Design Suite, powered by our own WRKS engine, allows anyone – from layman to expert – to build their own speaker. SDS is a highly intuitive program combining real-time data (from costs, to size, to materials) with onscreen visualization and sound testing. Quite frankly, it’s like nothing you’ve ever seen before."
 SDS_H2="The world of DIY sound just took a major leap forward"

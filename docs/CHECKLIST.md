@@ -28,6 +28,7 @@
 - [x] Products/Neo line: no Neo One mark unless it sits beside Neo One; drop "Four lines, one launching now"; Neo section carries no mention/images of the other lines; Ferrite / Alnico / Field Coil shown at the bottom with tight, near-abstract photography of the actual magnet materials (real photos if licensable, else generated)
 - [x] Republish artifact for review
 - [x] Software: "Download on the App Store" button (hero, split CTA, home SDS hero) → apps.apple.com id6788087317; note that SDS is a desktop app, iOS companion has limited capability, full functionality needs desktop
+- [x] Neo-Three description: drop "floor model"; now "the flagship of the Neo line, offering uncompromised build quality and fidelity for the most discerning listener"
 
 ## Flags for Bennett
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
