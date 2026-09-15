@@ -31,3 +31,5 @@ Rule: no new copy. Layout and text follow Diane Meier's Google Doc "MW Acoustics
 
 - 2026-09-14: Videos tab renamed to Press (Bennett, chat); the page now embeds the YouTube video Bennett supplied (https://www.youtube.com/watch?v=txUsUbOb2yQ) in place of Neo1_final.mp4.
 - 2026-09-14 (late): photo credit line removed from the products page at Bennett's request. The CC BY-SA ferrite photo (Omegatron) was therefore REPLACED with a Pexels photo that needs no credit: "Textured pieces of stone surface" (dark iron-oxide mineral close-up), Plato Terentev, Pexels licence — https://www.pexels.com/photo/5889422/ . Alnico (CC0) and copper coil (Pexels) unchanged.
+
+- 2026-09-14 (night): the three "SDS render" images (sds-render-speaker/views/turntable — wood bookshelf boxes) REMOVED at Bennett's instruction (he identified them as another manufacturer's photography). Replaced in the Software gallery with tight crops of our own Neo One renders (neo1-detail-horn.jpg from 14431791…, neo1-detail-cone.jpg from f3fad49f…).
