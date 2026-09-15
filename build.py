@@ -184,7 +184,7 @@ var t;track.addEventListener('scroll',function(){{clearTimeout(t);t=setTimeout(s
 <section id="process"><div class="wrap"><p class="eyebrow">Process</p><h2>Six workspaces. One document.</h2><hr class="rule" style="margin-bottom:26px">
 <ol class="steps">{"".join(f'<li><span class="n">{i:02d}</span><div><h3>{E(n)}</h3><p>{E(t)}</p></div></li>' for i,(n,t) in enumerate(PROCESS,1))}</ol></div></section>
 <section id="specs" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Specs</p><h2 class="poweredby" style="--pb:56px;margin-top:10px"><img class="pb-text" src="assets/logos/powered-by-white.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></h2>
-<p class="lead" style="margin-top:14px;color:var(--warm-white);max-width:60ch">WRKS is a collection of proprietary physics and simulation engines, built into all of our software.</p>
+<p class="lead" style="margin-top:14px;color:var(--warm-white);max-width:60ch">WRKS is a collection of proprietary physics and simulation engines, built into our software and services.</p>
 <div class="specs">{"".join(f'<div class="spec"><h3>{E(n)}</h3><p>{E(t)}</p></div>' for n,t in SPECS)}</div>
 <h3 style="color:var(--warm-white);margin-top:48px">How SDS compares</h3>
 <div class="tablewrap"><table class="cmp"><thead><tr><th></th>{"".join(f'<th>{E(c)}</th>' for c in COMPETITORS)}</tr></thead><tbody>{"".join('<tr><td>'+E(r)+'</td>'+"".join('<td class="v">'+('●' if v==1 else '◐' if v==2 else '–')+'</td>' for v in vs)+'</tr>' for r,vs in COMPARE)}</tbody></table></div>
