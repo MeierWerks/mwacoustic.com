@@ -48,6 +48,8 @@
 - [x] Favicon in the URL bar still showed the OLD square MW logo (Safari's cached icon from the Squarespace site) → real favicon.ico (circle mark, 16–64 px) added at both site roots + link tag; Safari also needs its favicon cache cleared
 - [x] Parent Partners page: EMM Labs entry removed
 - [x] Parent nav order: Divisions · Vision · Technology · Partners · Team · Contact
+- [x] Parent Partners page: official marks instead of text — NVIDIA logo, FORGE logo, Connecticut Innovations mark (+ name in site type), Apple "Download on the App Store" badge — live + artifact v22
+- [x] Parent WRKS strip: lockup flush-left with the caption (lockup SVG had 7 units of internal padding; cropped to ink), caption reworded per Bennett ("WRKS is a collection of proprietary physics and simulation engines, built into all of our software."), logo enlarged to 96 px, lockup top = logo top, caption bottom = logo bottom, 22 px gap — live + artifact v23
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
@@ -56,3 +58,4 @@
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
 - Photo credits: none required any more (all three material photos are CC0 / Pexels).
 - MW Acoustics logo version: still awaiting Bennett's confirming screenshot.
+- Partners: no NVIDIA *Inception* member badge was findable (Mail search empty; the program page's image is an illustration), so the card carries the NVIDIA corporate logo with the role "Program member". If Bennett has the Inception badge from the program welcome email, it should replace it. CT Innovations has no wordmark file online; the card pairs their circular mark with the name set in site type.
