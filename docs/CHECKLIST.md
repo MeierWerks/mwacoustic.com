@@ -67,6 +67,8 @@
 - [x] Parent Technology › Additive photo replaced again with an image that IS 3D printing: U.S. Marine holding a fresh print on its build plate (public domain) — live + artifact v30
 - [x] "Powered by" lockups rebuilt from the delivered artwork: POWERED BY cap height = WRKS logo height, gap 0.3× height, identical on every machine (no live text) — both sites live + artifacts v31 / v18
 
+- [x] MWA Software hero: the Iso/Front/Back… view buttons and the Look-around pill were half-cut at the top of the crop; painted out of the Workshop render's flat backdrop (sds-workshop-render-v2.jpg) so no UI text shows at any viewport — live + artifact v19
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
