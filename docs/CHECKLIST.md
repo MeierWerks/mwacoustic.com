@@ -55,6 +55,8 @@
 - [x] Parent Technology page rewritten: MW Acoustics = showcase of the group's technology in consumer products (magnetic motors, lens/horn via FEA/CFD/deep-learning simulation + CNC, nested cylindrical transmission line, additive + composite structures, CNC and global partners via Heavy); ISo-TL and SONIFoRM removed; other divisions' Applications name non-audio industries (automotive / Formula One, aerospace, defense, marine, energy); Additive = sovereign, deployable, secure slicing on any hardware; Deep Learning = alignment, computational storage, beyond transformers ("scalable, cost-effective and safe AI") — live + artifact v24
 - [x] Parent Technology › MW Acoustics motor entry softened: Neo line runs on third-party motors from an established driver manufacturer; MW Magnetics research informs later lines — live + artifact v25
 
+- [x] Parent site: NEO • ONE and SDS click through to the product on mwacoustic.com (products.html#neo-one / software.html) from the home division tile, the Divisions product cards ("View … →") and the Technology SDS entry — live + artifact v27
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
