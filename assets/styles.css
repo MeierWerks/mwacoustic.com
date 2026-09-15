@@ -71,11 +71,10 @@ section.tight{padding-block:clamp(36px,5vw,64px)}
 .principle .num{font-family:var(--display);font-weight:700;font-size:38px;line-height:.9;color:var(--gold);padding-top:2px}
 .principle h3{font-size:26px;color:var(--teal);padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:12px}
 .principle p{margin:0;font-size:17px}
-/* WRKS strip */
-.wrks{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,64px);align-items:center}
-.wrks img{height:64px;width:auto}
-.wrks p{margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,2.6vw,34px);line-height:1;color:var(--warm-white);max-width:none}
-.wrks small{display:block;font-family:var(--body);font-weight:500;text-transform:none;font-size:17px;margin-top:10px;color:var(--warm-white);opacity:.9}
+/* Powered by WRKS lockup */
+.poweredby{display:inline-flex;align-items:center;gap:.28em;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.005em;line-height:1;margin:0}
+.poweredby span{white-space:nowrap}
+.poweredby img{flex:none;height:1.15em;width:auto;display:block;position:relative;top:.02em}
 /* division detail pages */
 .div-section{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,72px);align-items:start;padding-block:clamp(48px,6vw,88px);border-top:1px solid var(--rule)}
 .div-section:first-of-type{border-top:0}
@@ -91,7 +90,7 @@ section.tight{padding-block:clamp(36px,5vw,64px)}
 .product .pname{font-family:var(--names);font-weight:900;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--black)}
 .product .ptag{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px;color:var(--teal);margin:4px 0 8px}
 .product p{font-size:15px;margin:0 0 8px}
-.product .pow{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--cinnabar)}
+.product .pow{font-size:13px;color:var(--cinnabar);letter-spacing:.06em;margin-top:6px}
 .tocome{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:var(--muted);margin-top:16px}
 /* team */
 .team{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,56px)}
