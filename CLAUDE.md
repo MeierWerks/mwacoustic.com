@@ -2,7 +2,7 @@
 
 ## Invariants (hand-written, tiny — the only prose to trust; change rarely)
 1. NO NEW COPY. Every sentence traces to COPY-SOURCES.md (Diane Meier's "MW Acoustics Website" doc, Brand Guide WE02, Bennett's emails). New copy needs Bennett's approval.
-2. Brand system = Brand Guide Working Edition 02. The MW Acoustics division mark is the DARK GREEN diagonal tile (Bennett, 2026-09-14), cut from Louise Johnson's vector colour-options sheet (`assets/logos/tile-acoustics-green.svg`); cinnabar stays the site's accent colour. Favicons are always the circular MW mark alone, never a tile. Logos come only from the company assets folder / kit.
+2. Brand system = Brand Guide Working Edition 02. The MW Acoustics division mark is the DARK GREEN diagonal tile (Bennett, 2026-09-14), cut from Louise Johnson's vector colour-options sheet (`assets/logos/tile-acoustics-green.svg`); cinnabar stays the site's accent colour. Favicon / tab icon on THIS site is the dark-green MW Acoustics tile (Bennett, 2026-09-15, so the division and parent tabs differ); the parent site keeps the circular MW mark alone. Logos come only from the company assets folder / kit.
 3. Pages are GENERATED: edit build.py + site/assets/styles.css, then `python3 build.py`. Never hand-edit site/*.html.
 4. Only the Neo line is live. Ferrite / Alnico / Field Coil stay "Coming soon" until Bennett says otherwise.
 5. Publishing (DNS, hosting) is human-gated.
