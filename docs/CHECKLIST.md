@@ -61,6 +61,8 @@
 
 - [x] MW Acoustics favicon / tab icon = the green MW Acoustics division tile (favicon.ico 16–64, PNG 32/192, apple-touch 180, SVG); parent keeps the circle mark, so the two sites are distinguishable in the tab bar and URL field — live + artifact v16
 
+- [x] Both sites: every WRKS mention is now "Powered by" + the WRKS colour logo (parent home strip, parent product cards, MWA About, MWA Software header and Specs); the separate WRKS logo above a "Powered by WRKS" line and the lockup artwork are retired; Specs lead = the new caption — live + artifacts v29 / v17
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
