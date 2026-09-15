@@ -10,6 +10,7 @@ COMPONENTS=[  # file, alt — one of each part type, four manufacturers; photos 
  ("jantzen-superior-zcap.jpg","Jantzen Audio Superior Z-Cap capacitor"),("jantzen-air-core-coil.jpg","Jantzen Audio air-core inductor"),("jantzen-mox-resistor.jpg","Jantzen Audio MOX resistor")]
 COMPONENTS_NOTE="SDS has a full catalog of verified and measured components."
 ATTRS=["Neodymium Magnet topology","Carbon Fiber diaphragms on all drivers","Transmission line nested cabinet","Advanced 3D Printing","CNC Machined Aluminum","Constrained layer damping","Acoustic Lens and Horn"]
+ATTR_IMG=["neodymium.jpg","carbon-fiber.jpg","transmission-line.jpg","3d-printing.jpg","cnc-aluminum.jpg","damping.jpg","lens-horn.jpg"]  # site/assets/img/attrs/ — sources in COPY-SOURCES.md
 
 def nav_html(current):
     items=[]
@@ -98,7 +99,7 @@ lines_html="".join(
 products=f'''
 <section id="neodymium" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h1 style="color:var(--warm-white);font-size:clamp(40px,5.5vw,76px)">The Neo Line</h1>
 <p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p><p style="color:var(--warm-white)">{E(NEO_P[1])}</p>
-<ul class="attrs" style="--c:var(--warm-white)">{"".join(f'<li style="border-color:var(--silver);color:var(--warm-white)"><span class="n">{i:02d}</span>{E(a)}</li>' for i,a in enumerate(ATTRS,1))}</ul>
+<ul class="attrs" style="--c:var(--warm-white)">{"".join(f'<li style="border-color:var(--silver);color:var(--warm-white)"><img src="assets/img/attrs/{img}" alt="" loading="lazy"><span class="n">{i:02d}</span>{E(a)}</li>' for i,(a,img) in enumerate(zip(ATTRS,ATTR_IMG),1))}</ul>
 <div class="neo-trio">
 <figure><img src="assets/img/neo1-studio-quarter.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
