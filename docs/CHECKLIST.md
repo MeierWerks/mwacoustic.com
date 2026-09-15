@@ -43,6 +43,7 @@
 - [x] Products: photo credit line removed; ferrite photo replaced with a no-attribution Pexels image (dark iron-oxide mineral close-up)
 - [x] Parent Divisions page (v5): each division's mark colours itself in with a smooth vector wipe (built from the delivered tile SVG, feathered edge) as soon as the mark is fully on screen; reverses on scroll-up; forced complete at page bottom; no video on the site any more; wipe eases per animation frame so stepped scroll input still animates smoothly (v6) — live
 - [x] Both sites: stylesheet URL cache-busted (fixes stale layouts in Safari)
+- [x] Removed the three wood-bookshelf "SDS render" images Bennett flagged as another manufacturer's photography; Software gallery now uses tight Neo One detail crops
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
