@@ -82,7 +82,7 @@
 
 - [x] Products › Neo attribute cards each carry a small image: magnetic field lines (Pexels), Bennett's carbon-fibre cone photo, his nested transmission-line render, a 3D printer close-up (Pexels), our machined aluminum ring render, an original edge-on damped-panel illustration for constrained layer damping, and Bennett's photo of the acoustic lens — live + artifact v27
 
-- [x] Parent positioning line replaced: "Where the hand of craft meets the precision of technology." (hero, Vision page, meta description); alternates listed in the parent COPY-SOURCES.md — live + artifact v35
+- [x] Parent positioning line replaced: "Where the art of craft meets the precision of technology." (hero, Vision page, meta description); alternates listed in the parent COPY-SOURCES.md — live + artifact v35
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
