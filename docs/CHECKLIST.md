@@ -51,6 +51,8 @@
 - [x] Parent Partners page: official marks instead of text — NVIDIA logo, FORGE logo, Connecticut Innovations mark (+ name in site type), Apple "Download on the App Store" badge — live + artifact v22
 - [x] Parent WRKS strip: lockup flush-left with the caption (lockup SVG had 7 units of internal padding; cropped to ink), caption reworded per Bennett ("WRKS is a collection of proprietary physics and simulation engines, built into all of our software."), logo enlarged to 96 px, lockup top = logo top, caption bottom = logo bottom, 22 px gap — live + artifact v23
 
+- [x] Parent Technology page rewritten: MW Acoustics = showcase of the group's technology in consumer products (magnetic motors, lens/horn via FEA/CFD/deep-learning simulation + CNC, nested cylindrical transmission line, additive + composite structures, CNC and global partners via Heavy); ISo-TL and SONIFoRM removed; other divisions' Applications name non-audio industries (automotive / Formula One, aerospace, defense, marine, energy); Additive = sovereign, deployable, secure slicing on any hardware; Deep Learning = alignment, computational storage, beyond transformers ("scalable, cost-effective and safe AI") — live + artifact v24
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
@@ -59,3 +61,4 @@
 - Photo credits: none required any more (all three material photos are CC0 / Pexels).
 - MW Acoustics logo version: still awaiting Bennett's confirming screenshot.
 - Partners: no NVIDIA *Inception* member badge was findable (Mail search empty; the program page's image is an illustration), so the card carries the NVIDIA corporate logo with the role "Program member". If Bennett has the Inception badge from the program welcome email, it should replace it. CT Innovations has no wordmark file online; the card pairs their circular mark with the name set in site type.
+- Technology page wording was drafted from Bennett's brief (parent build.py `TECH`); read it once for anything overstated — especially the nested-TL claim ("outperforms the rectangular and square lines of the competition") and the deep-learning research items (alignment, computational storage, beyond transformers).
