@@ -25,6 +25,18 @@ def nav_html(current):
     return "".join(items)
 
 CSS_VER=hashlib.md5((SITE/"assets/styles.css").read_bytes()).hexdigest()[:8]
+
+def clean_urls(html, fn, domain="mwacoustic.com"):
+    """Extensionless internal links (GitHub Pages serves /x for x.html) + canonical tag."""
+    html = re.sub(r'href="index\.html(#[^"]*)?"', lambda m: 'href="/%s"' % (m.group(1) or ""), html)
+    html = re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"', lambda m: 'href="/%s%s"' % (m.group(1), m.group(2) or ""), html)
+    html = re.sub(r'href="https://(mwacoustic\.com|meierwerks\.com)/([a-z0-9-]+)\.html(#[^"]*)?"', lambda m: 'href="https://%s/%s%s"' % (m.group(1), m.group(2), m.group(3) or ""), html)
+    slug = "" if fn == "index.html" else fn[:-5]
+    canon = '<link rel="canonical" href="https://%s/%s">' % (domain, slug)
+    if 'rel="canonical"' not in html:
+        html = re.sub(r'(</title>)', r'\1' + canon, html, count=1)
+    return html
+
 def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and Blended Take on Audio."):
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -213,4 +225,4 @@ privacy=f'<section><div class="wrap legal">{"".join(_pout)}</div></section>'
 
 pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — MW Acoustics",about,"about.html"),"products.html":("Products — MW Acoustics",products,"products.html"),
  "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"press.html":("Press — MW Acoustics",videos,"press.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None)}
-for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(shell(t,b,cur)); print("built",fn)
+for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(clean_urls(shell(t,b,cur), fn)); print("built",fn)
