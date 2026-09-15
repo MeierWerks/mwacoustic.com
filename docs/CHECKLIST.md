@@ -75,6 +75,8 @@
 - [x] MWA Software MacBook: click the screen to advance; a caption above the lid changes with the workspace (render workspace = Bennett's line) — live + artifact v23
 - [x] MWA Software component strip: compression driver, midrange, woofer, capacitor, inductor, resistor across B&C, Dayton, Eminence and Jantzen (from the app's authorised supplier catalog), centred on white, with "SDS has a full catalog of verified and measured components." beneath — live + artifact v23
 
+- [x] Both sites: clean addresses — every internal link is extensionless (mwacoustic.com/software, meierwerks.com/technology, /products#neo-one…), each page carries a canonical tag; old .html addresses still resolve; 15 live links crawled, none broken — live + artifacts v33 / v24
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
