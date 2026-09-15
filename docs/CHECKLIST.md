@@ -77,6 +77,9 @@
 
 - [x] Both sites: clean addresses — every internal link is extensionless (mwacoustic.com/software, meierwerks.com/technology, /products#neo-one…), each page carries a canonical tag; old .html addresses still resolve; 15 live links crawled, none broken — live + artifacts v33 / v24
 
+- [x] Diane's updated copy applied where it overlaps: About (3 paragraphs), Neo line intro, full Neo-One description, Neo-Two line, SDS paragraph with the Jay Lee pull quote and the "Engineering Studio in the Palm of Your Hand" tag line; home About-teaser trimmed to one paragraph so it no longer duplicates About — live + artifact v25
+- [x] WRKS caption everywhere now ends "…built into our software and services." — both sites live + artifacts v34 / v25
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
@@ -87,3 +90,6 @@
 - Additive photo is a U.S. Marine Corps (DoD) image: public domain, but DoD policy is that its imagery must not be presented as DoD endorsement. Fine as an industry illustration; don't caption it as a customer or partner.
 - New MW Acoustics favicon: Safari caches site icons aggressively. If the tab still shows the old circle: Safari › Settings › Privacy › Manage Website Data › remove mwacoustic.com, then reload; Chrome picks up the new `?v=2` URLs on its own.
 - MacBook captions are Claude's drafts from the approved Process copy (plus Bennett's render line); read them once in build.py `CAP` / data-caption and strike any that overstate.
+- Jay Lee quote: Diane's doc attributes "Quite frankly, it's like nothing you've ever seen before" to Jay Lee (the 1BIT Podcast host); it is now shown as a credited pull quote on the Software page. Confirm he said it and is happy to be quoted.
+- Neo-Three: kept Bennett's 2026-09-14 sentence rather than Diane's new flagship line ("…an uncompromised imposing loud speaker…"). Swap if Bennett prefers Diane's.
+- Diane's doc says "Software Design Suite"; the site keeps "Speaker Design Suite", the product's actual name.
