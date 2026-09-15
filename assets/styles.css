@@ -202,7 +202,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 .components{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px}
 .components img{width:100%;aspect-ratio:1;object-fit:contain;background:#fff;border-radius:10px;padding:6px;box-sizing:border-box;border:1px solid rgba(0,0,0,.08)}
-.components-note{margin:14px 0 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:var(--cinnabar)}
+.components-note{max-width:none;margin:14px 0 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:var(--cinnabar)}
 @media (max-width:900px){.components{grid-template-columns:repeat(3,1fr)}}
 
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,36px)}
