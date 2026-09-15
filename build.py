@@ -73,7 +73,7 @@ home=f'''
 '''
 about=f'''
 <section class="hero-photo"><img src="assets/img/cab-front.png" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
-<section><div class="wrap split"><div>{"".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)}<p class="poweredby" style="font-size:20px;margin-top:22px"><span>Powered by</span><img src="assets/logos/wrks-color.svg" alt="WRKS"></p></div><img src="assets/img/cab-internal.png" alt="" loading="lazy"></div></section>
+<section><div class="wrap split"><div>{"".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)}<p class="poweredby" style="--pb:20px;margin-top:22px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div><img src="assets/img/cab-internal.png" alt="" loading="lazy"></div></section>
 '''
 lines_html="".join(
   f'<a class="line-card{" live" if live else ""}" href="#{s}"><img src="assets/img/range/{s}-floorstander.png" alt=""><div class="cap"><div class="nm">{E(n)}</div>' + ('<div class="sub">The Neo Line</div>' if live else '<span class="soon-pill">Coming soon</span>') + '</div></a>'
@@ -148,13 +148,13 @@ software=f'''
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><h2 style="margin-top:26px">{E(SDS_H2)}</h2>
 <div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
 <p class="platform-note">{E(SDS_PLATFORM)}</p>
-<p class="poweredby" style="font-size:20px;margin-top:26px"><span>Powered by</span><img src="assets/logos/wrks-color.svg" alt="WRKS"></p></div>
+<p class="poweredby" style="--pb:20px;margin-top:26px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div>
 <img src="assets/img/sds/sds-crossover-design.jpg" alt="SDS crossover design workspace" loading="lazy"></div></section>
 <section class="tight" style="padding-top:0"><div class="wrap"><div class="gallery"><img class="wide" src="assets/img/sds/sds-design-gates.jpg" alt="SDS design workspace with validation gates" loading="lazy" style="aspect-ratio:2000/1584;object-fit:contain;background:#0B0C0E"><img src="assets/img/neo1-detail-horn.jpg" alt="Neo One horn assembly" loading="lazy" style="aspect-ratio:4/3;object-fit:cover"><img src="assets/img/sds/sds-filter-encyclopedia.jpg" alt="SDS filter encyclopedia" loading="lazy" style="aspect-ratio:2000/1606;object-fit:cover"><img src="assets/img/neo1-detail-cone.jpg" alt="Neo One acoustic lens" loading="lazy" style="aspect-ratio:4/3;object-fit:cover"><img src="assets/img/sds-lockup.png" alt="SDS Speaker Design Suite" loading="lazy" style="object-fit:contain;background:#fff"></div>
 <div class="components">{"".join(f'<img src="assets/img/sds/components/{f}" alt="" loading="lazy">' for f in COMPONENTS)}</div></div></section>
 <section id="process"><div class="wrap"><p class="eyebrow">Process</p><h2>Six workspaces. One document.</h2><hr class="rule" style="margin-bottom:26px">
 <ol class="steps">{"".join(f'<li><span class="n">{i:02d}</span><div><h3>{E(n)}</h3><p>{E(t)}</p></div></li>' for i,(n,t) in enumerate(PROCESS,1))}</ol></div></section>
-<section id="specs" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Specs</p><h2 class="poweredby" style="color:var(--warm-white);margin-top:10px"><span>Powered by</span><img src="assets/logos/wrks-color.svg" alt="WRKS"></h2>
+<section id="specs" class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Specs</p><h2 class="poweredby" style="--pb:56px;margin-top:10px"><img class="pb-text" src="assets/logos/powered-by-white.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></h2>
 <p class="lead" style="margin-top:14px;color:var(--warm-white);max-width:60ch">WRKS is a collection of proprietary physics and simulation engines, built into all of our software.</p>
 <div class="specs">{"".join(f'<div class="spec"><h3>{E(n)}</h3><p>{E(t)}</p></div>' for n,t in SPECS)}</div>
 <h3 style="color:var(--warm-white);margin-top:48px">How SDS compares</h3>
