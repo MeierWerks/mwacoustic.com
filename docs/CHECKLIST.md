@@ -71,6 +71,10 @@
 
 - [x] MWA Software page: device is now a MacBook (lid + aluminium base with hinge lip) and cycles through all 8 workspace screenshots Bennett supplied (Drivers → Crossover → Enclosure → Workshop → Workshop scene → Simulate → Measure → Measure room); each screen flies up to reveal the next every 3.4 s, pauses off-screen, static under reduced-motion — live + artifact v21
 
+- [x] MWA Software: the jumbled gallery replaced by one unified box — large tile = dot carousel through the 8 workspaces, two of Bennett's build renders to the right, two below, the current SDS mark in the corner; Neo One photos and the old olive SDS lockup removed from the section — live + artifact v23
+- [x] MWA Software MacBook: click the screen to advance; a caption above the lid changes with the workspace (render workspace = Bennett's line) — live + artifact v23
+- [x] MWA Software component strip: compression driver, midrange, woofer, capacitor, inductor, resistor across B&C, Dayton, Eminence and Jantzen (from the app's authorised supplier catalog), centred on white, with "SDS has a full catalog of verified and measured components." beneath — live + artifact v23
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
@@ -82,3 +86,4 @@
 - Technology page wording was drafted from Bennett's brief (parent build.py `TECH`); read it once for anything overstated — especially the nested-TL claim ("outperforms the rectangular and square lines of the competition") and the deep-learning research items (alignment, computational storage, beyond transformers).
 - Additive photo is a U.S. Air Force (DoD) image: public domain, but DoD policy is that its imagery must not be presented as DoD endorsement. The crop shows only a uniform sleeve, gloves and the printer — fine as an industry illustration; don't caption it as a customer or partner.
 - New MW Acoustics favicon: Safari caches site icons aggressively. If the tab still shows the old circle: Safari › Settings › Privacy › Manage Website Data › remove mwacoustic.com, then reload; Chrome picks up the new `?v=2` URLs on its own.
+- MacBook captions are Claude's drafts from the approved Process copy (plus Bennett's render line); read them once in build.py `CAP` / data-caption and strike any that overstate.
