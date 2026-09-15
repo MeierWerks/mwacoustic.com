@@ -222,3 +222,14 @@ table.cmp td.v:nth-child(2){color:var(--gold);font-weight:700}
 .compat dt{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:19px;margin-bottom:4px}
 .compat dd{margin:0;font-size:15px;color:var(--muted);line-height:1.55}
 @media (max-width:900px){.steps,.specs{grid-template-columns:1fr}.compat{grid-template-columns:1fr}}
+
+/* SDS laptop (software page) */
+.laptop{width:100%;max-width:720px;margin:0 auto;align-self:center}
+.laptop .lid{background:#0c0c0c;border-radius:18px 18px 6px 6px;padding:14px 14px 18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55),0 0 0 1px #1c1c1c inset}
+.laptop .screen{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:6px;background:#111}
+.laptop .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:transform .8s cubic-bezier(.65,0,.2,1)}
+.laptop .screen img.out{transform:translateY(-104%)}
+.laptop .screen img.reset{transition:none;transform:none}
+.laptop .base{position:relative;height:16px;margin:0 -5%;background:linear-gradient(180deg,#e2e2e0 0%,#bdbdbb 55%,#8f8f8d 100%);border-radius:3px 3px 14px 14px;box-shadow:0 10px 24px -8px rgba(0,0,0,.5)}
+.laptop .base span{position:absolute;left:50%;top:0;transform:translateX(-50%);width:16%;height:6px;background:linear-gradient(180deg,#8d8d8b,#b8b8b6);border-radius:0 0 8px 8px}
+@media (prefers-reduced-motion:reduce){.laptop .screen img{transition:none}}
