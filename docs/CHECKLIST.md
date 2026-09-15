@@ -69,6 +69,8 @@
 
 - [x] MWA Software hero: the Iso/Front/Back… view buttons and the Look-around pill were half-cut at the top of the crop; painted out of the Workshop render's flat backdrop (sds-workshop-render-v2.jpg) so no UI text shows at any viewport — live + artifact v19
 
+- [x] MWA Software page: device is now a MacBook (lid + aluminium base with hinge lip) and cycles through all 8 workspace screenshots Bennett supplied (Drivers → Crossover → Enclosure → Workshop → Workshop scene → Simulate → Measure → Measure room); each screen flies up to reveal the next every 3.4 s, pauses off-screen, static under reduced-motion — live + artifact v21
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
