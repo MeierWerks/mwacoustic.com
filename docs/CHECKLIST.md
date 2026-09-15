@@ -59,6 +59,8 @@
 
 - [x] Parent Technology › MW Additive photo: generic printer-nozzle stock replaced with a U.S. Air Force metals-shop additive-manufacturing photo (public domain, no credit needed), cropped to gloves + metal printer — live + artifact v28
 
+- [x] MW Acoustics favicon / tab icon = the green MW Acoustics division tile (favicon.ico 16–64, PNG 32/192, apple-touch 180, SVG); parent keeps the circle mark, so the two sites are distinguishable in the tab bar and URL field — live + artifact v16
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
@@ -69,3 +71,4 @@
 - Partners: the NVIDIA Inception card now carries NVIDIA's official Inception Program badge (the "badge RGB for screen" file NVIDIA gives members). If Bennett downloads the current badge from the Inception member portal, drop it on the Desktop and it will replace this copy. CT Innovations has no wordmark file online; the card pairs their circular mark with the name set in site type.
 - Technology page wording was drafted from Bennett's brief (parent build.py `TECH`); read it once for anything overstated — especially the nested-TL claim ("outperforms the rectangular and square lines of the competition") and the deep-learning research items (alignment, computational storage, beyond transformers).
 - Additive photo is a U.S. Air Force (DoD) image: public domain, but DoD policy is that its imagery must not be presented as DoD endorsement. The crop shows only a uniform sleeve, gloves and the printer — fine as an industry illustration; don't caption it as a customer or partner.
+- New MW Acoustics favicon: Safari caches site icons aggressively. If the tab still shows the old circle: Safari › Settings › Privacy › Manage Website Data › remove mwacoustic.com, then reload; Chrome picks up the new `?v=2` URLs on its own.
