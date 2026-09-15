@@ -47,6 +47,7 @@
 - [x] Parent Technology page: the acoustics stock photo (another manufacturer's driver) replaced with our own Neo One horn render
 - [x] Favicon in the URL bar still showed the OLD square MW logo (Safari's cached icon from the Squarespace site) → real favicon.ico (circle mark, 16–64 px) added at both site roots + link tag; Safari also needs its favicon cache cleared
 - [x] Parent Partners page: EMM Labs entry removed
+- [x] Parent nav order: Divisions · Vision · Technology · Partners · Team · Contact
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
