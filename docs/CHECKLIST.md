@@ -80,7 +80,7 @@
 - [x] Diane's updated copy applied where it overlaps: About (3 paragraphs), Neo line intro, full Neo-One description, Neo-Two line, SDS paragraph with the Jay Lee pull quote and the "Engineering Studio in the Palm of Your Hand" tag line; home About-teaser trimmed to one paragraph so it no longer duplicates About — live + artifact v25
 - [x] WRKS caption everywhere now ends "…built into our software and services." — both sites live + artifacts v34 / v25
 
-- [x] Products › Neo attribute cards each carry a small image: Bennett's carbon-fibre cone photo, his nested transmission-line render, our own Neo One renders (driver motor, machined aluminum ring, cabinet panel, lens and horn) and the licensed build-plate photo for 3D printing — live + artifact v26
+- [x] Products › Neo attribute cards each carry a small image: magnetic field lines (Pexels), Bennett's carbon-fibre cone photo, his nested transmission-line render, a 3D printer close-up (Pexels), our machined aluminum ring render, laminated layers on edge (Pexels) for constrained layer damping, and Bennett's photo of the acoustic lens — live + artifact v27
 
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
