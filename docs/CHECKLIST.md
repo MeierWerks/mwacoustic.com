@@ -49,6 +49,7 @@
 - [x] Parent Partners page: EMM Labs entry removed
 - [x] Parent nav order: Divisions · Vision · Technology · Partners · Team · Contact
 - [x] Parent Partners page: official marks instead of text — NVIDIA logo, FORGE logo, Connecticut Innovations mark (+ name in site type), Apple "Download on the App Store" badge — live + artifact v22
+- [x] Parent Partners: official NVIDIA Inception Program member badge in place of the corporate NVIDIA logo — live + artifact v26
 - [x] Parent WRKS strip: lockup flush-left with the caption (lockup SVG had 7 units of internal padding; cropped to ink), caption reworded per Bennett ("WRKS is a collection of proprietary physics and simulation engines, built into all of our software."), logo enlarged to 96 px, lockup top = logo top, caption bottom = logo bottom, 22 px gap — live + artifact v23
 
 - [x] Parent Technology page rewritten: MW Acoustics = showcase of the group's technology in consumer products (magnetic motors, lens/horn via FEA/CFD/deep-learning simulation + CNC, nested cylindrical transmission line, additive + composite structures, CNC and global partners via Heavy); ISo-TL and SONIFoRM removed; other divisions' Applications name non-audio industries (automotive / Formula One, aerospace, defense, marine, energy); Additive = sovereign, deployable, secure slicing on any hardware; Deep Learning = alignment, computational storage, beyond transformers ("scalable, cost-effective and safe AI") — live + artifact v24
@@ -61,5 +62,5 @@
 - meierwerks.com/privacy.html now returns 404 — update any App Store / SDS link that pointed there once mwacoustic.com is live.
 - Photo credits: none required any more (all three material photos are CC0 / Pexels).
 - MW Acoustics logo version: still awaiting Bennett's confirming screenshot.
-- Partners: no NVIDIA *Inception* member badge was findable (Mail search empty; the program page's image is an illustration), so the card carries the NVIDIA corporate logo with the role "Program member". If Bennett has the Inception badge from the program welcome email, it should replace it. CT Innovations has no wordmark file online; the card pairs their circular mark with the name set in site type.
+- Partners: the NVIDIA Inception card now carries NVIDIA's official Inception Program badge (the "badge RGB for screen" file NVIDIA gives members). If Bennett downloads the current badge from the Inception member portal, drop it on the Desktop and it will replace this copy. CT Innovations has no wordmark file online; the card pairs their circular mark with the name set in site type.
 - Technology page wording was drafted from Bennett's brief (parent build.py `TECH`); read it once for anything overstated — especially the nested-TL claim ("outperforms the rectangular and square lines of the competition") and the deep-learning research items (alignment, computational storage, beyond transformers).
