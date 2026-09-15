@@ -63,6 +63,10 @@
 
 - [x] Both sites: every WRKS mention is now "Powered by" + the WRKS colour logo (parent home strip, parent product cards, MWA About, MWA Software header and Specs); the separate WRKS logo above a "Powered by WRKS" line and the lockup artwork are retired; Specs lead = the new caption — live + artifacts v29 / v17
 
+- [x] Parent home hero: Bennett's "Evening Mist v1" drone footage behind the headline — 17 s cross-faded 1080p loop (4.9 MB), muted autoplay, poster still on phones and for reduced-motion; headline cream over a dark scrim — live + artifact v30
+- [x] Parent Technology › Additive photo replaced again with an image that IS 3D printing: U.S. Marine holding a fresh print on its build plate (public domain) — live + artifact v30
+- [x] "Powered by" lockups rebuilt from the delivered artwork: POWERED BY cap height = WRKS logo height, gap 0.3× height, identical on every machine (no live text) — both sites live + artifacts v31 / v18
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
