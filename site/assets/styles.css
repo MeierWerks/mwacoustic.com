@@ -255,3 +255,8 @@ table.cmp td.v:nth-child(2){color:var(--gold);font-weight:700}
 .laptop .lid{cursor:pointer}
 .laptop-caption{text-align:center;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:15px;line-height:1.25;color:var(--cinnabar);margin:0 0 12px;min-height:1.3em;transition:opacity .18s}
 .laptop-caption.fade{opacity:0}
+
+.pull{margin:18px 0 0;padding:0 0 0 18px;border-left:3px solid var(--gold)}
+.pull p{margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.45;font-style:italic;max-width:none}
+.pull cite{display:block;margin-top:6px;font-style:normal;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--cinnabar)}
+.tagline{margin:22px 0 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(20px,1.8vw,26px);line-height:1.1;color:var(--black);max-width:none}

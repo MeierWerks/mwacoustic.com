@@ -59,16 +59,18 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
 </body></html>'''
 
 ABOUT_H="MW Acoustics. A Completely Fresh and Blended Take on Audio"
-ABOUT_P=["Developing both hardware and software with an ear to heritage quality and an eye to next-generation modern efficiency and use.",
- "Our speakers incorporate new and patented materials from horn design to composites, with completely fresh behaviors in manufacturing to push the boundaries of what’s possible and blended with an unsurpassed quality of sound.",
- "While our software solutions are powered by our own WRKS engine, we have software solutions that allow anyone – from layman to expert – to coordinate process, data, design and real-time information."]
-NEO_P=["MW’s Neo line incorporates new and patented materials from horn design to composites, with completely fresh behaviors in manufacturing. Neo is designed to push the boundaries of what’s possible when the newest technologies are blended with heritage techniques – all toward an unsurpassed quality of sound.",
+ABOUT_P=["Developing both hardware and software with an ear to heritage quality and an eye to modern efficiency.",
+ "Our speakers incorporate new and patented materials from horn design to composites, to push the boundaries of what’s possible with an unsurpassed quality of sound.",
+ "We offer software solutions, powered by WRKS, that allow anyone – from layman to professional – to design and develop the audio products of their own imagination."]
+NEO_P=["MW’s hand-crafted Neo line incorporates new and patented materials from horn design to composites with revolutionary processes in manufacturing. Neo is designed to push the boundaries of what’s possible when the newest technologies are blended with heritage identity – all toward an unsurpassed quality of sound.",
  "Our Neo line incorporates: Neodymium Magnet Technology. Carbon Fiber diaphragms on all drivers. Transmission line nested cabinet. Advanced 3D Printing. CNC Machined Jewel-Quality Aluminum. Constrained layer damping. Acoustic Lens and Horn."]
-NEO1_P="Neo-One, the first of the speakers to be released is a mid-sized floor standing speaker with jewel-like detailing, an elegant shape suggesting both retro and future, jewel-like aluminum feet and details, and a spectacular hand-polished finish. All designed in the service of an unparalleled “in-the-air” sound quality that’s second to none."
-NEO2="A brilliant bookshelf model"
+NEO1_P="Neo-One, the first of the speakers to be released, is a hand-crafted, mid-sized, floor standing speaker with jewel-like detailing, and an elegant shape inspired by both the elegance of the past and the efficiency of the future. Our bead blasted aluminum satin finish contrasts with hand-rubbed, high-gloss lacquered panels, polished aluminum chamfers, and tactile leveling adjusters, in an unparalleled fit and finish reminiscent of the finest standards in craftsmanship. All designed in the service of a matchless sound quality that’s second to none."  # Diane, updated copy 2026-09-15
+NEO2="A more compact bookshelf model"
 NEO3="Neo-Three is the flagship of the Neo line, offering uncompromised build quality and fidelity for the most discerning listener."  # Bennett, chat, 2026-09-14 (replaces Diane's "larger floor model" line)
 SDS_H1="All the Tools, Products, Tests, and Visualized Process to Build Your Own Speaker"
-SDS_P="Our Speaker Design Suite, powered by our own WRKS engine, allows anyone – from layman to expert – to build their own speaker. SDS is a highly intuitive program combining real-time data (from costs, to size, to materials) with onscreen visualization and sound testing. Quite frankly, it’s like nothing you’ve ever seen before."
+SDS_P="SDS, our Speaker Design Suite, powered by WRKS, allows anyone – from layman to professional – to build their own speaker. SDS is a highly intuitive program combining real-time data (from costs, to size, to materials) with onscreen visualization and sound testing."
+SDS_QUOTE=("Quite frankly, it’s like nothing you’ve ever seen before.","Jay Lee")  # Diane, updated copy 2026-09-15
+SDS_TAG="The Power of an Engineering Studio in the Palm of Your Hand"  # Diane, updated copy 2026-09-15
 SDS_H2="The world of DIY sound just took a major leap forward"
 APPSTORE="https://apps.apple.com/us/app/sds-speaker-design-suite/id6788087317"   # Bennett, chat, 2026-09-14
 SDS_PLATFORM="SDS is a desktop application. A companion iOS app is available with limited capability; for full functionality, use the desktop version."  # wording per Bennett, chat, 2026-09-14
@@ -77,7 +79,7 @@ def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-
 
 home=f'''
 <section class="hero-photo"><img src="assets/img/hero-full.png" alt="Neo One" style="object-position:center 22%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
-<section><div class="wrap split"><div>{about_block()}<div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-light-quarter.jpg" alt="Neo One" loading="lazy"></div></section>
+<section><div class="wrap split"><div><h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(ABOUT_P[0])}</p><div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-light-quarter.jpg" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
 <figure><img src="assets/img/neo1-studio-quarter.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
@@ -160,7 +162,7 @@ COMPAT=[("Mac","Apple silicon Mac (M1 or later) running macOS 14 Sonoma or later
 
 software=f'''
 <section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render-v2.jpg" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
-<section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><h2 style="margin-top:26px">{E(SDS_H2)}</h2>
+<section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><blockquote class="pull"><p>“{E(SDS_QUOTE[0])}”</p><cite>{E(SDS_QUOTE[1])}</cite></blockquote><p class="tagline">{E(SDS_TAG)}</p><h2 style="margin-top:22px">{E(SDS_H2)}</h2>
 <div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
 <p class="platform-note">{E(SDS_PLATFORM)}</p>
 <p class="poweredby" style="--pb:20px;margin-top:26px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div>
