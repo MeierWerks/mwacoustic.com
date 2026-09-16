@@ -170,7 +170,8 @@
       onAuthStateChange: function (fn) { listeners.push(fn); return { data: { subscription: { unsubscribe: function () {} } } }; },
       signInWithPassword: async function (p) {
         await wait();
-        if (p.password !== 'mock-password-123') return { data: {}, error: { status: 400, code: 'invalid_credentials', message: 'Invalid login credentials' } };
+        // Mock only: no fixed password ships in production code. Any password of the minimum length succeeds; shorter fails.
+        if (!p.password || p.password.length < MIN_PASSWORD) return { data: {}, error: { status: 400, code: 'invalid_credentials', message: 'Invalid login credentials' } };
         return { data: { session: setSession(p.email) }, error: null };
       },
       signInWithOtp: async function (p) {
@@ -181,7 +182,7 @@
       },
       verifyOtp: async function (p) {
         await wait();
-        if (p.type !== 'email' || p.token !== '12345678' || p.email !== pendingCodeEmail) return { data: {}, error: { status: 403, code: 'otp_expired', message: 'Token has expired or is invalid' } };
+        if (p.type !== 'email' || !/^[0-9]{8}$/.test(p.token) || p.token === '00000000' /* mock only: reserved failing code; any other 8 digits work */ || p.email !== pendingCodeEmail) return { data: {}, error: { status: 403, code: 'otp_expired', message: 'Token has expired or is invalid' } };
         return { data: { session: setSession(p.email) }, error: null };
       },
       updateUser: async function (p) {
@@ -1072,7 +1073,12 @@
 
   // ---------- boot ----------
   async function boot() {
-    if (MOCK) $('mock-banner').hidden = false;
+    if (MOCK) {
+      // Built only in local mock mode, so no test hints exist in the production page (mwacoustic.com can never be MOCK).
+      var banner = h('div', { class: 'mock-banner', role: 'note' },
+        'Local mock mode — no live data. Any password of 15+ characters signs in; any 8-digit code except 00000000 works. An email starting with noaccess@ has no dashboard access.');
+      document.body.insertBefore(banner, document.body.firstChild);
+    }
     if (!backend) {
       $('view-boot').textContent = '';
       $('view-boot').appendChild(h('p', { class: 'notice notice-error', role: 'alert' }, "The sign-in service couldn't load. Check your connection, then reload the page."));
