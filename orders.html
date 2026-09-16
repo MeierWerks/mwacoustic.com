@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+  MW Acoustics order dashboard — https://mwacoustic.com/orders
+  Source: portal/orders.html (+ portal/orders.css, portal/orders.js). build.py copies these VERBATIM to
+  site/orders.html and site/assets/portal/ — never edit the copies in site/.
+  Contract: SUPPLIER-ORDER-DASHBOARD-CONTRACT.md (2026-09-16), "Supplier API" and "Dashboard sign-in".
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<!-- GitHub Pages cannot send response headers, so the policy lives here. A meta CSP cannot carry
+     frame-ancestors; orders.js refuses to run inside a frame instead. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://krmpfqluefhkiahphyiw.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>Order dashboard — MW Acoustics</title>
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/assets/logos/tile-acoustics-green.svg?v=2" type="image/svg+xml">
+<meta name="theme-color" content="#121211">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/portal/orders.css">
+<!-- supabase-js pinned to an exact version with Subresource Integrity. To upgrade: change the version, then
+     recompute with: curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js" integrity="sha384-iLddHTLokph6Omwoyid4XKxHaWa6w41BnoEj0q5oOrzmYPpHIKt1wyjReA7s//pP" crossorigin="anonymous" defer></script>
+<script src="/assets/portal/orders.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand"><img class="tile" src="/assets/logos/tile-acoustics-green.svg" alt=""><img class="divname" src="/assets/logos/division-acoustics-white.svg" alt="MW Acoustics"><span class="app-name">Order dashboard</span></div>
+  <div class="account" id="account" hidden>
+    <span class="who" id="who-email"></span>
+    <button type="button" class="btn btn-on-dark" id="sign-out">Sign out</button>
+  </div>
+</header>
+
+<div class="mock-banner" id="mock-banner" hidden role="note">
+  Local mock mode — no live data. Password <code>mock-password-123</code>, code <code>12345678</code>. An email starting with <code>noaccess@</code> has no dashboard access.
+</div>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ Sign-in views ============ -->
+  <section class="auth" id="view-boot" aria-busy="true">
+    <p class="muted">Loading…</p>
+  </section>
+
+  <section class="auth" id="view-signin" hidden aria-labelledby="signin-title">
+    <div class="card">
+      <h1 id="signin-title">Sign in</h1>
+      <p class="muted">MW Acoustics order dashboard for Parts Express.</p>
+      <div class="notice notice-error" id="signin-error" role="alert" hidden></div>
+      <div class="notice notice-info" id="signin-info" role="status" hidden></div>
+      <form id="signin-form" method="post" novalidate>
+        <label for="signin-email">Email</label>
+        <input id="signin-email" name="email" type="email" autocomplete="username" required spellcheck="false">
+        <label for="signin-password">Password</label>
+        <input id="signin-password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit" class="btn btn-primary btn-block" id="signin-submit">Sign in</button>
+      </form>
+      <button type="button" class="link" id="to-code">First time, or forgot your password? Email me a sign-in code</button>
+    </div>
+  </section>
+
+  <section class="auth" id="view-code-request" hidden aria-labelledby="code-request-title">
+    <div class="card">
+      <h1 id="code-request-title">Email me a sign-in code</h1>
+      <p class="muted">We'll email an 8-digit code. Type it here to sign in, then choose a password.</p>
+      <div class="notice notice-error" id="code-request-error" role="alert" hidden></div>
+      <form id="code-request-form" method="post" novalidate>
+        <label for="code-email">Email</label>
+        <input id="code-email" name="email" type="email" autocomplete="username" required spellcheck="false">
+        <button type="submit" class="btn btn-primary btn-block" id="code-request-submit">Email me a code</button>
+      </form>
+      <button type="button" class="link" data-back-to-signin>Back to sign in</button>
+    </div>
+  </section>
+
+  <section class="auth" id="view-code-verify" hidden aria-labelledby="code-verify-title">
+    <div class="card">
+      <h1 id="code-verify-title">Enter your code</h1>
+      <p class="muted" id="code-verify-lead"></p>
+      <div class="notice notice-error" id="code-verify-error" role="alert" hidden></div>
+      <div class="notice notice-info" id="code-verify-info" role="status" hidden></div>
+      <form id="code-verify-form" method="post" novalidate>
+        <label for="code-token">8-digit code</label>
+        <input id="code-token" name="token" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="8" pattern="[0-9]{8}" required class="code-input" spellcheck="false">
+        <button type="submit" class="btn btn-primary btn-block" id="code-verify-submit">Sign in with code</button>
+      </form>
+      <div class="auth-links">
+        <button type="button" class="link" id="code-resend">Send a new code</button>
+        <button type="button" class="link" data-back-to-signin>Back to sign in</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="auth" id="view-set-password" hidden aria-labelledby="set-password-title">
+    <div class="card">
+      <h1 id="set-password-title">Choose a password</h1>
+      <p class="muted">You're signed in. Set a password so you can sign in with it next time. Use at least 15 characters — a short sentence works well.</p>
+      <div class="notice notice-error" id="set-password-error" role="alert" hidden></div>
+      <form id="set-password-form" method="post" novalidate>
+        <input type="email" autocomplete="username" id="set-password-username" hidden>
+        <label for="new-password">New password</label>
+        <input id="new-password" name="password" type="password" autocomplete="new-password" minlength="15" required aria-describedby="new-password-hint">
+        <p class="hint" id="new-password-hint">15 characters or more.</p>
+        <label for="confirm-password">Type it again</label>
+        <input id="confirm-password" name="confirm" type="password" autocomplete="new-password" minlength="15" required>
+        <button type="submit" class="btn btn-primary btn-block" id="set-password-submit">Save password and continue</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ Inbox ============ -->
+  <section class="app" id="view-app" hidden>
+    <div class="inbox" id="inbox">
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter orders" id="filters">
+          <button type="button" class="filter" data-filter="needs_action" aria-pressed="false">Needs action <span class="count" data-count="needs_action"></span></button>
+          <button type="button" class="filter" data-filter="open" aria-pressed="false">Open <span class="count" data-count="open"></span></button>
+          <button type="button" class="filter" data-filter="shipped" aria-pressed="false">Shipped <span class="count" data-count="shipped"></span></button>
+          <button type="button" class="filter" data-filter="cancelled" aria-pressed="false">Cancelled <span class="count" data-count="cancelled"></span></button>
+          <button type="button" class="filter" data-filter="all" aria-pressed="false">All <span class="count" data-count="all"></span></button>
+        </div>
+        <div class="search">
+          <label for="search" class="sr-only">Search orders</label>
+          <input id="search" type="search" placeholder="Search PO, customer, city, item #" autocomplete="off" spellcheck="false">
+          <button type="button" class="btn btn-quiet" id="refresh" aria-label="Refresh list">Refresh</button>
+        </div>
+      </div>
+      <p class="list-status" id="list-status" role="status" aria-live="polite"></p>
+      <ul class="rows" id="rows" aria-label="Purchase orders"></ul>
+      <div class="list-foot">
+        <button type="button" class="btn btn-secondary" id="load-more" hidden>Load more</button>
+      </div>
+    </div>
+
+    <aside class="detail" id="detail" hidden aria-labelledby="detail-title" tabindex="-1">
+      <div class="detail-head">
+        <button type="button" class="btn btn-quiet back" id="detail-back">← Back to orders</button>
+        <button type="button" class="btn btn-quiet close" id="detail-close" aria-label="Close order">Close</button>
+      </div>
+      <div id="detail-body"></div>
+    </aside>
+  </section>
+</main>
+
+<dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-text">
+  <form method="dialog" class="dialog-body">
+    <h2 id="confirm-title"></h2>
+    <p id="confirm-text"></p>
+    <div class="dialog-actions">
+      <button type="submit" value="cancel" class="btn btn-secondary" id="confirm-cancel">Keep order</button>
+      <button type="submit" value="ok" class="btn btn-danger" id="confirm-ok">Approve</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>
