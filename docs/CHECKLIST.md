@@ -84,6 +84,8 @@
 
 - [x] Parent positioning line replaced: "Where the skill of craft meets the precision of technology." (hero, Vision page, meta description); alternates listed in the parent COPY-SOURCES.md — live + artifact v35
 
+- [x] SDS legal + support moved to MW Acoustics (Bennett, 2026-09-16: MW Acoustics owns SDS and the parent must not be entangled in the subsidiary's legal documents). /privacy, /terms and /support live here with Privacy · Terms · Support in every footer; meierwerks.com keeps only ~400-byte redirect stubs at those three paths (noindex, canonical + meta-refresh to MW Acoustics, no legal text) so the shipped SDS 0.1.2 links do not 404. Built by the desktop-92 session, commits mwacoustic.com 325d840 / meierwerks.com 6a8e5d7; both reviewed here and verified live.
+
 ## Flags for Bennett
 - Press embed = "Revolutionizing Audio: The Rise of AI Speakers" (1BIT Podcast, channel Jay's iyagi) — verified the embed plays over HTTP; caption uses the video's title.
 - "How SDS compares" table: the VituixCAD / Hornresp / REW / COMSOL columns are Claude's reading of their public feature sets — Bennett to verify before the site goes live.
@@ -97,3 +99,6 @@
 - Jay Lee quote: Diane's doc attributes "Quite frankly, it's like nothing you've ever seen before" to Jay Lee (the 1BIT Podcast host); it is now shown as a credited pull quote on the Software page. Confirm he said it and is happy to be quoted.
 - Neo-Three: kept Bennett's 2026-09-14 sentence rather than Diane's new flagship line ("…an uncompromised imposing loud speaker…"). Swap if Bennett prefers Diane's.
 - Diane's doc says "Software Design Suite"; the site keeps "Speaker Design Suite", the product's actual name.
+- LEGAL, needs counsel and not a build change: the relocated documents never mention MW Acoustics. privacy.txt names MeierWerks Inc. as the provider and data controller with privacy@meierwerks.com and https://meierwerks.com as contact and website; terms.txt is a binding agreement between the user and MeierWerks Inc., signed MeierWerks Inc. Zero occurrences of "MW Acoustics" in either file. Hosting them here changes the address and not one word of who is legally bound, so the move does not by itself separate the parent from the subsidiary's obligations. Whoever drafted them decides whether they should name the subsidiary, using its exact registered name.
+- BRAND, Bennett and Diane together: the footer and contact page here say "a division of MeierWerks Inc.", which suits the brand system but not a subsidiary structure. "Division" is not a stray word - it appears 44 times in the parent build.py, on all seven parent pages, and comes from Diane's Brand Guide ("One ownership brand. Distinct divisions", "Every product belongs to one division"), a hand-written invariant in both repos. Changing it is a site-wide brand-architecture decision, not a footer edit.
+- App Store Connect: the privacy URL there can be repointed to https://mwacoustic.com/privacy today without a new build, and should be. The in-app links are compiled into SDS 0.1.2, so the three parent stubs must stay until a later build ships and the 0.1.2 install base ages out - months, not weeks.
