@@ -237,3 +237,14 @@ pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — 
  "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"press.html":("Press — MW Acoustics",videos,"press.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None),
  "terms.html":("Terms of Use — MW Acoustics",terms,None),"support.html":("SDS Support — MW Acoustics",support,None)}
 for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(clean_urls(shell(t,b,cur), fn)); print("built",fn)
+
+# ---------- Order dashboard (2026-09-16): https://mwacoustic.com/orders ----------
+# The Parts Express order dashboard is a standalone sign-in app, NOT a site page. Its source lives in portal/ and is
+# copied VERBATIM: it must not go through shell() (no site nav/footer; it carries its own strict CSP and noindex)
+# nor clean_urls() (which would inject a canonical tag and rewrite its hrefs). It is deliberately absent from NAV,
+# the footer and any sitemap. Edit portal/orders.{html,css,js}, never the copies in site/.
+import shutil
+(SITE/"assets/portal").mkdir(exist_ok=True)
+shutil.copyfile(ROOT/"portal/orders.html", SITE/"orders.html")
+for _f in ("orders.css","orders.js"): shutil.copyfile(ROOT/"portal"/_f, SITE/"assets/portal"/_f)
+print("built orders.html (verbatim portal passthrough)")
