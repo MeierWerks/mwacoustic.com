@@ -53,7 +53,7 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
 <main>{body}</main>
 <footer class="site-footer"><div class="wrap">
 <img src="assets/logos/mw-stamp+wordmark-white.svg" alt="MeierWerks">
-<div><ul>{"".join(f'<li><a href="{h}">{E(l)}</a></li>' for l,h in NAV)}<li><a href="privacy.html">Privacy</a></li><li><a href="https://meierwerks.com/">MeierWerks</a></li></ul>
+<div><ul>{"".join(f'<li><a href="{h}">{E(l)}</a></li>' for l,h in NAV)}<li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="support.html">Support</a></li><li><a href="https://meierwerks.com/">MeierWerks</a></li></ul>
 <p class="fine">MW Acoustics is a division of MeierWerks Inc. &nbsp;·&nbsp; Kent, CT USA &nbsp;·&nbsp; <a href="mailto:info@meierwerks.com">info@meierwerks.com</a></p></div>
 <div class="right">© MeierWerks Inc. All rights reserved.</div>
 </div></footer>
@@ -215,17 +215,25 @@ contact='''
 <button type="submit" style="background:var(--cinnabar)">Send</button></form></div></div></section>
 '''
 
-# ---------- Privacy (verbatim; moved from meierwerks.com — MW Acoustics owns SDS) ----------
-_plines=[l.strip() for l in (ROOT/"docs/copy/privacy.txt").read_text().splitlines() if l.strip()]
-_pout=[]
-for _i,_l in enumerate(_plines):
-    if _i==0: _pout.append(f'<h1 style="font-size:clamp(40px,5.5vw,76px)">{E(_l)}</h1>')
-    elif re.match(r'^\d+\. [A-Z]', _l): _pout.append(f'<h2>{E(_l)}</h2>')
-    elif _l.startswith(("Effective:","Last updated:")): _pout.append(f'<p class="meta">{E(_l)}</p>')
-    else: _pout.append(f'<p>{E(_l)}</p>')
-privacy=f'<section><div class="wrap legal">{"".join(_pout)}</div></section>'
+# ---------- Legal + support (verbatim). MW Acoustics owns SDS, so the SDS Privacy Policy, Terms of Use and support
+# page live HERE and never on the parent meierwerks.com site (Bennett, 2026-09-16: the parent must not be entangled in the
+# subsidiary's legal documents). docs/copy/privacy.txt and terms.txt are verbatim copies of the SDS app bundle's
+# Privacy.md / Terms.md; re-copy them whenever the app's documents change. support-body.html is the support page body.
+def legal_page(path):
+    lines=[l.strip() for l in (ROOT/path).read_text().splitlines() if l.strip()]
+    out=[]
+    for i,l in enumerate(lines):
+        if i==0: out.append(f'<h1 style="font-size:clamp(40px,5.5vw,76px)">{E(l)}</h1>')
+        elif re.match(r'^\d+\. [A-Z]', l): out.append(f'<h2>{E(l)}</h2>')
+        elif l.startswith(("Effective:","Last updated:","Terms version:")): out.append(f'<p class="meta">{E(l)}</p>')
+        else: out.append(f'<p>{E(l)}</p>')
+    return f'<section><div class="wrap legal">{"".join(out)}</div></section>'
+privacy=legal_page("docs/copy/privacy.txt")
+terms=legal_page("docs/copy/terms.txt")
+support=f'<section><div class="wrap legal">{(ROOT/"docs/copy/support-body.html").read_text()}</div></section>'
 
 
 pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — MW Acoustics",about,"about.html"),"products.html":("Products — MW Acoustics",products,"products.html"),
- "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"press.html":("Press — MW Acoustics",videos,"press.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None)}
+ "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"press.html":("Press — MW Acoustics",videos,"press.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None),
+ "terms.html":("Terms of Use — MW Acoustics",terms,None),"support.html":("SDS Support — MW Acoustics",support,None)}
 for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(clean_urls(shell(t,b,cur), fn)); print("built",fn)

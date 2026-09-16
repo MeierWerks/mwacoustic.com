@@ -1,0 +1,195 @@
+SDS Terms of Use
+
+Effective: September 16, 2026
+Last updated: September 16, 2026
+Terms version: 6
+
+These Terms of Use ("Terms") are a binding agreement between you and MeierWerks Inc. ("MeierWerks," "we," "us," or "our") governing your use of SDS (Speaker Design Suite) for macOS and iOS, its account and sync services, MW-Assist, and related services (collectively, the "Service"). By creating an account, accepting these Terms in the app, or using the Service, you agree to these Terms and the Privacy Policy. If you do not agree, do not use the Service.
+
+1. ELIGIBILITY
+
+You must be at least 13 years old to create an account. If you are under the age of legal majority where you live, you may use the Service only with permission and supervision from a parent or legal guardian. A purchase must be made by an adult or by a parent or guardian on the user's behalf. You may not use the Service if applicable law prohibits you from doing so.
+
+2. ACCOUNTS
+
+Provide accurate account information and keep it current. You are responsible for activity under your account and for protecting your credentials and devices. Notify support@meierwerks.com promptly if you believe an account has been compromised.
+
+Acceptance is recorded by policy version and timestamp. A material Terms update may require you to accept a new version before continuing to use account-based features.
+
+3. APP LICENSE AND APPLE TERMS
+
+The app is licensed, not sold. Unless MeierWerks supplies a custom end-user license agreement through App Store Connect, the Apple Standard End User License Agreement governs the license to the downloaded app. Subject to that agreement and these Terms, MeierWerks grants you a limited, personal, non-exclusive, non-transferable, revocable license to use the Service on Apple-branded products you own or control as permitted by the App Store usage rules.
+
+You may not copy, sublicense, rent, lease, sell, redistribute, scrape, reverse engineer, decompile, bypass access controls, defeat entitlements, extract source code, or use the Service to create or train a competing product, except to the limited extent a restriction is prohibited by applicable law or an applicable open-source license.
+
+Apple is not responsible for the Service, its content, support, maintenance, warranties, product claims, or third-party intellectual-property claims. MeierWerks, not Apple, is responsible for operating and supporting the Service. Apple and its subsidiaries are third-party beneficiaries of the provisions that apply to an App Store-licensed application and may enforce those provisions as permitted by Apple's terms.
+
+4. YOUR PROJECTS, DESIGN DATA, AND PLAN RIGHTS
+
+"Independent Materials" means photographs, drawings, raw measurements, specifications, prompts, files, and other material that you created outside the Service and import or enter into it. "Project Materials" means any project, design, configuration, selection, measurement, calculation, simulation, optimization, recommendation, schematic, crossover network, enclosure geometry, model, rendering, cut file, manufacturing output, bill of materials, report, project file, technical parameter, usage record, or other design data or result created, captured, edited, calculated, assembled, transformed, stored, or produced in or by the Service, whether automatically or through your selections, prompts, instructions, edits, or other interaction. Project Materials do not include an unchanged copy of Independent Materials or third-party material merely incorporated into or displayed with a result. "Derived Data" means aggregated or de-identified technical data, metrics, relationships, patterns, datasets, models, know-how, and insights that MeierWerks derives from Project Materials or use of the Service and that do not identify you and are not reasonably linkable to you.
+
+"Non-Commercial Plan" means any Free, Pro, Premium, trial, or other plan that is not expressly sold as an annual Commercial License.
+
+You keep ownership. As between you and MeierWerks, you retain ownership of your Independent Materials and Project Materials. MeierWerks does not receive exclusive ownership of them, and the license below does not prevent you from keeping, using, copying, modifying, publishing, sharing, or building from your Project Materials for personal and other non-commercial purposes. Commercial manufacture, sale, distribution, or licensing requires an active Commercial License subscription or separate written permission from MeierWerks.
+
+Non-Commercial Plans: broad MeierWerks license. If an active annual Commercial License does not cover the project when Project Materials are first created or materially modified, you grant MeierWerks a worldwide, perpetual, irrevocable to the maximum extent permitted by law, non-exclusive, transferable, sublicensable through multiple tiers, fully paid, and royalty-free license under all rights you own or control to access, host, store, reproduce, transmit, use, modify, adapt, translate, analyze, combine, create derivative works from, display, distribute, publish, make, have made, market, offer for sale, sell, import, export, license, and otherwise exploit those Project Materials. MeierWerks may exercise this license for any lawful purpose, including operating, securing, supporting, improving, testing, and promoting the Service; research and analytics; training or evaluating systems; developing, manufacturing, marketing, licensing, and monetizing current or future products and services; and supplying the same or similar designs, data, features, products, or services to others. MeierWerks may do so without further approval, notice, attribution, payment, royalty, or accounting to you. This is an independent commercial-use right for MeierWerks, not a transfer that takes your ownership or permitted use away.
+
+Commercial License projects. Project Materials first created or materially modified while covered by an active annual Commercial License subscription are excluded from the broad Non-Commercial Plan license above. You retain ownership and commercial rights in those Project Materials, subject to the Commercial License terms and third-party rights. MeierWerks receives only the limited license needed to process materials for cloud, sync, support, or other features you affirmatively choose to use. The Commercial tier's offline/no-cloud mode does not collect engineering data. Upgrading does not cancel the license already granted for Project Materials previously created or materially modified under a Non-Commercial Plan; it protects new Commercial License work prospectively.
+
+Derived Data and MeierWerks improvements. MeierWerks owns the Derived Data, datasets, models, algorithms, know-how, product improvements, and other technology that MeierWerks creates from lawfully available Non-Commercial Plan Project Materials or use of the Service. MeierWerks may retain, use, disclose, license, sell, and otherwise monetize those items without restriction, provided that data described as de-identified is not used to reidentify you except to test and maintain the de-identification safeguards or as otherwise permitted by law. Commercial License Project Materials are excluded unless you separately and affirmatively authorize their use.
+
+Local storage and actual access. The current app keeps full project files and the local engineering queue on your device unless you choose a feature that transmits specified material, such as account sync, MW-Assist, an AI-assisted feature, or support. The Non-Commercial Plan license allocates contractual rights; it does not mean that MeierWerks currently receives or stores a copy of every local project. Before enabling any additional remote collection or materially different use, MeierWerks will update the Privacy Policy and obtain any notice, permission, or consent required by law or Apple's rules.
+
+Authority, confidentiality, and third-party rights. Do not enter an employer's, client's, collaborator's, or other person's confidential information, trade secrets, or material unless you are authorized to grant the applicable rights. You represent that you own or control the rights you grant and that MeierWerks' permitted use will not violate law, confidentiality obligations, privacy rights, intellectual-property rights, or another agreement. Non-Commercial Plan Project Materials that you transmit to MeierWerks are not confidential information under these Terms unless MeierWerks agrees otherwise in a separate signed writing. Commercial License materials are handled under the Commercial License terms. These Terms do not grant you or MeierWerks ownership of third-party driver data, product images, trademarks, measurements, documentation, open-source software, or other licensed material; the applicable third-party rights continue to control.
+
+Privacy and prospective effect. Intellectual-property and contract rights are separate from privacy law. This Section does not itself authorize undisclosed collection of personal information, remove a privacy right, or replace a consent required by law or Apple's rules. The Privacy Policy controls what information the Service actually collects, how it is used and retained, and how you exercise privacy choices and deletion rights. The expanded Non-Commercial Plan license in this Section applies only to Project Materials first created or materially modified after you accept Terms version 4; it does not retroactively expand MeierWerks' rights in earlier projects. By selecting "Agree," you specifically acknowledge the Non-Commercial Plan commercial-use license, the Commercial License exclusion, and the no-compensation terms in this Section.
+
+5. MW-ASSIST AND AI-ASSISTED FEATURES
+
+MW-Assist and other AI-assisted features may send your request and relevant project, workspace, conversation, datasheet, or image context through our server to an AI service provider. The Privacy Policy describes this processing.
+
+AI output may be incomplete, inaccurate, or unsuitable. It is a convenience and design aid, not an engineering authority. AI output does not override deterministic solver results, safety requirements, manufacturer specifications, or your responsibility to verify a design. You must review an AI-proposed change before relying on or manufacturing from it.
+
+6. ACCEPTABLE USE
+
+You may not:
+
+- use the Service unlawfully, deceptively, or to design or promote an unlawful product;
+- violate another person's intellectual-property, privacy, publicity, contractual, or confidentiality rights;
+- upload malicious code or attempt to probe, disrupt, overload, or gain unauthorized access to the Service or another account;
+- bypass subscriptions, product entitlements, usage limits, authentication, security controls, or payment systems;
+- scrape, harvest, resell, or misuse account, catalog, or service data;
+- submit content you do not have the right to provide to an AI or cloud service; or
+- use the Service in a way that creates an unreasonable safety, fraud, security, or legal risk.
+
+We may investigate suspected misuse and suspend or terminate access when reasonably necessary to protect the Service, users, third parties, or legal compliance.
+
+7. DIGITAL PURCHASES AND SUBSCRIPTIONS
+
+Digital features, subscriptions, and add-ons offered inside the app are sold through Apple's In-App Purchase system and StoreKit. Apple is the merchant for those transactions and controls payment authorization, localized price, taxes where applicable, renewal, cancellation, Family Sharing eligibility, and refunds under Apple's terms.
+
+An auto-renewable subscription continues until canceled through your Apple account. Cancellation takes effect according to the App Store terms and ordinarily does not provide a refund for time already used. Manage a subscription at https://apps.apple.com/account/subscriptions and request an App Store refund through Apple Support.
+
+We use Apple-signed transaction information to unlock and reconcile digital access with your SDS account. You are responsible for using the Apple ID and SDS account associated with the purchase. Deleting your SDS account does not cancel Apple billing.
+
+8. PHYSICAL HARDWARE ORDERS
+
+Stripe checkout is used only for tangible products shipped for use outside the app, such as loudspeaker drivers, crossover components, and cabinet hardware. The price shown before payment is the MeierWerks retail price and may include a margin over supplier cost. Shipping, taxes, and other disclosed charges are added before you authorize payment.
+
+Availability and price are rechecked before a checkout session is created. A component without a valid current supplier price or confirmed availability is not eligible for purchase. We may reject or cancel an order if a product becomes unavailable, a price is clearly erroneous, fraud review fails, or fulfillment is not reasonably possible. If we cancel after capture, we will issue the appropriate refund.
+
+Products may be sourced or fulfilled by third-party distributors, including Parts Express. We may provide the supplier and carrier with the order, contact, and shipping information necessary to purchase, fulfill, track, return, or support the goods. Delivery dates are estimates, not guarantees.
+
+Inspect a shipment promptly. Contact support@meierwerks.com within 30 days after delivery to request a return authorization for an unused stock item or to report a missing, incorrect, damaged, or defective item. Do not send a return without authorization. Return eligibility, shipping responsibility, restocking fees, and any product-specific exception will be disclosed with the order or return authorization. Custom-made, cut, engraved, configured, or fabricated goods are final sale except when defective, incorrectly made, or returnable under mandatory law. Nothing in this section limits non-waivable consumer rights.
+
+9. ENGINEERING AND MEASUREMENT DISCLAIMER
+
+SDS provides models, simulations, measurements, visualizations, recommendations, bills of materials, geometry, and manufacturing outputs as engineering aids. Results depend on model assumptions; input data; component tolerances; room conditions; microphone calibration and placement; materials; construction; wiring; and other factors outside our control.
+
+THE SERVICE DOES NOT GUARANTEE FREQUENCY RESPONSE, SOUND QUALITY, POWER HANDLING, EFFICIENCY, DIRECTIVITY, FIT, CLEARANCE, STRUCTURAL INTEGRITY, ELECTRICAL SAFETY, MANUFACTURABILITY, OR PERFORMANCE. THE SAME INPUTS ARE INTENDED TO PRODUCE REPEATABLE SOFTWARE RESULTS, BUT REPEATABILITY DOES NOT GUARANTEE THAT A PHYSICAL BUILD WILL MATCH A MODEL.
+
+10. YOUR BUILD AND SAFETY RESPONSIBILITIES
+
+You are responsible for independently checking dimensions, cut files, clearances, material thickness, joinery, fasteners, electrical topology, polarity, component ratings, thermal limits, amplifier compatibility, hearing safety, and all other build decisions before purchasing, cutting, wiring, energizing, selling, or using a product.
+
+Use proper protective equipment and qualified professional assistance where appropriate. Never rely on the Service as a substitute for physical measurement, a manufacturer drawing, code compliance, safety testing, or professional engineering judgment. You assume the risks associated with tools, machinery, electricity, sound-pressure levels, heavy objects, dust, adhesives, finishes, heat, and physical construction.
+
+11. MEIERWERKS INTELLECTUAL PROPERTY
+
+The Service, including its source and object code, deterministic engines, models, algorithms, architecture, user interface, workflows, generated-system logic, branding, documentation, and MeierWerks-created content, is owned by MeierWerks or its licensors and protected by intellectual-property and other laws. No right is granted except the limited license expressly stated in these Terms.
+
+You may use exports and outputs for the purposes allowed by your active plan. Unless a plan or separate written agreement expressly grants commercial rights, the Service license is for personal use and internal evaluation and does not permit reselling the Service, offering it as a hosted service, or distributing MeierWerks code, engines, or proprietary data.
+
+12. THIRD-PARTY SERVICES AND MATERIALS
+
+The Service uses or connects to third-party services and materials, including Apple, Supabase, Google, Anthropic, Stripe, component manufacturers, distributors, carriers, and open-source software. Their terms, privacy notices, licenses, availability, and service limitations may apply. Third-party names and marks belong to their owners. Third-party software notices are available in Settings.
+
+We are not responsible for an external site, supplier, carrier, payment service, sign-in service, or AI service that we do not control, but this does not limit responsibilities that applicable law places on MeierWerks.
+
+13. PRIVACY AND ACCOUNT DELETION
+
+The Privacy Policy explains our data practices and your choices. You may initiate account deletion in Settings. Deletion removes the account and associated personal information that we are not legally required to retain. A manual deletion process may take up to 30 days after verification. StoreKit billing continues until you separately cancel it with Apple.
+
+14. SUSPENSION AND TERMINATION
+
+You may stop using the Service at any time. We may suspend or terminate access for a material breach, fraud, unlawful conduct, security risk, nonpayment, abuse of the Service, or legal requirement. Where reasonable, we will provide notice and an opportunity to cure. Provisions concerning ownership, payments already due, disclaimers, liability, indemnity, and disputes survive termination.
+
+15. WARRANTIES AND CONSUMER RIGHTS
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT EXPRESS OR IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, QUIET ENJOYMENT, OR UNINTERRUPTED AVAILABILITY.
+
+Some jurisdictions do not allow certain warranty exclusions. Mandatory warranties and consumer guarantees that cannot lawfully be excluded remain in effect. If the App Store-licensed application fails to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price for the application, if any, as provided by Apple's terms. Apple has no other warranty obligation for the Service.
+
+16. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, MEIERWERKS AND ITS DIRECTORS, OFFICERS, EMPLOYEES, CONTRACTORS, AND AGENTS WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR LOST PROFITS, REVENUE, DATA, MATERIALS, TIME, OPPORTUNITY, OR GOODWILL, ARISING FROM OR RELATED TO THE SERVICE, AN AI OUTPUT, A SIMULATION OR MEASUREMENT, A PURCHASE, OR A PHYSICAL BUILD.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, MEIERWERKS' TOTAL AGGREGATE LIABILITY ARISING FROM OR RELATED TO THE SERVICE WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID TO MEIERWERKS OR THROUGH THE APP STORE FOR THE SERVICE DURING THE 12 MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM OR (B) USD $100.
+
+These limitations do not apply to liability that cannot legally be limited, including liability for fraud, willful misconduct, or death or personal injury caused by negligence where applicable law prohibits limitation. Your jurisdiction may provide additional rights.
+
+17. INDEMNITY
+
+To the extent permitted by law, you will defend, indemnify, and hold MeierWerks harmless from third-party claims, losses, and reasonable costs arising from your unlawful misuse of the Service, violation of these Terms, infringement of a third party's rights, or manufacture or sale of a product based on a Design. This section does not apply to the extent a claim was caused by MeierWerks or cannot lawfully be shifted to you.
+
+18. EXPORT AND SANCTIONS
+
+You may not use or export the Service in violation of United States export-control or sanctions laws or other applicable trade restrictions. You represent that you are not located in a prohibited territory and are not a prohibited or restricted party to the extent this representation is required by Apple's standard terms or applicable law.
+
+19. CHANGES TO THE SERVICE OR THESE TERMS
+
+We may modify the Service and these Terms. If a change is material, we will provide reasonable notice and may require renewed acceptance. Changes apply prospectively from the stated effective date. If you do not agree to an updated version, stop using the Service and close your account.
+
+20. GOVERNING LAW AND DISPUTES
+
+These Terms are governed by the laws of the State of Connecticut and applicable United States federal law, without regard to conflict-of-law rules. Subject to any mandatory consumer forum right, courts located in Connecticut will have exclusive jurisdiction over disputes arising from these Terms or the Service.
+
+If you are a consumer outside the United States, this choice does not deprive you of mandatory protections or courts available under the law of your habitual residence. Before filing a claim, please contact support@meierwerks.com so we can try to resolve the issue informally. These Terms do not require arbitration and do not waive a non-waivable right to participate in a class or representative action.
+
+21. GENERAL TERMS
+
+If a provision is unenforceable, it will be enforced to the maximum lawful extent and the remaining provisions remain effective. Our failure to enforce a provision is not a waiver. You may not assign these Terms without our consent; we may assign them as part of a merger, reorganization, financing, or sale of the Service. These Terms, the Privacy Policy, Apple's applicable terms, and any product-specific terms shown at purchase are the entire agreement for the subject matter they address.
+
+22. CONTACT
+
+MeierWerks Inc.
+Kent, Connecticut 06757
+United States
+
+Support and legal notices: support@meierwerks.com
+Privacy: privacy@meierwerks.com
+Website: https://meierwerks.com
+
+23. TECHNOLOGICAL PROTECTION MEASURES AND ANTI-CIRCUMVENTION
+
+The Service uses technological measures to control access to MeierWerks' copyrighted works and to the paid tiers, engines, and features of the Service. Those measures include account authentication; server-side verification of Apple-signed App Store transaction information and the entitlement records derived from it; server-side authorization of MW-Assist and other AI-assisted or server-processed features; entitlement and feature checks within the application; and the license, integrity, code-signing, and distribution controls applied to the application.
+
+Access to a paid feature, engine, tier, or output is authorized while a valid entitlement covering it is in effect. That includes an entitlement derived from an Apple-signed transaction, an entitlement issued by MeierWerks, an entitlement obtained through Family Sharing where Apple makes it available, and a previously verified entitlement that the app continues to honor offline or during a renewal or grace period that MeierWerks provides. Normal use of the Service while your device is offline is authorized use, and nothing in this Section makes it a circumvention. What is not authorized is obtaining or extending access by defeating, forging, tampering with, or working around the measures described above.
+
+You may not circumvent, disable, remove, deactivate, impair, or otherwise avoid any such measure. You may not manufacture, import, offer to the public, provide, traffic in, distribute, or otherwise make available any technology, product, service, device, component, patch, loader, modified build, key, credential, or set of instructions that is primarily designed or produced to do so, that has only limited commercially significant purpose or use other than to do so, or that is marketed for use in doing so. MeierWerks reserves all rights and remedies available under 17 U.S.C. §§ 1201 and 1203 and under any comparable law of your jurisdiction, in addition to its rights under these Terms, copyright law, and contract law.
+
+Nothing in this section restricts conduct that applicable law does not permit MeierWerks to restrict, including activity expressly permitted by 17 U.S.C. § 1201(f) or by a mandatory decompilation or interoperability right under the law of your jurisdiction.
+
+24. COPYRIGHT COMPLAINTS AND REPEAT INFRINGEMENT
+
+MeierWerks respects copyright and responds to notices of claimed infringement concerning material stored on its systems at the direction of a user, including projects, measurements, attachments, images, and other files you upload or sync.
+
+If you believe material stored on the Service infringes your copyright, send a written notice to MeierWerks' designated copyright agent at the address in Section 22, marked "DMCA Notice," or by email to support@meierwerks.com with "DMCA Notice" in the subject line. To be effective under 17 U.S.C. § 512(c)(3), a notice must include: a physical or electronic signature of the copyright owner or of a person authorized to act on the owner's behalf; identification of the copyrighted work claimed to have been infringed; identification of the material claimed to be infringing, with information reasonably sufficient to permit us to locate it; your address, telephone number, and email address; a statement that you have a good-faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and a statement, made under penalty of perjury, that the information in the notice is accurate and that you are the copyright owner or are authorized to act on the owner's behalf.
+
+We may remove or disable access to material that is the subject of an effective notice, and we will take reasonable steps to notify the affected user. If your material was removed or disabled and you believe that this was the result of mistake or misidentification, you may send a counter notification containing the elements required by 17 U.S.C. § 512(g)(3), and we will handle it as that section provides.
+
+Knowingly materially misrepresenting that material is infringing, or that material was removed or disabled by mistake or misidentification, may make you liable for damages under 17 U.S.C. § 512(f).
+
+It is MeierWerks' policy, in appropriate circumstances, to terminate the accounts of users who are repeat infringers. MeierWerks maintains a record of the notices it receives and of the accounts terminated under this policy.
+
+25. FEEDBACK
+
+If you send MeierWerks a suggestion, idea, bug report, feature request, design comment, or other feedback about the Service, you grant MeierWerks a worldwide, perpetual, irrevocable to the maximum extent permitted by law, non-exclusive, transferable, sublicensable, fully paid, and royalty-free license to use, reproduce, modify, and incorporate that feedback into any product or service, without obligation, attribution, accounting, or payment to you. Feedback is not your confidential information unless MeierWerks agrees otherwise in a separate signed writing. This section does not affect your ownership of Independent Materials or Project Materials under Section 4.
+
+26. AUTOMATED EXTRACTION AND COMPETITIVE USE
+
+In addition to Section 6, you may not use automated means, scripted or synthesized input, bulk parameter sweeps, instrumentation or interception of the application, or systematic collection of the Service's outputs to assemble a dataset of the Service's calculations, simulation results, optimizer decisions, geometry outputs, or catalog data for the purpose of replicating, approximating, reverse engineering, or training a product or service that competes with the Service, or for the purpose of enabling a third party to do so. You may not sell, license, publish, or otherwise make available a dataset assembled in that way.
+
+This section does not restrict your ordinary use of the Service for your own designs, your use or publication of your own Project Materials, your independent measurement of a loudspeaker you built, or your honest description, review, or comparison of the Service based on ordinary use of it.
+
+By selecting "Agree," you confirm that you have read, understood, and agree to these Terms of Use and the Privacy Policy.

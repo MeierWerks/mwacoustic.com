@@ -119,7 +119,7 @@ Submit a request in the app or email privacy@meierwerks.com. We may verify your 
 
 You may initiate deletion from Settings on macOS or iOS. Deletion covers the account and associated personal information that we are not legally required to retain. If manual review is required, we will keep you informed and aim to complete verified requests within 30 days.
 
-Deleting your SDS account does not automatically cancel an Apple subscription. Manage or cancel Apple billing at https://apps.apple.com/account/subscriptions. Where Sign in with Apple was used, we will revoke the associated Apple authorization as part of the completed deletion process where required.
+Deleting your SDS account does not automatically cancel an Apple subscription. Manage or cancel Apple billing at https://apps.apple.com/account/subscriptions. If you signed in with Apple, we revoke the Apple authorization when you delete your account; you will be asked to confirm with Apple once. If you cancel that Apple confirmation, your account is still deleted, and you can remove the remaining Apple authorization yourself under Sign in with Apple in your Apple Account settings.
 
 8. CHILDREN
 
