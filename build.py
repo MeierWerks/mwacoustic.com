@@ -43,7 +43,7 @@ def clean_urls(html, fn, domain="mwacoustic.com"):
 # (Diane's doc / Bennett's emails — see COPY-SOURCES.md). Invariant 1 holds: no new sentences were written here.
 DOMAIN="mwacoustic.com"; SITE_URL=f"https://{DOMAIN}"
 # Fill these the day the accounts exist; empty string = tag is not emitted at all.
-MEASURE={"ga4":"G-1T8K0LCD7F", "meta_pixel":"", "gsc_verify":"", "bing_verify":""}
+MEASURE={"ga4":"G-1T8K0LCD7F", "meta_pixel":"1951583152912310", "gsc_verify":"", "bing_verify":""}
 OG_DEFAULT="assets/img/hero-neo1-card.jpg"
 
 def measurement_head():
