@@ -20,3 +20,10 @@
 - Performance: 24 images to WebP (42 MB -> 3.1 MB); superseded originals moved to assets-src/ outside site/. Published folder 48 MB -> 11 MB. Verified zero broken refs, all pages build, home + software render correctly.
 - OPEN, needs Bennett: four account IDs (GSC, GA4, Bing, Meta Pixel); approval of search-first page titles; decision on whether to add content pages (comparison / Mac / crossover guide) — all §3 of docs/DISCOVERABILITY-2026-09-17.md.
 - NOT deployed (invariant 5, publishing human-gated). Working tree left dirty for review.
+
+## 2026-09-17 — logo audit against MeierWerks Company Assets (Bennett's iCloud kit)
+- Compared all 10 site marks against the official kit. Seven identical (MW circle, wordmark, SDS, Neo One, MetaGraph, MW ACOUSTICS text, WRKS-as-colour-variant). No systemic "old logo" problem.
+- ONE real difference: site tile-acoustics-green.svg is DARK GREEN; the official MW-Acoustics web asset (Aug 31 2026) is CINNABAR, and Brand Guide WE02 assigns cinnabar to Acoustics.
+- DECISION (Bennett, 2026-09-17, chat): KEEP THE GREEN TILE — what is live on the site stands. The official company-assets file is the one that is out of date; flag to Louise/Diane for a refreshed export. Do not "fix" this to cinnabar in future sessions.
+- Two cosmetic variants noted, left alone: the site uses the stamp WITHOUT the MeierWerks lockup (footer carries the wordmark separately), and rebuilds "POWERED BY" + coloured WRKS rather than using the official single "POWERED BY WRKS" lockup.
+- Official PDFs were converted to clean SVGs in /tmp/official-svg during the audit if a future session wants kit-traceable marks; nothing in the repo was changed.
