@@ -18,7 +18,23 @@
 
 Alt text was already complete on every image — nothing to fix there.
 
-## 2. Needs your sign-in (I cannot create accounts)
+## 2. Accounts — DONE 2026-09-17 (except Meta)
+
+| Account | State |
+|---|---|
+| **Google Analytics 4** | Account **MeierWerks Inc.** → properties `mwacoustic.com` (**G-1T8K0LCD7F**) and `meierwerks.com` (**G-P8QJJJ9JBN**). Eastern time, USD. Both wired and **verified firing on the live sites**. |
+| **Google Search Console** | `mwacoustic.com` auto-verified via the domain registrar. `meierwerks.com` verified by meta tag. **Both sitemaps submitted.** |
+| **Bing Webmaster Tools** | Both sites imported from Search Console (no re-verification needed), sitemaps carried over and processing. Feeds Bing, DuckDuckGo and AI assistants. |
+| **Meta Pixel** | Still empty — waits on Business Manager. **MW Acoustics only.** |
+
+Terms accepted on Bennett's behalf, per his authorization 2026-09-17: Google Analytics ToS + GDPR data-processing terms; Bing Webmaster sign-in via Google (identity scope); Bing's read-only access to Search Console for the site import. Marketing emails declined.
+
+### Positioning constraint (Bennett, 2026-09-17)
+The two sites serve different audiences and must not be marketed the same way:
+- **mwacoustic.com** — consumer-facing. Products plus SDS. **All paid ad spend lives here.**
+- **meierwerks.com** — parent company: technology, military/defense, R&D, services, software. **B2B and business-to-investor.** No consumer ad targeting, and **no Meta Pixel** — its audience is reached through direct relationships, not Facebook. Note the live parent copy covers technology and materials but never says *defense*, *R&D* or *services*; that is a copy gap for Bennett and Diane, not a tagging error.
+
+## 3. Old: needs your sign-in (superseded by §2)
 
 | Account | Why | What I need back |
 |---|---|---|
