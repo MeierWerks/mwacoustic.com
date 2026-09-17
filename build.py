@@ -38,12 +38,66 @@ def clean_urls(html, fn, domain="mwacoustic.com"):
         html = re.sub(r'(</title>)', r'\1' + canon, html, count=1)
     return html
 
-def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and Blended Take on Audio."):
+# ---------- Discoverability layer (2026-09-17) ----------
+# Every description/OG string below is EXISTING approved copy, reused verbatim from the constants in this file
+# (Diane's doc / Bennett's emails — see COPY-SOURCES.md). Invariant 1 holds: no new sentences were written here.
+DOMAIN="mwacoustic.com"; SITE_URL=f"https://{DOMAIN}"
+# Fill these the day the accounts exist; empty string = tag is not emitted at all.
+MEASURE={"ga4":"", "meta_pixel":"", "gsc_verify":"", "bing_verify":""}
+OG_DEFAULT="assets/img/hero-neo1.webp"
+
+def measurement_head():
+    t=[]
+    if MEASURE["gsc_verify"]: t.append(f'<meta name="google-site-verification" content="{E(MEASURE["gsc_verify"])}">')
+    if MEASURE["bing_verify"]: t.append(f'<meta name="msvalidate.01" content="{E(MEASURE["bing_verify"])}">')
+    return "".join(t)
+
+def measurement_body():
+    """GA4 + Meta Pixel, plus one shared outbound event so an App Store click is countable on both."""
+    out=[]
+    if MEASURE["ga4"]:
+        g=E(MEASURE["ga4"])
+        out.append(f'<script async src="https://www.googletagmanager.com/gtag/js?id={g}"></script>'
+                   f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
+                   f'gtag("js",new Date());gtag("config","{g}");</script>')
+    if MEASURE["meta_pixel"]:
+        p=E(MEASURE["meta_pixel"])
+        out.append('<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?'
+                   'n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;'
+                   'n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];'
+                   's.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");'
+                   f'fbq("init","{p}");fbq("track","PageView");</script>'
+                   f'<noscript><img height="1" width="1" style="display:none" alt="" '
+                   f'src="https://www.facebook.com/tr?id={p}&ev=PageView&noscript=1"></noscript>')
+    if MEASURE["ga4"] or MEASURE["meta_pixel"]:
+        out.append('<script>document.addEventListener("click",function(e){var a=e.target.closest'
+                   '(\'a[href*="apps.apple.com"]\');if(!a)return;'
+                   'if(window.gtag)gtag("event","app_store_click",{link_url:a.href,page:location.pathname});'
+                   'if(window.fbq)fbq("trackCustom","AppStoreClick",{page:location.pathname});},true);</script>')
+    return "".join(out)
+
+def jsonld(*blocks):
+    import json
+    return "".join('<script type="application/ld+json">%s</script>' % json.dumps(b, ensure_ascii=False) for b in blocks if b)
+
+ORG_LD={"@context":"https://schema.org","@type":"Organization","name":"MW Acoustics",
+ "url":SITE_URL,"logo":f"{SITE_URL}/assets/logos/division-acoustics-black.svg",
+ "email":"info@meierwerks.com","parentOrganization":{"@type":"Organization","name":"MeierWerks Inc.","url":"https://meierwerks.com/"},
+ "address":{"@type":"PostalAddress","addressLocality":"Kent","addressRegion":"CT","addressCountry":"US"}}
+
+def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and Blended Take on Audio.", og_image=None, ld=None, og_type="website"):
+    img=f"{SITE_URL}/{og_image or OG_DEFAULT}"
+    social=(f'<meta property="og:site_name" content="MW Acoustics"><meta property="og:type" content="{og_type}">'
+            f'<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">'
+            f'<meta property="og:image" content="{E(img)}"><meta property="og:locale" content="en_US">'
+            f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}">'
+            f'<meta name="twitter:description" content="{E(desc)}"><meta name="twitter:image" content="{E(img)}">')
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}"><meta name="theme-color" content="#121211">
+{social}{measurement_head()}{jsonld(*(ld or []))}
 <link rel="icon" href="favicon.ico?v=2" sizes="any"><link rel="icon" href="assets/logos/tile-acoustics-green.svg?v=2" type="image/svg+xml"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Jost:ital,wght@0,500;1,500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Jost:ital,wght@0,500;1,500&display=swap">
 <link rel="stylesheet" href="assets/styles.css?v={CSS_VER}"></head>
 <body>
 <header class="site-header"><div class="wrap">
@@ -57,6 +111,7 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
 <p class="fine">MW Acoustics is a division of MeierWerks Inc. &nbsp;·&nbsp; Kent, CT USA &nbsp;·&nbsp; <a href="mailto:info@meierwerks.com">info@meierwerks.com</a></p></div>
 <div class="right">© MeierWerks Inc. All rights reserved.</div>
 </div></footer>
+{measurement_body()}
 </body></html>'''
 
 ABOUT_H="MW Acoustics. A Completely Fresh and Blended Take on Audio"
@@ -79,19 +134,19 @@ SDS_PLATFORM="SDS is a desktop application. A companion iOS app is available wit
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
 
 home=f'''
-<section class="hero-photo"><img src="assets/img/hero-full.png" alt="Neo One" style="object-position:center 22%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
-<section><div class="wrap split"><div><h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(ABOUT_P[0])}</p><div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-light-quarter.jpg" alt="Neo One" loading="lazy"></div></section>
+<section class="hero-photo"><img src="assets/img/hero-full.webp" alt="Neo One" style="object-position:center 22%"><div class="caption"><p class="eyebrow" style="color:var(--gold)">MW Acoustics</p><h1>A Completely Fresh and Blended Take on Audio</h1></div></section>
+<section><div class="wrap split"><div><h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(ABOUT_P[0])}</p><div class="buttons"><a href="about.html">About</a></div></div><img src="assets/img/neo1-light-quarter.webp" alt="Neo One" loading="lazy"></div></section>
 <section class="band-black"><div class="wrap"><p class="eyebrow" style="color:var(--gold)">Products</p><h2 style="color:var(--warm-white)">The Neo Line</h2><p class="lead" style="margin-top:14px;color:var(--warm-white)">{E(NEO_P[0])}</p>
 <div class="neo-trio">
 <figure><img src="assets/img/neo1-studio-quarter.jpg" alt="Neo One"><figcaption>Neo One<small>Available now</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.jpg" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a href="software.html">Software</a><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.webp" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h2>{E(SDS_H1)}</h2><div class="buttons"><a href="software.html">Software</a><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
 '''
 about=f'''
-<section class="hero-photo"><img src="assets/img/cab-front.png" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
-<section><div class="wrap split"><div>{"".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)}<p class="poweredby" style="--pb:20px;margin-top:22px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div><img src="assets/img/cab-internal.png" alt="" loading="lazy"></div></section>
+<section class="hero-photo"><img src="assets/img/cab-front.webp" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
+<section><div class="wrap split"><div>{"".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)}<p class="poweredby" style="--pb:20px;margin-top:22px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div><img src="assets/img/cab-internal.webp" alt="" loading="lazy"></div></section>
 '''
 lines_html="".join(
   f'<a class="line-card{" live" if live else ""}" href="#{s}"><img src="assets/img/range/{s}-floorstander.png" alt=""><div class="cap"><div class="nm">{E(n)}</div>' + ('<div class="sub">The Neo Line</div>' if live else '<span class="soon-pill">Coming soon</span>') + '</div></a>'
@@ -106,7 +161,7 @@ products=f'''
 <figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div></div></section>
 <section id="neo-one"><div class="wrap"><div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap"><img src="assets/logos/neo-one-mark.svg" alt="NEO • ONE" style="width:120px;height:auto"><div><p class="eyebrow">Neo One</p><h2>Neo-One</h2></div></div><hr class="rule" style="margin-bottom:22px"><p class="lead">{E(NEO1_P)}</p>
-<div class="gallery"><img class="wide" src="assets/img/neo1-studio-above.jpg" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-studio-side.jpg" alt="" loading="lazy"><img src="assets/img/neo1-light-rear.jpg" alt="" loading="lazy"><img src="assets/img/cab-front.png" alt="" loading="lazy"><img src="assets/img/cab-internal.png" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.png" alt="" loading="lazy"></div>
+<div class="gallery"><img class="wide" src="assets/img/neo1-studio-above.webp" alt="Neo One" loading="lazy" style="object-position:center 40%"><img src="assets/img/neo1-studio-side.jpg" alt="" loading="lazy"><img src="assets/img/neo1-light-rear.jpg" alt="" loading="lazy"><img src="assets/img/cab-front.webp" alt="" loading="lazy"><img src="assets/img/cab-internal.webp" alt="" loading="lazy"><img src="assets/img/cab-assembly-v85.webp" alt="" loading="lazy"></div>
 <p class="label" style="margin-top:36px">Coming soon</p>
 <div class="coming"><div class="item"><div class="nm">Neo-Two</div><p>{E(NEO2)}</p></div><div class="item"><div class="nm">Neo-Three</div><p>{E(NEO3)}</p></div></div>
 <div class="buttons"><a href="contact.html">Inquire</a></div></div></section>
@@ -162,13 +217,13 @@ COMPAT=[("Mac","Apple silicon Mac (M1 or later) running macOS 14 Sonoma or later
  ("Parts","Parts Express is the fulfilment partner: the bill of materials hands off to a live cart with current price and stock.")]
 
 software=f'''
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render-v2.jpg" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render-v2.webp" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><blockquote class="pull"><p>“{E(SDS_QUOTE[0])}”</p><cite>{E(SDS_QUOTE[1])}</cite></blockquote><p class="tagline">{E(SDS_TAG)}</p><h2 style="margin-top:22px">{E(SDS_H2)}</h2>
 <div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
 <p class="platform-note">{E(SDS_PLATFORM)}</p>
 <p class="poweredby" style="--pb:20px;margin-top:26px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div>
-<div class="laptop" aria-label="SDS workspaces cycling on a MacBook"><p class="laptop-caption" aria-live="polite">Pick a driver from the catalog, or load your own measurements</p><div class="lid" title="Click for the next workspace"><div class="screen"><img data-caption="Pick a driver from the catalog, or load your own measurements" src="assets/img/sds/workspaces/drivers.jpg" alt="SDS Drivers workspace"><img data-caption="Design the crossover and read the response as you work" src="assets/img/sds/workspaces/crossover.jpg" alt="SDS Crossover workspace" loading="lazy"><img data-caption="Dial the enclosure while loading, excursion and port velocity update live" src="assets/img/sds/workspaces/enclosure.jpg" alt="SDS Enclosure workspace" loading="lazy"><img data-caption="Build the cabinet: materials, finishes, bracing, cut files and a price" src="assets/img/sds/workspaces/workshop.jpg" alt="SDS Workshop workspace" loading="lazy"><img data-caption="Create beautiful renders with our custom rendering engine" src="assets/img/sds/workspaces/workshop-scene.jpg" alt="SDS Workshop scene render workspace" loading="lazy"><img data-caption="Simulate the whole system with the FEM / BEM cockpit" src="assets/img/sds/workspaces/simulate.jpg" alt="SDS Simulate workspace" loading="lazy"><img data-caption="Measure the real speaker and compare it against the design" src="assets/img/sds/workspaces/measure.jpg" alt="SDS Measure workspace" loading="lazy"><img data-caption="Set up the room and see the first reflections before you build" src="assets/img/sds/workspaces/measure-room.jpg" alt="SDS Measure room setup workspace" loading="lazy"></div></div><div class="base"><span></span></div></div></div></section>
-<section class="tight" style="padding-top:0"><div class="wrap"><div class="sds-grid"><div class="shots" aria-roledescription="carousel" aria-label="SDS workspaces"><div class="track"><div class="slide"><img src="assets/img/sds/workspaces/drivers.jpg" alt="SDS Drivers workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/crossover.jpg" alt="SDS Crossover workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/enclosure.jpg" alt="SDS Enclosure workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/workshop.jpg" alt="SDS Workshop workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/workshop-scene.jpg" alt="SDS Workshop scene render workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/simulate.jpg" alt="SDS Simulate workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/measure.jpg" alt="SDS Measure workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/measure-room.jpg" alt="SDS Measure room setup workspace" loading="lazy"></div></div><div class="dots"><button type="button" aria-label="Drivers" aria-current="true"></button><button type="button" aria-label="Crossover"></button><button type="button" aria-label="Enclosure"></button><button type="button" aria-label="Workshop"></button><button type="button" aria-label="Workshop scene render"></button><button type="button" aria-label="Simulate"></button><button type="button" aria-label="Measure"></button><button type="button" aria-label="Measure room setup"></button></div></div><img class="t r1" src="assets/img/sds/builds/build-horn.jpg" alt="A horn-loaded speaker designed in SDS" loading="lazy"><img class="t r2" src="assets/img/sds/builds/build-tl-tower.jpg" alt="A transmission-line tower designed in SDS" loading="lazy"><img class="t b1" src="assets/img/sds/builds/build-bookshelf.jpg" alt="A walnut bookshelf speaker designed in SDS" loading="lazy"><img class="t b2" src="assets/img/sds/builds/build-cherry-tower.jpg" alt="A cherry three-way tower designed in SDS" loading="lazy"><div class="t logo"><img src="assets/logos/sds-mark.svg" alt="SDS"></div></div>
+<div class="laptop" aria-label="SDS workspaces cycling on a MacBook"><p class="laptop-caption" aria-live="polite">Pick a driver from the catalog, or load your own measurements</p><div class="lid" title="Click for the next workspace"><div class="screen"><img data-caption="Pick a driver from the catalog, or load your own measurements" src="assets/img/sds/workspaces/drivers.jpg" alt="SDS Drivers workspace"><img data-caption="Design the crossover and read the response as you work" src="assets/img/sds/workspaces/crossover.webp" alt="SDS Crossover workspace" loading="lazy"><img data-caption="Dial the enclosure while loading, excursion and port velocity update live" src="assets/img/sds/workspaces/enclosure.jpg" alt="SDS Enclosure workspace" loading="lazy"><img data-caption="Build the cabinet: materials, finishes, bracing, cut files and a price" src="assets/img/sds/workspaces/workshop.jpg" alt="SDS Workshop workspace" loading="lazy"><img data-caption="Create beautiful renders with our custom rendering engine" src="assets/img/sds/workspaces/workshop-scene.webp" alt="SDS Workshop scene render workspace" loading="lazy"><img data-caption="Simulate the whole system with the FEM / BEM cockpit" src="assets/img/sds/workspaces/simulate.jpg" alt="SDS Simulate workspace" loading="lazy"><img data-caption="Measure the real speaker and compare it against the design" src="assets/img/sds/workspaces/measure.jpg" alt="SDS Measure workspace" loading="lazy"><img data-caption="Set up the room and see the first reflections before you build" src="assets/img/sds/workspaces/measure-room.webp" alt="SDS Measure room setup workspace" loading="lazy"></div></div><div class="base"><span></span></div></div></div></section>
+<section class="tight" style="padding-top:0"><div class="wrap"><div class="sds-grid"><div class="shots" aria-roledescription="carousel" aria-label="SDS workspaces"><div class="track"><div class="slide"><img src="assets/img/sds/workspaces/drivers.jpg" alt="SDS Drivers workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/crossover.webp" alt="SDS Crossover workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/enclosure.jpg" alt="SDS Enclosure workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/workshop.jpg" alt="SDS Workshop workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/workshop-scene.webp" alt="SDS Workshop scene render workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/simulate.jpg" alt="SDS Simulate workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/measure.jpg" alt="SDS Measure workspace" loading="lazy"></div><div class="slide"><img src="assets/img/sds/workspaces/measure-room.webp" alt="SDS Measure room setup workspace" loading="lazy"></div></div><div class="dots"><button type="button" aria-label="Drivers" aria-current="true"></button><button type="button" aria-label="Crossover"></button><button type="button" aria-label="Enclosure"></button><button type="button" aria-label="Workshop"></button><button type="button" aria-label="Workshop scene render"></button><button type="button" aria-label="Simulate"></button><button type="button" aria-label="Measure"></button><button type="button" aria-label="Measure room setup"></button></div></div><img class="t r1" src="assets/img/sds/builds/build-horn.jpg" alt="A horn-loaded speaker designed in SDS" loading="lazy"><img class="t r2" src="assets/img/sds/builds/build-tl-tower.jpg" alt="A transmission-line tower designed in SDS" loading="lazy"><img class="t b1" src="assets/img/sds/builds/build-bookshelf.jpg" alt="A walnut bookshelf speaker designed in SDS" loading="lazy"><img class="t b2" src="assets/img/sds/builds/build-cherry-tower.jpg" alt="A cherry three-way tower designed in SDS" loading="lazy"><div class="t logo"><img src="assets/logos/sds-mark.svg" alt="SDS"></div></div>
 <div class="components">{"".join(f'<img src="assets/img/sds/components/{f}" alt="{E(a)}" loading="lazy">' for f,a in COMPONENTS)}</div><p class="components-note">{E(COMPONENTS_NOTE)}</p></div></section>
 <script>(function(){{var s=document.querySelector('.laptop .screen');if(!s)return;var imgs=[].slice.call(s.querySelectorAll('img'));if(imgs.length<2)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var order=imgs.slice();function stack(){{order.forEach(function(im,i){{im.style.zIndex=String(order.length-i)}});}}
@@ -233,10 +288,45 @@ terms=legal_page("docs/copy/terms.txt")
 support=f'<section><div class="wrap legal">{(ROOT/"docs/copy/support-body.html").read_text()}</div></section>'
 
 
-pages={"index.html":("MW Acoustics",home,"index.html"),"about.html":("About — MW Acoustics",about,"about.html"),"products.html":("Products — MW Acoustics",products,"products.html"),
- "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html"),"press.html":("Press — MW Acoustics",videos,"press.html"),"contact.html":("Contact — MW Acoustics",contact,"contact.html"),"privacy.html":("Privacy Policy — MW Acoustics",privacy,None),
- "terms.html":("Terms of Use — MW Acoustics",terms,None),"support.html":("SDS Support — MW Acoustics",support,None)}
-for fn,(t,b,cur) in pages.items(): (SITE/fn).write_text(clean_urls(shell(t,b,cur), fn)); print("built",fn)
+# Per-page description + structured data. Descriptions are approved copy reused verbatim (invariant 1).
+SDS_LD={"@context":"https://schema.org","@type":"SoftwareApplication","name":"SDS / Speaker Design Suite",
+ "alternateName":"Speaker Design Suite","applicationCategory":"DesignApplication","applicationSubCategory":"Loudspeaker design",
+ "operatingSystem":"macOS 14 Sonoma or later (Apple silicon); iOS 17 or later (companion)",
+ "description":SDS_P,"url":f"{SITE_URL}/software","downloadUrl":APPSTORE,"installUrl":APPSTORE,
+ "softwareHelp":f"{SITE_URL}/support","image":f"{SITE_URL}/assets/img/sds/workspaces/crossover.webp",
+ "publisher":{"@type":"Organization","name":"MW Acoustics","url":SITE_URL},
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":APPSTORE},
+ "featureList":[n for n,_ in PROCESS]}
+NEO_LD={"@context":"https://schema.org","@type":"Product","name":"Neo One","brand":{"@type":"Brand","name":"MW Acoustics"},
+ "description":NEO_P[0],"image":f"{SITE_URL}/assets/img/hero-neo1.webp","url":f"{SITE_URL}/products#neodymium",
+ "manufacturer":{"@type":"Organization","name":"MeierWerks Inc."}}
+
+pages={  # fn: (title, body, nav-current, description, extra JSON-LD, og image, og type)
+ "index.html":("MW Acoustics",home,"index.html",ABOUT_P[0],[NEO_LD],None,"website"),
+ "about.html":("About — MW Acoustics",about,"about.html",ABOUT_P[0],[],None,"website"),
+ "products.html":("Products — MW Acoustics",products,"products.html",NEO_P[0],[NEO_LD],"assets/img/neo1-render.webp","product"),
+ "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html",SDS_P.split(". ")[0]+".",[SDS_LD],"assets/img/sds/workspaces/crossover.webp","product"),
+ "press.html":("Press — MW Acoustics",videos,"press.html",SDS_H2,[],None,"website"),
+ "contact.html":("Contact — MW Acoustics",contact,"contact.html",ABOUT_H+".",[],None,"website"),
+ "privacy.html":("Privacy Policy — MW Acoustics",privacy,None,ABOUT_H+".",[],None,"website"),
+ "terms.html":("Terms of Use — MW Acoustics",terms,None,ABOUT_H+".",[],None,"website"),
+ "support.html":("SDS Support — MW Acoustics",support,None,SDS_PLATFORM,[],None,"website")}
+for fn,(t,b,cur,dsc,ld,ogi,ogt) in pages.items():
+    (SITE/fn).write_text(clean_urls(shell(t,b,cur,desc=dsc,og_image=ogi,ld=[ORG_LD]+ld,og_type=ogt), fn)); print("built",fn)
+
+# ---------- robots.txt + sitemap.xml (2026-09-17) ----------
+# /orders is a sign-in app: excluded here exactly as it is excluded from NAV and the footer.
+import datetime
+_today=datetime.date.today().isoformat()
+_PRIORITY={"index.html":"1.0","software.html":"0.9","products.html":"0.9","about.html":"0.7","press.html":"0.6","contact.html":"0.6","support.html":"0.5","privacy.html":"0.3","terms.html":"0.3"}
+_urls="".join(
+ '<url><loc>%s/%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>' %
+ (SITE_URL, "" if fn=="index.html" else fn[:-5], _today, _PRIORITY.get(fn,"0.5")) for fn in pages)
+(SITE/"sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+ '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">%s</urlset>\n' % _urls)
+(SITE/"robots.txt").write_text(
+ "User-agent: *\nAllow: /\nDisallow: /orders\nDisallow: /assets/portal/\n\nSitemap: %s/sitemap.xml\n" % SITE_URL)
+print("built sitemap.xml + robots.txt")
 
 # ---------- Order dashboard (2026-09-16): https://mwacoustic.com/orders ----------
 # The Parts Express order dashboard is a standalone sign-in app, NOT a site page. Its source lives in portal/ and is
