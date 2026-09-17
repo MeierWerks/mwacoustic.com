@@ -43,8 +43,8 @@ def clean_urls(html, fn, domain="mwacoustic.com"):
 # (Diane's doc / Bennett's emails — see COPY-SOURCES.md). Invariant 1 holds: no new sentences were written here.
 DOMAIN="mwacoustic.com"; SITE_URL=f"https://{DOMAIN}"
 # Fill these the day the accounts exist; empty string = tag is not emitted at all.
-MEASURE={"ga4":"", "meta_pixel":"", "gsc_verify":"", "bing_verify":""}
-OG_DEFAULT="assets/img/hero-neo1.webp"
+MEASURE={"ga4":"G-1T8K0LCD7F", "meta_pixel":"", "gsc_verify":"", "bing_verify":""}
+OG_DEFAULT="assets/img/hero-neo1-card.jpg"
 
 def measurement_head():
     t=[]
@@ -293,19 +293,19 @@ SDS_LD={"@context":"https://schema.org","@type":"SoftwareApplication","name":"SD
  "alternateName":"Speaker Design Suite","applicationCategory":"DesignApplication","applicationSubCategory":"Loudspeaker design",
  "operatingSystem":"macOS 14 Sonoma or later (Apple silicon); iOS 17 or later (companion)",
  "description":SDS_P,"url":f"{SITE_URL}/software","downloadUrl":APPSTORE,"installUrl":APPSTORE,
- "softwareHelp":f"{SITE_URL}/support","image":f"{SITE_URL}/assets/img/sds/workspaces/crossover.webp",
+ "softwareHelp":f"{SITE_URL}/support","image":f"{SITE_URL}/assets/img/sds/workspaces/crossover-card.jpg",
  "publisher":{"@type":"Organization","name":"MW Acoustics","url":SITE_URL},
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":APPSTORE},
  "featureList":[n for n,_ in PROCESS]}
 NEO_LD={"@context":"https://schema.org","@type":"Product","name":"Neo One","brand":{"@type":"Brand","name":"MW Acoustics"},
- "description":NEO_P[0],"image":f"{SITE_URL}/assets/img/hero-neo1.webp","url":f"{SITE_URL}/products#neodymium",
+ "description":NEO_P[0],"image":f"{SITE_URL}/assets/img/hero-neo1-card.jpg","url":f"{SITE_URL}/products#neodymium",
  "manufacturer":{"@type":"Organization","name":"MeierWerks Inc."}}
 
 pages={  # fn: (title, body, nav-current, description, extra JSON-LD, og image, og type)
  "index.html":("MW Acoustics",home,"index.html",ABOUT_P[0],[NEO_LD],None,"website"),
  "about.html":("About — MW Acoustics",about,"about.html",ABOUT_P[0],[],None,"website"),
- "products.html":("Products — MW Acoustics",products,"products.html",NEO_P[0],[NEO_LD],"assets/img/neo1-render.webp","product"),
- "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html",SDS_P.split(". ")[0]+".",[SDS_LD],"assets/img/sds/workspaces/crossover.webp","product"),
+ "products.html":("Products — MW Acoustics",products,"products.html",NEO_P[0],[NEO_LD],"assets/img/neo1-render-card.jpg","product"),
+ "software.html":("SDS : Speaker Design Suite — MW Acoustics",software,"software.html",SDS_P.split(". ")[0]+".",[SDS_LD],"assets/img/sds/workspaces/crossover-card.jpg","product"),
  "press.html":("Press — MW Acoustics",videos,"press.html",SDS_H2,[],None,"website"),
  "contact.html":("Contact — MW Acoustics",contact,"contact.html",ABOUT_H+".",[],None,"website"),
  "privacy.html":("Privacy Policy — MW Acoustics",privacy,None,ABOUT_H+".",[],None,"website"),
