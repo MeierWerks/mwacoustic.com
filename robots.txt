@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /orders
+Disallow: /assets/portal/
+
+Sitemap: https://mwacoustic.com/sitemap.xml
