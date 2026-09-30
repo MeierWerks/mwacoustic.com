@@ -27,3 +27,10 @@
 - DECISION (Bennett, 2026-09-17, chat): KEEP THE GREEN TILE — what is live on the site stands. The official company-assets file is the one that is out of date; flag to Louise/Diane for a refreshed export. Do not "fix" this to cinnabar in future sessions.
 - Two cosmetic variants noted, left alone: the site uses the stamp WITHOUT the MeierWerks lockup (footer carries the wordmark separately), and rebuilds "POWERED BY" + coloured WRKS rather than using the official single "POWERED BY WRKS" lockup.
 - Official PDFs were converted to clean SVGs in /tmp/official-svg during the audit if a future session wants kit-traceable marks; nothing in the repo was changed.
+
+## 2026-09-29 — legal-traps fixes (Claude)
+- Web fonts SELF-HOSTED (site/assets/fonts, OFL latin subsets); no page requests fonts.googleapis/gstatic anymore (GDPR, LG München 3 O 17493/20).
+- GA4 (+ Meta Pixel on mwacoustic) now OPT-IN: nothing third-party loads before Accept; Decline wipes _ga/_gid/_fbp; GPC blocks the Pixel; footer "Cookie choices" reopens. noscript pixel removed (it fired without consent).
+- mwacoustic only: /orders portal serves supabase-js 2.116.0 from assets/portal (vendored, SRI unchanged) and fonts locally; CSP tightened to 'self'. Privacy §14 added (website/cookies/analytics).
+- Verified in a local browser: 0 external requests before consent; Accept loads gtag+fbevents; Decline clears cookies; portal loads with no CSP errors.
+- NOT PUBLISHED: gh-pages subtree push is human-gated (invariant 5).

@@ -13,17 +13,16 @@
 <meta name="referrer" content="no-referrer">
 <!-- GitHub Pages cannot send response headers, so the policy lives here. A meta CSP cannot carry
      frame-ancestors; orders.js refuses to run inside a frame instead. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://krmpfqluefhkiahphyiw.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://krmpfqluefhkiahphyiw.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
 <title>Order dashboard — MW Acoustics</title>
 <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 <link rel="icon" href="/assets/logos/tile-acoustics-green.svg?v=2" type="image/svg+xml">
 <meta name="theme-color" content="#121211">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Jost:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/portal/orders.css">
-<!-- supabase-js pinned to an exact version with Subresource Integrity. To upgrade: change the version, then
-     recompute with: curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js" integrity="sha384-iLddHTLokph6Omwoyid4XKxHaWa6w41BnoEj0q5oOrzmYPpHIKt1wyjReA7s//pP" crossorigin="anonymous" defer></script>
+<!-- supabase-js 2.116.0, VENDORED as portal/supabase.js (self-hosted: no visitor IP goes to a CDN), pinned with SRI.
+     To upgrade: replace portal/supabase.js from cdn.jsdelivr.net/npm/@supabase/supabase-js@<ver>/dist/umd/supabase.js,
+     then recompute with: openssl dgst -sha384 -binary portal/supabase.js | openssl base64 -A -->
+<script src="/assets/portal/supabase.js" integrity="sha384-iLddHTLokph6Omwoyid4XKxHaWa6w41BnoEj0q5oOrzmYPpHIKt1wyjReA7s//pP" crossorigin="anonymous" defer></script>
 <script src="/assets/portal/orders.js" defer></script>
 </head>
 <body>

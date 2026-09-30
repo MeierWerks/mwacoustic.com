@@ -53,28 +53,42 @@ def measurement_head():
     return "".join(t)
 
 def measurement_body():
-    """GA4 + Meta Pixel, plus one shared outbound event so an App Store click is countable on both."""
-    out=[]
-    if MEASURE["ga4"]:
-        g=E(MEASURE["ga4"])
-        out.append(f'<script async src="https://www.googletagmanager.com/gtag/js?id={g}"></script>'
-                   f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
-                   f'gtag("js",new Date());gtag("config","{g}");</script>')
-    if MEASURE["meta_pixel"]:
-        p=E(MEASURE["meta_pixel"])
-        out.append('<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?'
-                   'n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;'
-                   'n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];'
-                   's.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");'
-                   f'fbq("init","{p}");fbq("track","PageView");</script>'
-                   f'<noscript><img height="1" width="1" style="display:none" alt="" '
-                   f'src="https://www.facebook.com/tr?id={p}&ev=PageView&noscript=1"></noscript>')
-    if MEASURE["ga4"] or MEASURE["meta_pixel"]:
-        out.append('<script>document.addEventListener("click",function(e){var a=e.target.closest'
-                   '(\'a[href*="apps.apple.com"]\');if(!a)return;'
-                   'if(window.gtag)gtag("event","app_store_click",{link_url:a.href,page:location.pathname});'
-                   'if(window.fbq)fbq("trackCustom","AppStoreClick",{page:location.pathname});},true);</script>')
-    return "".join(out)
+    """GA4 + Meta Pixel behind an opt-in cookie notice (2026-09-29, Bennett: "solve them all" on the legal-traps audit).
+    NOTHING third-party loads before the visitor presses Accept: no gtag, no fbevents, no noscript pixel (a noscript
+    <img> fires without consent, so it is gone). Decline, or a withdrawn Accept, clears the _ga/_gid/_fbp cookies.
+    A Global Privacy Control signal blocks the Meta Pixel even after Accept (CCPA: GPC = opt-out of sale/sharing).
+    The footer's "Cookie choices" link reopens the notice. Choice lives in localStorage under mw-consent-v1."""
+    if not (MEASURE["ga4"] or MEASURE["meta_pixel"]): return ""
+    g=E(MEASURE["ga4"]); p=E(MEASURE["meta_pixel"])
+    notice='We would like to use Google Analytics and the Meta Pixel to count visits and measure our ads. They set cookies and send your IP address and the pages you view to Google and Meta. Nothing loads unless you accept. <a href="privacy.html">Privacy Policy</a>'
+    return ('<div id="mw-consent" class="consent" role="dialog" aria-label="Cookie choices" hidden><p>'+notice+'</p>'
+            '<div class="consent-actions"><button type="button" data-consent="granted">Accept</button>'
+            '<button type="button" data-consent="denied">Decline</button></div></div>'
+            '<script>(function(){var K="mw-consent-v1",G="'+g+'",P="'+p+'",el=document.getElementById("mw-consent"),on=false;'
+            'var gpc=navigator.globalPrivacyControl===true;'
+            'function get(){try{return localStorage.getItem(K)}catch(e){return null}}'
+            'function put(v){try{localStorage.setItem(K,v)}catch(e){}}'
+            'function add(src){var t=document.createElement("script");t.async=true;t.src=src;document.head.appendChild(t)}'
+            'function load(){if(on)return;on=true;'
+            'if(G){add("https://www.googletagmanager.com/gtag/js?id="+G);window.dataLayer=window.dataLayer||[];'
+            'window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",G);}'
+            'if(P&&!gpc){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?'
+            'n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;'
+            'n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];'
+            's.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");'
+            'fbq("init",P);fbq("track","PageView");}}'
+            'function wipe(){document.cookie.split(";").forEach(function(c){var n=c.split("=")[0].trim();'
+            'if(/^(_ga|_gid|_gat|_fbp|_fbc)/.test(n)){var h=location.hostname.split(".");for(var i=0;i<h.length-1;i++){'
+            'var d=h.slice(i).join(".");document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain="+d;}'
+            'document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";}})}'
+            'var c=get();if(c==="granted")load();else{if(c==="denied")wipe();else el.hidden=false;}'
+            'el.addEventListener("click",function(e){var b=e.target.closest("[data-consent]");if(!b)return;'
+            'var v=b.getAttribute("data-consent");put(v);el.hidden=true;if(v==="granted")load();else{wipe();if(on)location.reload();}});'
+            'document.addEventListener("click",function(e){if(e.target.closest("[data-consent-open]")){e.preventDefault();el.hidden=false;}});'
+            'document.addEventListener("click",function(e){var a=e.target.closest(\'a[href*="apps.apple.com"]\');if(!a)return;'
+            'if(window.gtag)gtag("event","app_store_click",{link_url:a.href,page:location.pathname});'
+            'if(window.fbq)fbq("trackCustom","AppStoreClick",{page:location.pathname});},true);'
+            '})();</script>')
 
 def jsonld(*blocks):
     import json
@@ -97,7 +111,6 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
 <title>{E(title)}</title><meta name="description" content="{E(desc)}"><meta name="theme-color" content="#121211">
 {social}{measurement_head()}{jsonld(*(ld or []))}
 <link rel="icon" href="favicon.ico?v=2" sizes="any"><link rel="icon" href="assets/logos/tile-acoustics-green.svg?v=2" type="image/svg+xml"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Jost:ital,wght@0,500;1,500&display=swap">
 <link rel="stylesheet" href="assets/styles.css?v={CSS_VER}"></head>
 <body>
 <header class="site-header"><div class="wrap">
@@ -107,7 +120,7 @@ def shell(title, body, current=None, desc="MW Acoustics. A Completely Fresh and 
 <main>{body}</main>
 <footer class="site-footer"><div class="wrap">
 <img src="assets/logos/mw-stamp+wordmark-white.svg" alt="MeierWerks">
-<div><ul>{"".join(f'<li><a href="{h}">{E(l)}</a></li>' for l,h in NAV)}<li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="support.html">Support</a></li><li><a href="https://meierwerks.com/">MeierWerks</a></li></ul>
+<div><ul>{"".join(f'<li><a href="{h}">{E(l)}</a></li>' for l,h in NAV)}<li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="support.html">Support</a></li><li><a href="#cookie-choices" data-consent-open>Cookie choices</a></li><li><a href="https://meierwerks.com/">MeierWerks</a></li></ul>
 <p class="fine">MW Acoustics is a division of MeierWerks Inc. &nbsp;·&nbsp; Kent, CT USA &nbsp;·&nbsp; <a href="mailto:info@meierwerks.com">info@meierwerks.com</a></p></div>
 <div class="right">© MeierWerks Inc. All rights reserved.</div>
 </div></footer>
@@ -336,5 +349,6 @@ print("built sitemap.xml + robots.txt")
 import shutil
 (SITE/"assets/portal").mkdir(exist_ok=True)
 shutil.copyfile(ROOT/"portal/orders.html", SITE/"orders.html")
-for _f in ("orders.css","orders.js"): shutil.copyfile(ROOT/"portal"/_f, SITE/"assets/portal"/_f)
+# supabase-js 2.116.0 is vendored in portal/ (was cdn.jsdelivr.net — a third-party IP leak; SRI hash unchanged)
+for _f in ("orders.css","orders.js","supabase.js"): shutil.copyfile(ROOT/"portal"/_f, SITE/"assets/portal"/_f)
 print("built orders.html (verbatim portal passthrough)")
