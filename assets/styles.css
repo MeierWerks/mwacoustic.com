@@ -1,4 +1,10 @@
 /* MW Acoustics (mwacoustic.com) — built to MeierWerks Brand Guide Working Edition 02 (Aug 2026); division colour = cinnabar */
+/* Web fonts are SELF-HOSTED (2026-09-29): loading them from fonts.googleapis.com sent every visitor's IP to Google
+   (LG München 3 O 17493/20). Barlow Condensed + Jost are SIL OFL 1.1, latin subset from Google Fonts. */
+@font-face{font-family:"Barlow Condensed";src:url("fonts/barlow-condensed-600.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url("fonts/barlow-condensed-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Jost";src:url("fonts/jost-var.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Jost";src:url("fonts/jost-italic-var.woff2") format("woff2");font-weight:100 900;font-style:italic;font-display:swap}
 @font-face{font-family:"DIN Condensed Brand";src:local("DIN Condensed Bold"),local("DINCondensed-Bold");font-weight:700}
 @font-face{font-family:"Futura Brand";src:local("Futura Medium"),local("Futura-Medium");font-weight:500}
 @font-face{font-family:"Futura Brand";src:local("Futura Medium Italic"),local("Futura-MediumItalic");font-weight:500;font-style:italic}
@@ -261,3 +267,12 @@ table.cmp td.v:nth-child(2){color:var(--gold);font-weight:700}
 .pull p{margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.45;font-style:italic;max-width:none}
 .pull cite{display:block;margin-top:6px;font-style:normal;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--cinnabar)}
 .tagline{margin:22px 0 0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(20px,1.8vw,26px);line-height:1.1;color:var(--black);max-width:none}
+
+/* cookie notice — opt-in; Accept and Decline are deliberately equal weight */
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:720px;margin:0 auto;background:var(--black);color:var(--warm-white);padding:18px 20px;border:1px solid rgba(243,238,228,.2);box-shadow:0 8px 32px rgba(0,0,0,.35);display:flex;gap:16px 24px;align-items:center;flex-wrap:wrap}
+.consent[hidden]{display:none}
+.consent p{margin:0;flex:1 1 320px;font-size:15px;line-height:1.45}
+.consent a{text-decoration:underline}
+.consent-actions{display:flex;gap:10px}
+.consent button{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:16px;padding:10px 22px;background:transparent;color:var(--warm-white);border:1.5px solid var(--warm-white);cursor:pointer}
+.consent button:hover,.consent button:focus-visible{background:var(--warm-white);color:var(--black);outline:none}
