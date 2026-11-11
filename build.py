@@ -327,6 +327,33 @@ pages={  # fn: (title, body, nav-current, description, extra JSON-LD, og image, 
 for fn,(t,b,cur,dsc,ld,ogi,ogt) in pages.items():
     (SITE/fn).write_text(clean_urls(shell(t,b,cur,desc=dsc,og_image=ogi,ld=[ORG_LD]+ld,og_type=ogt), fn)); print("built",fn)
 
+# ---------- SDS return pages (2026-11-11): /sds/purchase-complete, /sds/purchase-cancelled, /sds/billing-return ----------
+# Where Stripe Checkout and the Stripe billing portal send the browser back after a purchase started inside SDS (Windows
+# and Mac). They are static: no script reads the URL, nothing is personalised, no query string is handled. They go through
+# shell() like every other page (same header, footer, consent notice) but are NOT in `pages`, so they stay out of the
+# sitemap, NAV and footer, and each carries noindex with no canonical tag. They live one folder down, so the shell's
+# relative asset paths are made root-absolute. Copy: functional return text, logged in COPY-SOURCES.md.
+RETURN_PAGES={  # fn: (title, heading, paragraphs)
+ "sds/purchase-complete.html":("Payment received — MW Acoustics","Payment received",
+  ["Return to SDS. Your purchase unlocks within a few moments. You can close this tab.",
+   "Stripe emails your receipt. Purchases follow your SDS account on Windows and Mac."]),
+ "sds/purchase-cancelled.html":("Checkout cancelled — MW Acoustics","Checkout was cancelled",
+  ["Nothing was charged. Return to SDS to try again."]),
+ "sds/billing-return.html":("Subscription — MW Acoustics","You’re done managing your subscription",
+  ["Return to SDS. You can close this tab."])}
+def return_page(heading, paras):
+    links='<p class="meta"><a href="terms.html">Terms of Use</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="support.html">SDS Support</a></p>'
+    return (f'<section><div class="wrap legal"><h1 style="font-size:clamp(34px,4.5vw,56px)">{E(heading)}</h1>'
+            + "".join(f'<p>{E(p)}</p>' for p in paras) + links + '</div></section>')
+def nested_page(html):
+    """noindex, no canonical, and root-absolute asset paths for a page that is not at the site root."""
+    html=re.sub(r'<link rel="canonical"[^>]*>', '', html)
+    html=html.replace('</title>', '</title><meta name="robots" content="noindex">', 1)
+    return re.sub(r'(href|src)="(assets/|favicon|icon-192|apple-touch-icon)', r'\1="/\2', html)
+(SITE/"sds").mkdir(exist_ok=True)
+for fn,(t,h,ps) in RETURN_PAGES.items():
+    (SITE/fn).write_text(nested_page(clean_urls(shell(t,return_page(h,ps),None,desc=ps[0]), fn))); print("built",fn)
+
 # ---------- robots.txt + sitemap.xml (2026-09-17) ----------
 # /orders is a sign-in app: excluded here exactly as it is excluded from NAV and the footer.
 import datetime

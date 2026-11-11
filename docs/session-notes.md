@@ -34,3 +34,10 @@
 - mwacoustic only: /orders portal serves supabase-js 2.116.0 from assets/portal (vendored, SRI unchanged) and fonts locally; CSP tightened to 'self'. Privacy §14 added (website/cookies/analytics).
 - Verified in a local browser: 0 external requests before consent; Accept loads gtag+fbevents; Decline clears cookies; portal loads with no CSP errors.
 - NOT PUBLISHED: gh-pages subtree push is human-gated (invariant 5).
+
+## 2026-11-11 — SDS return pages (Claude, branch claude/sds-return-pages-20261111)
+- Three static pages added via build.py RETURN_PAGES: site/sds/purchase-complete.html, purchase-cancelled.html, billing-return.html (Stripe Checkout / billing-portal return targets for SDS on Windows and Mac).
+- Same shell() header/footer/consent notice as every page; noindex, no canonical, not in sitemap/NAV/footer; no script reads the URL. Asset paths root-absolute because the pages sit one folder down.
+- Verified from a local build in a worktree on MW-10 TB: HTML well-formed, titles set, all 36 links/assets per page resolve to built files, sitemap still 9 URLs.
+- Copy is new functional text, logged in COPY-SOURCES.md as pending Bennett's approval (invariant 1).
+- NOT PUBLISHED, not merged to main, not pushed: gh-pages subtree push is human-gated (invariant 5).

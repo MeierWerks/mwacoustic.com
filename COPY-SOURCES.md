@@ -53,3 +53,4 @@ Source: Bennett, chat, 2026-09-29 — "ok solve them all" on the six-legal-traps
 renewal terms, DMCA, CAN-SPAM, COPPA). The notice text in build.py `measurement_body()` and the footer link are legal
 disclosure copy approved in that turn. On mwacoustic.com the matching disclosure is Privacy Policy §14 (docs/copy/privacy.txt,
 verbatim from the SDS app's Resources/Privacy.md).
+- 2026-11-11: SDS return pages /sds/purchase-complete, /sds/purchase-cancelled, /sds/billing-return — NEW FUNCTIONAL COPY, PENDING BENNETT'S APPROVAL. Wording dispatched by the SDS payments coordinator session (win-parity payments-20261111), not sourced from Diane's doc. These are the plain pages Stripe Checkout and the Stripe billing portal return the browser to after a purchase started inside SDS; noindex, absent from NAV, footer and sitemap. Text lives in RETURN_PAGES in build.py. Built on branch claude/sds-return-pages-20261111; not published.
