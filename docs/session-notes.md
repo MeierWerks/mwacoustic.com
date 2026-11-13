@@ -42,6 +42,13 @@
 - Copy is new functional text, logged in COPY-SOURCES.md as pending Bennett's approval (invariant 1).
 - NOT PUBLISHED, not merged to main, not pushed: gh-pages subtree push is human-gated (invariant 5).
 
+## 2026-11-13 — Windows full-parity correction (Codex)
+- Bennett superseded the free/sign-in-only launch assumption: Windows must ship with Mac-equivalent account, physical and digital commerce, entitlements, fulfillment/refunds and authenticated signed updates.
+- Removed the unpublished free-only / paid-unavailable claims while retaining the blue Apple badge, Apple alignment fix and disabled red Windows control.
+- The Windows disclosure and legal links now stay absent until an approved full-parity download URL exists.
+- `origin/gh-pages` remains unchanged; no Windows package or corrected draft was published.
+- Next: audit the exact candidate and payment/update acceptance, then add final approved copy only after those gates pass.
+
 ## 2026-11-12 — Windows download and legal draft (Codex)
 - Scope: prepare an unpublished Windows download UI plus Terms, Privacy and Support wording; do not publish or enable Windows paid checkout.
 - Changed: blue Apple badge, disabled red Windows badge below it, corrected glyph alignment/clipping, ARM64 compatibility text and conditional Windows/Stripe legal language.

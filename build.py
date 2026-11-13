@@ -145,7 +145,7 @@ SDS_H2="The world of DIY sound just took a major leap forward"
 APPSTORE="https://apps.apple.com/us/app/sds-speaker-design-suite/id6788087317"   # Bennett, chat, 2026-09-14
 WINDOWS_DOWNLOAD=""  # Fail closed until the signed MSIX receipt supplies the immutable public URL.
 WINDOWS_VERSION="1.1.4.0"
-WINDOWS_DISCLOSURE="Windows 11 ARM64 · Version 1.1.4.0 · Free download. Paid Windows subscriptions and add-ons are not available in this release. You will be asked to sign in and accept the Windows Terms of Use (version 7)."
+WINDOWS_DISCLOSURE=""  # Set only after the full-parity release and final legal copy are approved.
 SDS_PLATFORM="SDS is a desktop application for Mac and Windows. A companion iOS app is available with limited capability; for full functionality, use the desktop version."
 
 def download_badges():
@@ -155,8 +155,8 @@ def download_badges():
         windows='<a class="store-badge windows" href="%s" rel="noopener" data-download-platform="windows" aria-label="Download SDS for Windows ARM64, version %s">%s</a>' % (E(WINDOWS_DOWNLOAD), E(WINDOWS_VERSION), copy)
     else:
         windows='<span class="store-badge windows is-pending" aria-disabled="true" title="Windows download is being prepared">%s</span>' % copy
-    disclosure='<p class="windows-release-note">%s</p>' % E(WINDOWS_DISCLOSURE)
-    legal='<p class="windows-legal-links"><a href="/terms/windows">Windows Terms of Use</a><span aria-hidden="true">·</span><a href="/privacy/windows">Windows Privacy Policy</a></p>'
+    disclosure=('<p class="windows-release-note">%s</p>' % E(WINDOWS_DISCLOSURE)) if WINDOWS_DOWNLOAD and WINDOWS_DISCLOSURE else ''
+    legal=('<p class="windows-legal-links"><a href="/terms/windows">Windows Terms of Use</a><span aria-hidden="true">·</span><a href="/privacy/windows">Windows Privacy Policy</a></p>') if WINDOWS_DOWNLOAD else ''
     return '<div class="download-stack" role="group" aria-label="Download SDS">%s%s%s%s</div>' % (apple, windows, disclosure, legal)
 
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
