@@ -46,6 +46,7 @@
 - Bennett superseded the free/sign-in-only launch assumption: Windows must ship with Mac-equivalent account, physical and digital commerce, entitlements, fulfillment/refunds and authenticated signed updates.
 - Removed the unpublished free-only / paid-unavailable claims while retaining the blue Apple badge, Apple alignment fix and disabled red Windows control.
 - The Windows disclosure and legal links now stay absent until an approved full-parity download URL exists.
+- The eventual button must target the stable ARM64 `.appinstaller` feed, not an immutable raw MSIX; x64 remains a separate acceptance gate.
 - `origin/gh-pages` remains unchanged; no Windows package or corrected draft was published.
 - Next: audit the exact candidate and payment/update acceptance, then add final approved copy only after those gates pass.
 
