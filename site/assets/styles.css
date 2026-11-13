@@ -203,6 +203,13 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .store-copy{display:flex;min-width:0;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;text-align:left}
 .store-kicker{font-family:var(--body);font-size:11px;font-weight:500;line-height:1.05;letter-spacing:.02em;text-transform:none}
 .store-title{font-family:var(--display);font-size:23px;font-weight:700;line-height:.98;letter-spacing:.01em;text-transform:none;white-space:nowrap}
+.windows-release-note{width:270px;max-width:100%;margin:1px 0 0;color:var(--muted);font-size:12px;line-height:1.4}
+.windows-legal-links{display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;width:270px;max-width:100%;margin:0;font-size:12px;line-height:1.35}
+.buttons .windows-legal-links a{padding:0;border-radius:0;background:transparent;color:var(--black);font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0;text-decoration:underline;text-underline-offset:2px;text-transform:none}
+.buttons .windows-legal-links a:hover{background:transparent;color:var(--cinnabar)}
+.sds-hero .windows-release-note{color:var(--warm-white)}
+.sds-hero .buttons .windows-legal-links a{color:var(--warm-white)}
+.sds-hero .buttons .windows-legal-links a:hover{color:var(--gold)}
 .platform-note{margin-top:16px;font-size:15px;color:var(--muted);max-width:52ch}
 .sds-hero{position:relative;background:var(--black);color:var(--warm-white);overflow:hidden}
 .sds-hero img.bg{width:100%;height:min(70vh,640px);object-fit:cover;opacity:.7;display:block}

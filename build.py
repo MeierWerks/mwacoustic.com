@@ -145,6 +145,7 @@ SDS_H2="The world of DIY sound just took a major leap forward"
 APPSTORE="https://apps.apple.com/us/app/sds-speaker-design-suite/id6788087317"   # Bennett, chat, 2026-09-14
 WINDOWS_DOWNLOAD=""  # Fail closed until the signed MSIX receipt supplies the immutable public URL.
 WINDOWS_VERSION="1.1.4.0"
+WINDOWS_DISCLOSURE="Windows 11 ARM64 · Version 1.1.4.0 · Free download. Paid Windows subscriptions and add-ons are not available in this release. You will be asked to sign in and accept the Windows Terms of Use (version 7)."
 SDS_PLATFORM="SDS is a desktop application for Mac and Windows. A companion iOS app is available with limited capability; for full functionality, use the desktop version."
 
 def download_badges():
@@ -154,7 +155,9 @@ def download_badges():
         windows='<a class="store-badge windows" href="%s" rel="noopener" data-download-platform="windows" aria-label="Download SDS for Windows ARM64, version %s">%s</a>' % (E(WINDOWS_DOWNLOAD), E(WINDOWS_VERSION), copy)
     else:
         windows='<span class="store-badge windows is-pending" aria-disabled="true" title="Windows download is being prepared">%s</span>' % copy
-    return '<div class="download-stack" role="group" aria-label="Download SDS">%s%s</div>' % (apple, windows)
+    disclosure='<p class="windows-release-note">%s</p>' % E(WINDOWS_DISCLOSURE)
+    legal='<p class="windows-legal-links"><a href="/terms/windows">Windows Terms of Use</a><span aria-hidden="true">·</span><a href="/privacy/windows">Windows Privacy Policy</a></p>'
+    return '<div class="download-stack" role="group" aria-label="Download SDS">%s%s%s%s</div>' % (apple, windows, disclosure, legal)
 
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
 
@@ -311,6 +314,8 @@ def legal_page(path):
     return f'<section><div class="wrap legal">{"".join(out)}</div></section>'
 privacy=legal_page("docs/copy/privacy.txt")
 terms=legal_page("docs/copy/terms.txt")
+windows_privacy=legal_page("docs/copy/windows-privacy.txt")
+windows_terms=legal_page("docs/copy/windows-terms.txt")
 support=f'<section><div class="wrap legal">{(ROOT/"docs/copy/support-body.html").read_text()}</div></section>'
 
 
@@ -335,10 +340,17 @@ pages={  # fn: (title, body, nav-current, description, extra JSON-LD, og image, 
  "press.html":("Press — MW Acoustics",videos,"press.html",SDS_H2,[],None,"website"),
  "contact.html":("Contact — MW Acoustics",contact,"contact.html",ABOUT_H+".",[],None,"website"),
  "privacy.html":("Privacy Policy — MW Acoustics",privacy,None,ABOUT_H+".",[],None,"website"),
+ "privacy/windows.html":("Windows Privacy Policy — MW Acoustics",windows_privacy,None,ABOUT_H+".",[],None,"website"),
  "terms.html":("Terms of Use — MW Acoustics",terms,None,ABOUT_H+".",[],None,"website"),
+ "terms/windows.html":("Windows Terms of Use — MW Acoustics",windows_terms,None,ABOUT_H+".",[],None,"website"),
  "support.html":("SDS Support — MW Acoustics",support,None,SDS_PLATFORM,[],None,"website")}
+def root_absolute_assets(html):
+    """Make shared shell assets root-relative for pages below the site root."""
+    return re.sub(r'(href|src)="(assets/|favicon|icon-192|apple-touch-icon)', r'\1="/\2', html)
 for fn,(t,b,cur,dsc,ld,ogi,ogt) in pages.items():
-    (SITE/fn).write_text(clean_urls(shell(t,b,cur,desc=dsc,og_image=ogi,ld=[ORG_LD]+ld,og_type=ogt), fn)); print("built",fn)
+    target=SITE/fn; target.parent.mkdir(parents=True,exist_ok=True)
+    page=clean_urls(shell(t,b,cur,desc=dsc,og_image=ogi,ld=[ORG_LD]+ld,og_type=ogt), fn)
+    target.write_text(root_absolute_assets(page) if "/" in fn else page); print("built",fn)
 
 # ---------- SDS return pages (2026-11-11): /sds/purchase-complete, /sds/purchase-cancelled, /sds/billing-return ----------
 # Where Stripe Checkout and the Stripe billing portal send the browser back after a purchase started inside SDS (Windows
@@ -362,7 +374,7 @@ def nested_page(html):
     """noindex, no canonical, and root-absolute asset paths for a page that is not at the site root."""
     html=re.sub(r'<link rel="canonical"[^>]*>', '', html)
     html=html.replace('</title>', '</title><meta name="robots" content="noindex">', 1)
-    return re.sub(r'(href|src)="(assets/|favicon|icon-192|apple-touch-icon)', r'\1="/\2', html)
+    return root_absolute_assets(html)
 (SITE/"sds").mkdir(exist_ok=True)
 for fn,(t,h,ps) in RETURN_PAGES.items():
     (SITE/fn).write_text(nested_page(clean_urls(shell(t,return_page(h,ps),None,desc=ps[0]), fn))); print("built",fn)
@@ -371,7 +383,7 @@ for fn,(t,h,ps) in RETURN_PAGES.items():
 # /orders is a sign-in app: excluded here exactly as it is excluded from NAV and the footer.
 import datetime
 _today=datetime.date.today().isoformat()
-_PRIORITY={"index.html":"1.0","software.html":"0.9","products.html":"0.9","about.html":"0.7","press.html":"0.6","contact.html":"0.6","support.html":"0.5","privacy.html":"0.3","terms.html":"0.3"}
+_PRIORITY={"index.html":"1.0","software.html":"0.9","products.html":"0.9","about.html":"0.7","press.html":"0.6","contact.html":"0.6","support.html":"0.5","privacy.html":"0.3","privacy/windows.html":"0.3","terms.html":"0.3","terms/windows.html":"0.3"}
 _urls="".join(
  '<url><loc>%s/%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>' %
  (SITE_URL, "" if fn=="index.html" else fn[:-5], _today, _PRIORITY.get(fn,"0.5")) for fn in pages)

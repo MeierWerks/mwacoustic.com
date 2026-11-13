@@ -48,3 +48,10 @@
 - Evidence: `python3 build.py`, Python compilation, `git diff --check`, focused HTML assertions and local HTTP 200 checks passed; browser screenshot tooling was unavailable.
 - Status: source and generated pages are complete as a review draft; the Windows control deliberately has no link and legal pages carry a draft-approval marker.
 - Next: Bennett/counsel approves copy; after a verified signed MSIX receipt, insert its public URL, revalidate, then publish through the human-gated release process.
+
+## 2026-11-12 — Windows-specific legal routes correction (Codex)
+- Scope: preserve the disabled Windows download UI while separating Windows legal documents from the established combined Terms and Privacy pages.
+- Changed: restored combined legal sources byte-for-byte to `cc46df4`; added `/terms/windows` and `/privacy/windows` from SDS commit `e8a2895`; added the approved launch disclosure and both Windows legal links below every Windows control.
+- Evidence: source `cmp` checks, SHA-256 checks, generated-text parity assertions, Python compilation, `git diff --check`, fail-closed assertions and six local HTTP 200 checks passed.
+- Status: unpublished review source is complete; Windows Terms hash `ac0803b…d501`, Windows Privacy hash `0b68ba5…fad2a2`; Support remains conditional and visibly marked as a draft.
+- Next: retain the empty Windows URL until signed-package verification, then set the immutable URL, re-run the same checks and publish only through the human-gated release process.

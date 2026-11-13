@@ -1,10 +1,9 @@
 SDS Privacy Policy
 
-DRAFT — BENNETT APPROVAL REQUIRED BEFORE PUBLICATION
-Proposed effective: November 12, 2026
-Last updated: November 12, 2026
+Effective: September 16, 2026
+Last updated: September 29, 2026
 
-This Privacy Policy explains how MeierWerks Inc. ("MeierWerks," "we," "us," or "our") collects, uses, discloses, retains, and protects personal information when you use SDS (Speaker Design Suite) for macOS, Windows, or iOS, its account and sync services, MW-Assist, digital-purchase checkout, and physical-hardware checkout (collectively, the "Service").
+This Privacy Policy explains how MeierWerks Inc. ("MeierWerks," "we," "us," or "our") collects, uses, discloses, retains, and protects personal information when you use SDS (Speaker Design Suite) for macOS or iOS, its account and sync services, MW-Assist, and physical-hardware checkout (collectively, the "Service").
 
 1. WHO WE ARE
 
@@ -26,19 +25,19 @@ Measurement information. We process acoustic measurements, frequency-response da
 
 MW-Assist and AI-assisted feature information. When you choose to use MW-Assist or another disclosed AI-assisted feature, the Service sends the text you enter and relevant conversation, project, workspace, datasheet, or image context through our authenticated server to our AI service provider, currently Anthropic, so the requested response or analysis can be generated. The app discloses this transfer and asks for your permission before an AI-assisted feature sends anything for the first time, and you can turn MW-Assist off at any time from the assistant's options menu. Do not submit information that you are not authorized to share.
 
-Digital-purchase information. Apple processes payment for subscriptions and digital add-ons purchased through the App Store on Apple platforms. If Windows digital purchases are offered, Stripe will process payment for subscriptions and digital add-ons purchased through SDS on Windows. For purchases you make, we receive transaction or checkout identifiers, product identifiers, amounts, currency, tax, payment and subscription status, expiration or revocation status, refunds, disputes, and related receipt or entitlement information needed to unlock, reconcile, support, and account for digital access. Apple and Stripe, not MeierWerks, receive and process full payment-card details for their respective transactions.
+Digital-purchase information. Apple processes payment for subscriptions and digital add-ons purchased through the App Store. We receive transaction identifiers, product identifiers, subscription status, expiration or revocation status, and related receipt or entitlement information needed to unlock and reconcile digital access. We do not receive your full payment-card details from Apple.
 
 Physical-order information. Stripe processes payment for shipped physical hardware. We receive order items, amounts, currency, payment and fulfillment status, contact details, shipping address, taxes, shipping method, tracking information, refunds, disputes, and supplier references needed to fulfill and support the order. Stripe, not MeierWerks, receives and processes your full card number and security code.
 
 Support and communications. We collect information you send when you contact us, submit a privacy request, or report a problem. Support diagnostics may include app and operating-system versions, device type, selected workspace, sync state, and redacted error information. The support flow is designed to exclude credentials, API keys, authentication tokens, full project contents, and account identifiers from diagnostics.
 
-Device and installation information. To enforce the per-account device limit, the app creates a random installation identifier on first launch, stores it on your device, and sends it to our server with your device class (computer or phone) and the name your operating system reports for the device (for example, the computer name shown in your macOS or Windows settings) when it registers or renews an account device lease. This identifier is app-private: it is not a hardware serial number or advertising identifier, it is linked to your account only while a lease exists, and it is not used for tracking. You can see your active devices and end their sessions from Settings ▸ Account.
+Device and installation information. To enforce the per-account device limit, the app creates a random installation identifier on first launch, stores it on your device, and sends it to our server with your device class (computer or phone) and the name your operating system reports for the device (for example, the computer name shown in your macOS settings) when it registers or renews an account device lease. This identifier is app-private: it is not a hardware serial number or advertising identifier, it is linked to your account only while a lease exists, and it is not used for tracking. You can see your active devices and end their sessions from Settings ▸ Account.
 
 Security and service information. Our providers and systems may process IP address, device and operating-system information, app version, sign-in and session events, request timestamps, service logs, crash or error information, fraud signals, and security events needed to operate and protect the Service.
 
 Preference and policy records. We retain your marketing preference and records of policy disclosures and acceptance, together with the applicable policy version and timestamp.
 
-Local engineering samples. On eligible Non-Commercial Plans, the current app may create an install-scoped local queue of numeric, de-identified engineering samples such as enclosure count, driver-way count, and alignment category. The current release does not upload that queue. It excludes user ID, project name, file path, free text, and full project contents. Engineering-data collection is off for the Commercial tier's offline/no-cloud mode. We will update this Policy and the app disclosure and obtain any permission required by law or applicable platform rules before enabling remote collection.
+Local engineering samples. On eligible Non-Commercial Plans, the current app may create an install-scoped local queue of numeric, de-identified engineering samples such as enclosure count, driver-way count, and alignment category. The current release does not upload that queue. It excludes user ID, project name, file path, free text, and full project contents. Engineering-data collection is off for the Commercial tier's offline/no-cloud mode. We will update this Policy and the app disclosure and obtain any permission required by law or Apple's rules before enabling remote collection.
 
 3. HOW WE USE INFORMATION
 
@@ -47,7 +46,7 @@ We use personal information to:
 - create, authenticate, secure, and support your account;
 - provide project storage and cross-device sync;
 - provide measurements, simulations, MW-Assist, and other requested features;
-- verify StoreKit purchases and, when offered, Stripe Windows purchases, and maintain digital entitlements;
+- verify StoreKit purchases and maintain digital entitlements;
 - price, process, fulfill, support, refund, and account for physical orders;
 - communicate service, security, purchase, support, and policy notices;
 - detect errors, fraud, abuse, and security incidents;
@@ -73,7 +72,7 @@ We disclose information only as reasonably necessary to:
 - Apple, for App Store distribution, Sign in with Apple, StoreKit billing, and transaction verification;
 - Google, if you choose Google sign-in;
 - Anthropic, when you choose MW-Assist or an AI-assisted feature;
-- Stripe, for physical-goods payment processing and, when Windows digital purchases are offered, digital-purchase processing, subscription billing, tax, fraud controls, disputes, refunds, and receipts;
+- Stripe, for physical-goods payment processing, tax, fraud controls, and receipts;
 - component suppliers, carriers, and fulfillment providers, including Parts Express where applicable, for availability, purchasing, shipment, returns, and order support;
 - support, security, diagnostics, hosting, email, and professional advisers acting for us; and
 - courts, regulators, law enforcement, or other parties when required by law or reasonably necessary to protect rights, safety, security, or the integrity of the Service.
@@ -118,9 +117,9 @@ Submit a request in the app or email privacy@meierwerks.com. We may verify your 
 
 7. ACCOUNT DELETION AND SUBSCRIPTIONS
 
-You may initiate deletion from Settings on macOS, Windows, or iOS. Deletion covers the account and associated personal information that we are not legally required to retain. If manual review is required, we will keep you informed and aim to complete verified requests within 30 days.
+You may initiate deletion from Settings on macOS or iOS. Deletion covers the account and associated personal information that we are not legally required to retain. If manual review is required, we will keep you informed and aim to complete verified requests within 30 days.
 
-Deleting your SDS account does not automatically cancel an Apple subscription or any Windows Stripe subscription that may be offered. Manage or cancel Apple billing at https://apps.apple.com/account/subscriptions. For a Windows subscription, use any Stripe customer-portal link provided in the receipt or purchase confirmation; if no link is provided, contact support@meierwerks.com. If you signed in with Apple, we revoke the Apple authorization when you delete your account; you will be asked to confirm with Apple once. If you cancel that Apple confirmation, your account is still deleted, and you can remove the remaining Apple authorization yourself under Sign in with Apple in your Apple Account settings.
+Deleting your SDS account does not automatically cancel an Apple subscription. Manage or cancel Apple billing at https://apps.apple.com/account/subscriptions. If you signed in with Apple, we revoke the Apple authorization when you delete your account; you will be asked to confirm with Apple once. If you cancel that Apple confirmation, your account is still deleted, and you can remove the remaining Apple authorization yourself under Sign in with Apple in your Apple Account settings.
 
 8. CHILDREN
 
@@ -158,6 +157,6 @@ This section covers the website at https://mwacoustic.com (the "Site").
 
 Fonts and page files. The Site serves its fonts, scripts, and page files from its own hosting. It does not load fonts from Google or any other font service.
 
-Analytics and advertising measurement. Only if you choose "Accept" on the Site's cookie notice, the Site uses Google Analytics to count visits and see which pages are used, and the Meta Pixel to measure whether our ads on Facebook and Instagram lead to visits and Apple App Store or Windows download clicks. These tools set cookies or similar identifiers and send your IP address, browser and device information, the pages you view, and the links you click to Google and Meta, which process it under their own privacy notices. Meta may use it to show you ads. Under California law, this use of the Meta Pixel may be "sharing" personal information for cross-context behavioral advertising.
+Analytics and advertising measurement. Only if you choose "Accept" on the Site's cookie notice, the Site uses Google Analytics to count visits and see which pages are used, and the Meta Pixel to measure whether our ads on Facebook and Instagram lead to visits and App Store clicks. These tools set cookies or similar identifiers and send your IP address, browser and device information, the pages you view, and the links you click to Google and Meta, which process it under their own privacy notices. Meta may use it to show you ads. Under California law, this use of the Meta Pixel may be "sharing" personal information for cross-context behavioral advertising.
 
 Your choice. Neither tool loads until you choose "Accept." If you choose "Decline," neither tool loads. If your browser sends a Global Privacy Control signal, the Meta Pixel does not load even if you choose "Accept," and nothing is shared with Meta. Choosing "Decline" after accepting stops both tools and deletes their cookies from the Site. You can change your choice at any time with the "Cookie choices" link at the bottom of every page. The Site does not use session-recording, keystroke-capture, or screen-replay tools.
