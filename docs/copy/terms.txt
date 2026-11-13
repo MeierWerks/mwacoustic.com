@@ -1,10 +1,11 @@
 SDS Terms of Use
 
-Effective: September 16, 2026
-Last updated: September 16, 2026
-Terms version: 6
+DRAFT — BENNETT APPROVAL REQUIRED BEFORE PUBLICATION
+Proposed effective: November 12, 2026
+Last updated: November 12, 2026
+Terms version: 7 (proposed)
 
-These Terms of Use ("Terms") are a binding agreement between you and MeierWerks Inc. ("MeierWerks," "we," "us," or "our") governing your use of SDS (Speaker Design Suite) for macOS and iOS, its account and sync services, MW-Assist, and related services (collectively, the "Service"). By creating an account, accepting these Terms in the app, or using the Service, you agree to these Terms and the Privacy Policy. If you do not agree, do not use the Service.
+These Terms of Use ("Terms") are a binding agreement between you and MeierWerks Inc. ("MeierWerks," "we," "us," or "our") governing your use of SDS (Speaker Design Suite) for macOS, Windows, and iOS, its account and sync services, MW-Assist, and related services (collectively, the "Service"). By creating an account, accepting these Terms in the app, or using the Service, you agree to these Terms and the Privacy Policy. If you do not agree, do not use the Service.
 
 1. ELIGIBILITY
 
@@ -16,13 +17,13 @@ Provide accurate account information and keep it current. You are responsible fo
 
 Acceptance is recorded by policy version and timestamp. A material Terms update may require you to accept a new version before continuing to use account-based features.
 
-3. APP LICENSE AND APPLE TERMS
+3. APP LICENSE AND PLATFORM TERMS
 
-The app is licensed, not sold. Unless MeierWerks supplies a custom end-user license agreement through App Store Connect, the Apple Standard End User License Agreement governs the license to the downloaded app. Subject to that agreement and these Terms, MeierWerks grants you a limited, personal, non-exclusive, non-transferable, revocable license to use the Service on Apple-branded products you own or control as permitted by the App Store usage rules.
+The app is licensed, not sold. For SDS obtained through Apple's App Store, unless MeierWerks supplies a custom end-user license agreement through App Store Connect, the Apple Standard End User License Agreement governs the license to that copy of the app. For SDS obtained for Windows directly from MeierWerks, these Terms govern the license to the downloaded app. Subject to the applicable platform agreement and these Terms, MeierWerks grants you a limited, personal, non-exclusive, non-transferable, revocable license to use the Service on devices you own or control.
 
 You may not copy, sublicense, rent, lease, sell, redistribute, scrape, reverse engineer, decompile, bypass access controls, defeat entitlements, extract source code, or use the Service to create or train a competing product, except to the limited extent a restriction is prohibited by applicable law or an applicable open-source license.
 
-Apple is not responsible for the Service, its content, support, maintenance, warranties, product claims, or third-party intellectual-property claims. MeierWerks, not Apple, is responsible for operating and supporting the Service. Apple and its subsidiaries are third-party beneficiaries of the provisions that apply to an App Store-licensed application and may enforce those provisions as permitted by Apple's terms.
+For an App Store-licensed copy, Apple is not responsible for the Service, its content, support, maintenance, warranties, product claims, or third-party intellectual-property claims. MeierWerks, not Apple, is responsible for operating and supporting the Service. Apple and its subsidiaries are third-party beneficiaries of the provisions that apply to an App Store-licensed application and may enforce those provisions as permitted by Apple's terms.
 
 4. YOUR PROJECTS, DESIGN DATA, AND PLAN RIGHTS
 
@@ -38,11 +39,11 @@ Commercial License projects. Project Materials first created or materially modif
 
 Derived Data and MeierWerks improvements. MeierWerks owns the Derived Data, datasets, models, algorithms, know-how, product improvements, and other technology that MeierWerks creates from lawfully available Non-Commercial Plan Project Materials or use of the Service. MeierWerks may retain, use, disclose, license, sell, and otherwise monetize those items without restriction, provided that data described as de-identified is not used to reidentify you except to test and maintain the de-identification safeguards or as otherwise permitted by law. Commercial License Project Materials are excluded unless you separately and affirmatively authorize their use.
 
-Local storage and actual access. The current app keeps full project files and the local engineering queue on your device unless you choose a feature that transmits specified material, such as account sync, MW-Assist, an AI-assisted feature, or support. The Non-Commercial Plan license allocates contractual rights; it does not mean that MeierWerks currently receives or stores a copy of every local project. Before enabling any additional remote collection or materially different use, MeierWerks will update the Privacy Policy and obtain any notice, permission, or consent required by law or Apple's rules.
+Local storage and actual access. The current app keeps full project files and the local engineering queue on your device unless you choose a feature that transmits specified material, such as account sync, MW-Assist, an AI-assisted feature, or support. The Non-Commercial Plan license allocates contractual rights; it does not mean that MeierWerks currently receives or stores a copy of every local project. Before enabling any additional remote collection or materially different use, MeierWerks will update the Privacy Policy and obtain any notice, permission, or consent required by law or applicable platform rules.
 
 Authority, confidentiality, and third-party rights. Do not enter an employer's, client's, collaborator's, or other person's confidential information, trade secrets, or material unless you are authorized to grant the applicable rights. You represent that you own or control the rights you grant and that MeierWerks' permitted use will not violate law, confidentiality obligations, privacy rights, intellectual-property rights, or another agreement. Non-Commercial Plan Project Materials that you transmit to MeierWerks are not confidential information under these Terms unless MeierWerks agrees otherwise in a separate signed writing. Commercial License materials are handled under the Commercial License terms. These Terms do not grant you or MeierWerks ownership of third-party driver data, product images, trademarks, measurements, documentation, open-source software, or other licensed material; the applicable third-party rights continue to control.
 
-Privacy and prospective effect. Intellectual-property and contract rights are separate from privacy law. This Section does not itself authorize undisclosed collection of personal information, remove a privacy right, or replace a consent required by law or Apple's rules. The Privacy Policy controls what information the Service actually collects, how it is used and retained, and how you exercise privacy choices and deletion rights. The expanded Non-Commercial Plan license in this Section applies only to Project Materials first created or materially modified after you accept Terms version 4; it does not retroactively expand MeierWerks' rights in earlier projects. By selecting "Agree," you specifically acknowledge the Non-Commercial Plan commercial-use license, the Commercial License exclusion, and the no-compensation terms in this Section.
+Privacy and prospective effect. Intellectual-property and contract rights are separate from privacy law. This Section does not itself authorize undisclosed collection of personal information, remove a privacy right, or replace a consent required by law or applicable platform rules. The Privacy Policy controls what information the Service actually collects, how it is used and retained, and how you exercise privacy choices and deletion rights. The expanded Non-Commercial Plan license in this Section applies only to Project Materials first created or materially modified after you accept Terms version 4; it does not retroactively expand MeierWerks' rights in earlier projects. By selecting "Agree," you specifically acknowledge the Non-Commercial Plan commercial-use license, the Commercial License exclusion, and the no-compensation terms in this Section.
 
 5. MW-ASSIST AND AI-ASSISTED FEATURES
 
@@ -66,15 +67,17 @@ We may investigate suspected misuse and suspend or terminate access when reasona
 
 7. DIGITAL PURCHASES AND SUBSCRIPTIONS
 
-Digital features, subscriptions, and add-ons offered inside the app are sold through Apple's In-App Purchase system and StoreKit. Apple is the merchant for those transactions and controls payment authorization, localized price, taxes where applicable, renewal, cancellation, Family Sharing eligibility, and refunds under Apple's terms.
+On Apple platforms, digital features, subscriptions, and add-ons offered inside the app are sold through Apple's In-App Purchase system and StoreKit. Apple is the merchant for those transactions and controls payment authorization, localized price, taxes where applicable, renewal, cancellation, Family Sharing eligibility, and refunds under Apple's terms.
 
-An auto-renewable subscription continues until canceled through your Apple account. Cancellation takes effect according to the App Store terms and ordinarily does not provide a refund for time already used. Manage a subscription at https://apps.apple.com/account/subscriptions and request an App Store refund through Apple Support.
+When Windows digital purchases are offered, MeierWerks will sell digital features, subscriptions, and add-ons through Stripe Checkout and Stripe Billing. Stripe will process payment details, authentication, tax calculations where enabled, receipts, subscription billing, refunds, disputes, and fraud signals. The price, billing interval, renewal terms, and any taxes or other charges will be shown before you authorize payment.
 
-We use Apple-signed transaction information to unlock and reconcile digital access with your SDS account. You are responsible for using the Apple ID and SDS account associated with the purchase. Deleting your SDS account does not cancel Apple billing.
+An Apple auto-renewable subscription continues until canceled through your Apple account. Manage it at https://apps.apple.com/account/subscriptions and request an App Store refund through Apple Support. If a Windows subscription is offered, manage or cancel it using any Stripe customer-portal link provided in the receipt or purchase confirmation; if no link is provided, contact support@meierwerks.com. Cancellation and refund treatment follows the terms shown by the applicable store or checkout before purchase and any mandatory consumer rights.
+
+We use Apple-signed transaction information for Apple purchases to unlock and reconcile digital access with your SDS account. When Windows digital purchases are offered, we will use Stripe-signed event and transaction information for those purchases for the same purposes. You are responsible for using the applicable store or payment account and the SDS account associated with the purchase. Deleting your SDS account does not by itself cancel Apple billing or any Stripe billing that may be offered.
 
 8. PHYSICAL HARDWARE ORDERS
 
-Stripe checkout is used only for tangible products shipped for use outside the app, such as loudspeaker drivers, crossover components, and cabinet hardware. The price shown before payment is the MeierWerks retail price and may include a margin over supplier cost. Shipping, taxes, and other disclosed charges are added before you authorize payment.
+Stripe Checkout is also used for tangible products shipped for use outside the app, such as loudspeaker drivers, crossover components, and cabinet hardware. The price shown before payment is the MeierWerks retail price and may include a margin over supplier cost. Shipping, taxes, and other disclosed charges are added before you authorize payment.
 
 Availability and price are rechecked before a checkout session is created. A component without a valid current supplier price or confirmed availability is not eligible for purchase. We may reject or cancel an order if a product becomes unavailable, a price is clearly erroneous, fraud review fails, or fulfillment is not reasonably possible. If we cancel after capture, we will issue the appropriate refund.
 
@@ -108,7 +111,7 @@ We are not responsible for an external site, supplier, carrier, payment service,
 
 13. PRIVACY AND ACCOUNT DELETION
 
-The Privacy Policy explains our data practices and your choices. You may initiate account deletion in Settings. Deletion removes the account and associated personal information that we are not legally required to retain. A manual deletion process may take up to 30 days after verification. StoreKit billing continues until you separately cancel it with Apple.
+The Privacy Policy explains our data practices and your choices. You may initiate account deletion in Settings. Deletion removes the account and associated personal information that we are not legally required to retain. A manual deletion process may take up to 30 days after verification. Apple StoreKit billing, and any Windows Stripe billing if offered, continue until you separately cancel them through the applicable billing service.
 
 14. SUSPENSION AND TERMINATION
 
@@ -118,7 +121,7 @@ You may stop using the Service at any time. We may suspend or terminate access f
 
 TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT EXPRESS OR IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, QUIET ENJOYMENT, OR UNINTERRUPTED AVAILABILITY.
 
-Some jurisdictions do not allow certain warranty exclusions. Mandatory warranties and consumer guarantees that cannot lawfully be excluded remain in effect. If the App Store-licensed application fails to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price for the application, if any, as provided by Apple's terms. Apple has no other warranty obligation for the Service.
+Some jurisdictions do not allow certain warranty exclusions. Mandatory warranties and consumer guarantees that cannot lawfully be excluded remain in effect. If an App Store-licensed copy fails to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price for the application, if any, as provided by Apple's terms. Apple has no other warranty obligation for the Service. MeierWerks remains responsible for obligations that applicable law places on it for a Windows copy distributed directly by MeierWerks.
 
 16. LIMITATION OF LIABILITY
 
@@ -134,7 +137,7 @@ To the extent permitted by law, you will defend, indemnify, and hold MeierWerks 
 
 18. EXPORT AND SANCTIONS
 
-You may not use or export the Service in violation of United States export-control or sanctions laws or other applicable trade restrictions. You represent that you are not located in a prohibited territory and are not a prohibited or restricted party to the extent this representation is required by Apple's standard terms or applicable law.
+You may not use or export the Service in violation of United States export-control or sanctions laws or other applicable trade restrictions. You represent that you are not located in a prohibited territory and are not a prohibited or restricted party to the extent this representation is required by applicable platform terms or law.
 
 19. CHANGES TO THE SERVICE OR THESE TERMS
 
@@ -148,7 +151,7 @@ If you are a consumer outside the United States, this choice does not deprive yo
 
 21. GENERAL TERMS
 
-If a provision is unenforceable, it will be enforced to the maximum lawful extent and the remaining provisions remain effective. Our failure to enforce a provision is not a waiver. You may not assign these Terms without our consent; we may assign them as part of a merger, reorganization, financing, or sale of the Service. These Terms, the Privacy Policy, Apple's applicable terms, and any product-specific terms shown at purchase are the entire agreement for the subject matter they address.
+If a provision is unenforceable, it will be enforced to the maximum lawful extent and the remaining provisions remain effective. Our failure to enforce a provision is not a waiver. You may not assign these Terms without our consent; we may assign them as part of a merger, reorganization, financing, or sale of the Service. These Terms, the Privacy Policy, applicable platform and payment-provider terms, and any product-specific terms shown at purchase are the entire agreement for the subject matter they address.
 
 22. CONTACT
 
@@ -162,9 +165,9 @@ Website: https://meierwerks.com
 
 23. TECHNOLOGICAL PROTECTION MEASURES AND ANTI-CIRCUMVENTION
 
-The Service uses technological measures to control access to MeierWerks' copyrighted works and to the paid tiers, engines, and features of the Service. Those measures include account authentication; server-side verification of Apple-signed App Store transaction information and the entitlement records derived from it; server-side authorization of MW-Assist and other AI-assisted or server-processed features; entitlement and feature checks within the application; and the license, integrity, code-signing, and distribution controls applied to the application.
+The Service uses technological measures to control access to MeierWerks' copyrighted works and to the paid tiers, engines, and features of the Service. Those measures include account authentication; server-side verification of Apple-signed App Store transaction information and, when Windows digital purchases are offered, Stripe-signed Windows transaction events and the entitlement records derived from them; server-side authorization of MW-Assist and other AI-assisted or server-processed features; entitlement and feature checks within the application; and the license, integrity, code-signing, and distribution controls applied to the application.
 
-Access to a paid feature, engine, tier, or output is authorized while a valid entitlement covering it is in effect. That includes an entitlement derived from an Apple-signed transaction, an entitlement issued by MeierWerks, an entitlement obtained through Family Sharing where Apple makes it available, and a previously verified entitlement that the app continues to honor offline or during a renewal or grace period that MeierWerks provides. Normal use of the Service while your device is offline is authorized use, and nothing in this Section makes it a circumvention. What is not authorized is obtaining or extending access by defeating, forging, tampering with, or working around the measures described above.
+Access to a paid feature, engine, tier, or output is authorized while a valid entitlement covering it is in effect. That includes an entitlement derived from an Apple-signed transaction, an entitlement derived from a Stripe-processed Windows purchase when offered, an entitlement issued by MeierWerks, an entitlement obtained through Family Sharing where Apple makes it available, and a previously verified entitlement that the app continues to honor offline or during a renewal or grace period that MeierWerks provides. Normal use of the Service while your device is offline is authorized use, and nothing in this Section makes it a circumvention. What is not authorized is obtaining or extending access by defeating, forging, tampering with, or working around the measures described above.
 
 You may not circumvent, disable, remove, deactivate, impair, or otherwise avoid any such measure. You may not manufacture, import, offer to the public, provide, traffic in, distribute, or otherwise make available any technology, product, service, device, component, patch, loader, modified build, key, credential, or set of instructions that is primarily designed or produced to do so, that has only limited commercially significant purpose or use other than to do so, or that is marketed for use in doing so. MeierWerks reserves all rights and remedies available under 17 U.S.C. §§ 1201 and 1203 and under any comparable law of your jurisdiction, in addition to its rights under these Terms, copyright law, and contract law.
 

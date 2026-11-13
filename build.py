@@ -85,9 +85,10 @@ def measurement_body():
             'el.addEventListener("click",function(e){var b=e.target.closest("[data-consent]");if(!b)return;'
             'var v=b.getAttribute("data-consent");put(v);el.hidden=true;if(v==="granted")load();else{wipe();if(on)location.reload();}});'
             'document.addEventListener("click",function(e){if(e.target.closest("[data-consent-open]")){e.preventDefault();el.hidden=false;}});'
-            'document.addEventListener("click",function(e){var a=e.target.closest(\'a[href*="apps.apple.com"]\');if(!a)return;'
-            'if(window.gtag)gtag("event","app_store_click",{link_url:a.href,page:location.pathname});'
-            'if(window.fbq)fbq("trackCustom","AppStoreClick",{page:location.pathname});},true);'
+            'document.addEventListener("click",function(e){var a=e.target.closest("a[data-download-platform]");if(!a)return;'
+            'var platform=a.getAttribute("data-download-platform")||"unknown";'
+            'if(window.gtag)gtag("event","software_download_click",{platform:platform,link_url:a.href,page:location.pathname});'
+            'if(window.fbq)fbq("trackCustom","SoftwareDownloadClick",{platform:platform,page:location.pathname});},true);'
             '})();</script>')
 
 def jsonld(*blocks):
@@ -142,7 +143,18 @@ SDS_QUOTE=("Quite frankly, it’s like nothing you’ve ever seen before.","Jay 
 SDS_TAG="The Power of an Engineering Studio in the Palm of Your Hand"  # Diane, updated copy 2026-09-15
 SDS_H2="The world of DIY sound just took a major leap forward"
 APPSTORE="https://apps.apple.com/us/app/sds-speaker-design-suite/id6788087317"   # Bennett, chat, 2026-09-14
-SDS_PLATFORM="SDS is a desktop application. A companion iOS app is available with limited capability; for full functionality, use the desktop version."  # wording per Bennett, chat, 2026-09-14
+WINDOWS_DOWNLOAD=""  # Fail closed until the signed MSIX receipt supplies the immutable public URL.
+WINDOWS_VERSION="1.1.4.0"
+SDS_PLATFORM="SDS is a desktop application for Mac and Windows. A companion iOS app is available with limited capability; for full functionality, use the desktop version."
+
+def download_badges():
+    apple='''<a class="store-badge apple" href="%s" rel="noopener" data-download-platform="apple" aria-label="Download SDS on the Apple App Store"><span class="store-mark apple-mark" aria-hidden="true"></span><span class="store-copy"><span class="store-kicker">Download on the</span><span class="store-title">App Store</span></span></a>''' % APPSTORE
+    copy='''<span class="store-mark windows-mark" aria-hidden="true"></span><span class="store-copy"><span class="store-kicker">Download for</span><span class="store-title">Windows</span></span>'''
+    if WINDOWS_DOWNLOAD:
+        windows='<a class="store-badge windows" href="%s" rel="noopener" data-download-platform="windows" aria-label="Download SDS for Windows ARM64, version %s">%s</a>' % (E(WINDOWS_DOWNLOAD), E(WINDOWS_VERSION), copy)
+    else:
+        windows='<span class="store-badge windows is-pending" aria-disabled="true" title="Windows download is being prepared">%s</span>' % copy
+    return '<div class="download-stack" role="group" aria-label="Download SDS">%s%s</div>' % (apple, windows)
 
 def about_block(): return f'<h2>{E(ABOUT_H)}</h2><hr class="rule" style="margin-bottom:22px">' + "".join(f'<p class="lead">{E(p)}</p>' for p in ABOUT_P)
 
@@ -155,7 +167,7 @@ home=f'''
 <figure class="hidden"><img src="assets/img/neo-two-satin.jpg" alt="Neo Two, under cover"><figcaption>Neo Two<small>Coming soon</small></figcaption></figure>
 <figure class="hidden"><img src="assets/img/neo-three-satin.jpg" alt="Neo Three, under cover"><figcaption>Neo Three<small>Coming soon</small></figcaption></figure>
 </div><div class="buttons"><a href="products.html">The Neo Line</a></div></div></section>
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.webp" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h2>{E(SDS_H1)}</h2><div class="buttons"><a href="software.html">Software</a><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-crossover-schematic.webp" alt="SDS crossover workspace"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">Software · SDS : Speaker Design Suite</p><h2>{E(SDS_H1)}</h2><div class="buttons"><a href="software.html">Software</a>{download_badges()}</div></div></section>
 '''
 about=f'''
 <section class="hero-photo"><img src="assets/img/cab-front.webp" alt=""><div class="caption"><p class="eyebrow" style="color:var(--gold)">About</p><h1>{E(ABOUT_H)}</h1></div></section>
@@ -222,6 +234,7 @@ COMPARE=[("Crossover design from measured FRD / ZMA",[1,1,0,0,0]),
  ("One live document from driver to cut file",[1,0,0,0,0])]
 CMP_LEGEND="● included · ◐ partial or build-it-yourself · – not offered"
 COMPAT=[("Mac","Apple silicon Mac (M1 or later) running macOS 14 Sonoma or later. SDS is a desktop application; the physics, optimizers, Workshop and rendering live here."),
+ ("Windows","Windows 11 on an ARM64 computer for this release. An x64 release will follow."),
  ("iPhone and iPad","A companion app for iOS 17 or later: measurement capture with microphone calibration, AirPlay output routing, Resources, Add-ons, orders and cart. Limited capability by design; for full functionality use the desktop version."),
  ("Microphones","Any calibrated USB measurement microphone; UMIK, ECM8000 and EMM-6 are recognised automatically. Phone-mic calibration profiles are supported."),
  ("Input","3Dconnexion SpaceMouse for six-axis viewport navigation, alongside the mouse and trackpad."),
@@ -230,9 +243,9 @@ COMPAT=[("Mac","Apple silicon Mac (M1 or later) running macOS 14 Sonoma or later
  ("Parts","Parts Express is the fulfilment partner: the bill of materials hands off to a live cart with current price and stock.")]
 
 software=f'''
-<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render-v2.webp" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
+<section class="sds-hero"><img class="bg" src="assets/img/sds/sds-workshop-render-v2.webp" alt="SDS Workshop render"><div class="over"><img src="assets/logos/sds-mark.svg" alt="SDS"><p class="eyebrow" style="color:var(--gold)">SDS : Speaker Design Suite</p><h1>{E(SDS_H1)}</h1><div class="buttons">{download_badges()}</div></div></section>
 <section><div class="wrap split"><div><p class="lead">{E(SDS_P)}</p><blockquote class="pull"><p>“{E(SDS_QUOTE[0])}”</p><cite>{E(SDS_QUOTE[1])}</cite></blockquote><p class="tagline">{E(SDS_TAG)}</p><h2 style="margin-top:22px">{E(SDS_H2)}</h2>
-<div class="buttons"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a><a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
+<div class="buttons">{download_badges()}<a href="#process">Process</a><a href="#specs">Specs</a><a href="#compatibility">Compatibility</a></div>
 <p class="platform-note">{E(SDS_PLATFORM)}</p>
 <p class="poweredby" style="--pb:20px;margin-top:26px"><img class="pb-text" src="assets/logos/powered-by-black.svg" alt="Powered by"><img class="pb-logo" src="assets/logos/wrks-color.svg" alt="WRKS"></p></div>
 <div class="laptop" aria-label="SDS workspaces cycling on a MacBook"><p class="laptop-caption" aria-live="polite">Pick a driver from the catalog, or load your own measurements</p><div class="lid" title="Click for the next workspace"><div class="screen"><img data-caption="Pick a driver from the catalog, or load your own measurements" src="assets/img/sds/workspaces/drivers.jpg" alt="SDS Drivers workspace"><img data-caption="Design the crossover and read the response as you work" src="assets/img/sds/workspaces/crossover.webp" alt="SDS Crossover workspace" loading="lazy"><img data-caption="Dial the enclosure while loading, excursion and port velocity update live" src="assets/img/sds/workspaces/enclosure.jpg" alt="SDS Enclosure workspace" loading="lazy"><img data-caption="Build the cabinet: materials, finishes, bracing, cut files and a price" src="assets/img/sds/workspaces/workshop.jpg" alt="SDS Workshop workspace" loading="lazy"><img data-caption="Create beautiful renders with our custom rendering engine" src="assets/img/sds/workspaces/workshop-scene.webp" alt="SDS Workshop scene render workspace" loading="lazy"><img data-caption="Simulate the whole system with the FEM / BEM cockpit" src="assets/img/sds/workspaces/simulate.jpg" alt="SDS Simulate workspace" loading="lazy"><img data-caption="Measure the real speaker and compare it against the design" src="assets/img/sds/workspaces/measure.jpg" alt="SDS Measure workspace" loading="lazy"><img data-caption="Set up the room and see the first reflections before you build" src="assets/img/sds/workspaces/measure-room.webp" alt="SDS Measure room setup workspace" loading="lazy"></div></div><div class="base"><span></span></div></div></div></section>
@@ -258,9 +271,9 @@ var t;track.addEventListener('scroll',function(){{clearTimeout(t);t=setTimeout(s
 <h3 style="color:var(--warm-white);margin-top:48px">How SDS compares</h3>
 <div class="tablewrap"><table class="cmp"><thead><tr><th></th>{"".join(f'<th>{E(c)}</th>' for c in COMPETITORS)}</tr></thead><tbody>{"".join('<tr><td>'+E(r)+'</td>'+"".join('<td class="v">'+('●' if v==1 else '◐' if v==2 else '–')+'</td>' for v in vs)+'</tr>' for r,vs in COMPARE)}</tbody></table></div>
 <p class="fine" style="color:var(--silver);margin-top:10px">{E(CMP_LEGEND)}</p></div></section>
-<section id="compatibility"><div class="wrap"><p class="eyebrow">Compatibility</p><h2>Built for the Mac</h2><hr class="rule" style="margin-bottom:26px">
+<section id="compatibility"><div class="wrap"><p class="eyebrow">Compatibility</p><h2>Built for Mac and Windows</h2><hr class="rule" style="margin-bottom:26px">
 <dl class="compat">{"".join(f'<div><dt>{E(n)}</dt><dd>{E(t)}</dd></div>' for n,t in COMPAT)}</dl>
-<div class="buttons" style="margin-top:28px"><a class="appstore" href="{APPSTORE}" rel="noopener">Download on the App Store</a></div></div></section>
+<div class="buttons" style="margin-top:28px">{download_badges()}</div></div></section>
 <section class="band-black tight" id="inquire"><div class="wrap split"><div><p class="eyebrow" style="color:var(--gold)">Learn more</p><h2 style="color:var(--warm-white)">Inquire</h2></div>
 <form action="mailto:info@meierwerks.com?subject=SDS%20inquiry" method="post" enctype="text/plain">
 <label style="color:var(--silver)">Name<input id="sds-name" name="name" type="text" autocomplete="name" required></label>
@@ -304,7 +317,7 @@ support=f'<section><div class="wrap legal">{(ROOT/"docs/copy/support-body.html")
 # Per-page description + structured data. Descriptions are approved copy reused verbatim (invariant 1).
 SDS_LD={"@context":"https://schema.org","@type":"SoftwareApplication","name":"SDS / Speaker Design Suite",
  "alternateName":"Speaker Design Suite","applicationCategory":"DesignApplication","applicationSubCategory":"Loudspeaker design",
- "operatingSystem":"macOS 14 Sonoma or later (Apple silicon); iOS 17 or later (companion)",
+ "operatingSystem":"macOS 14 Sonoma or later (Apple silicon); Windows 11 (ARM64); iOS 17 or later (companion)",
  "description":SDS_P,"url":f"{SITE_URL}/software","downloadUrl":APPSTORE,"installUrl":APPSTORE,
  "softwareHelp":f"{SITE_URL}/support","image":f"{SITE_URL}/assets/img/sds/workspaces/crossover-card.jpg",
  "publisher":{"@type":"Organization","name":"MW Acoustics","url":SITE_URL},

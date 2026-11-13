@@ -41,3 +41,10 @@
 - Verified from a local build in a worktree on MW-10 TB: HTML well-formed, titles set, all 36 links/assets per page resolve to built files, sitemap still 9 URLs.
 - Copy is new functional text, logged in COPY-SOURCES.md as pending Bennett's approval (invariant 1).
 - NOT PUBLISHED, not merged to main, not pushed: gh-pages subtree push is human-gated (invariant 5).
+
+## 2026-11-12 — Windows download and legal draft (Codex)
+- Scope: prepare an unpublished Windows download UI plus Terms, Privacy and Support wording; do not publish or enable Windows paid checkout.
+- Changed: blue Apple badge, disabled red Windows badge below it, corrected glyph alignment/clipping, ARM64 compatibility text and conditional Windows/Stripe legal language.
+- Evidence: `python3 build.py`, Python compilation, `git diff --check`, focused HTML assertions and local HTTP 200 checks passed; browser screenshot tooling was unavailable.
+- Status: source and generated pages are complete as a review draft; the Windows control deliberately has no link and legal pages carry a draft-approval marker.
+- Next: Bennett/counsel approves copy; after a verified signed MSIX receipt, insert its public URL, revalidate, then publish through the human-gated release process.
