@@ -69,3 +69,4 @@
 - Originals kept in assets-src/img/sds/*-20261116.webp. Old files left in place, unreferenced.
 - Not published; more images from Bennett pending.
 - Follow-up: bookshelf build tile → horn + crossover render (builds/build-horn-crossover.webp, UI cropped out); old build-bookshelf.jpg unreferenced.
+- Follow-up: multi-cell build tile → walnut multi-cell render (builds/build-multicell-walnut.webp); old build-horn.jpg unreferenced.
