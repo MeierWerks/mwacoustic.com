@@ -63,3 +63,8 @@
 - Evidence: source `cmp` checks, SHA-256 checks, generated-text parity assertions, Python compilation, `git diff --check`, fail-closed assertions and six local HTTP 200 checks passed.
 - Status: unpublished review source is complete; Windows Terms hash `ac0803b…d501`, Windows Privacy hash `0b68ba5…fad2a2`; Support remains conditional and visibly marked as a draft.
 - Next: retain the empty Windows URL until signed-package verification, then set the immutable URL, re-run the same checks and publish only through the human-gated release process.
+## 2026-11-16 — SDS image refresh (Claude)
+- Software hero → new multi-cell front render (sds-workshop-render-v3.webp, top-anchored crop).
+- Workshop slot in laptop + carousel → rear Workshop shot (workspaces/workshop-v2.webp).
+- Originals kept in assets-src/img/sds/*-20261116.webp. Old files left in place, unreferenced.
+- Not published; more images from Bennett pending.
