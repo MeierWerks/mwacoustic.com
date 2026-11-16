@@ -71,3 +71,4 @@
 - Follow-up: bookshelf build tile → horn + crossover render (builds/build-horn-crossover.webp, UI cropped out); old build-bookshelf.jpg unreferenced.
 - Follow-up: multi-cell build tile → walnut multi-cell render (builds/build-multicell-walnut.webp); old build-horn.jpg unreferenced.
 - Follow-up: transmission-line tower tile → horn bookshelf rear render, padded to 4:3 by extending its background (builds/build-horn-bookshelf-rear.webp); old build-tl-tower.jpg unreferenced.
+- Follow-up: cherry tower tile → three-way tower render (builds/build-three-way-tower.webp); old build-cherry-tower.jpg unreferenced. All four build tiles now new.
